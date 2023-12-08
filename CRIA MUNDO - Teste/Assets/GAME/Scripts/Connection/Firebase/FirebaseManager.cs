@@ -120,6 +120,7 @@ public class FirebaseAuthManager : MonoBehaviour
 
             Debug.LogFormat("{0} Voce se logou com sucesso como:", user.DisplayName);
             CORE.instance.status.userName = user.DisplayName;
+            CORE.instance.connection.ConnectToMaster();
         }
     }
 

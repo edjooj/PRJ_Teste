@@ -9,6 +9,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     void Update()
     {
         // Checa se o personagem está no chão
