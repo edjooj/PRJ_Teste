@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         if(!photonView.IsMine) { return; }
         nickname.text = CORE.instance.connection.userName;
     }
