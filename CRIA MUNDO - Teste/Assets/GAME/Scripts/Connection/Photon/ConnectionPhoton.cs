@@ -21,7 +21,7 @@ public class ConnectionPhoton : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("Voce entrou na sala");
+        Debug.Log("Voce entrou na sala" + PhotonNetwork.CurrentRoom.Name);
         PhotonNetwork.LoadLevel("GAME");
         PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
     }
