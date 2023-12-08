@@ -4822,6 +4822,7 @@ MonoBehaviour:
   emailRegisterField: {fileID: 610343416}
   passwordRegisterField: {fileID: 1242272062}
   confirmPasswordRegisterField: {fileID: 1347019944}
+  photon: {fileID: 1524329066}
 --- !u!4 &1492143066
 Transform:
   m_ObjectHideFlags: 0

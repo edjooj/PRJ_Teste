@@ -27,6 +27,11 @@ public class FirebaseAuthManager : MonoBehaviour
     public TMP_InputField passwordRegisterField;
     public TMP_InputField confirmPasswordRegisterField;
 
+    // Variaveis Registro
+    [Space]
+    [Header("Photon")]
+    public ConnectionPhoton photon;
+
     private void Awake()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
@@ -121,6 +126,8 @@ public class FirebaseAuthManager : MonoBehaviour
             Debug.LogFormat("{0} Voce se logou com sucesso como:", user.DisplayName);
             CORE.instance.status.userName = user.DisplayName;
             CORE.instance.connection.ConnectToMaster();
+
+            photon.SetUserName(user.DisplayName);
         }
     }
 

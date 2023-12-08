@@ -1,14 +1,15 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ConnectionPhoton : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
+    public string userName;
+
 
     public void ConnectToMaster()
     {
+        PhotonNetwork.NickName = userName;
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -23,5 +24,10 @@ public class ConnectionPhoton : MonoBehaviourPunCallbacks
         Debug.Log("Voce entrou na sala");
         PhotonNetwork.LoadLevel("GAME");
         PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+    }
+
+    public void SetUserName(string name)
+    {
+        userName = name;
     }
 }

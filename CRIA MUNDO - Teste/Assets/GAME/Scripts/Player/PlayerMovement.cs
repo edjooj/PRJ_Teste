@@ -1,6 +1,8 @@
+using Photon.Pun;
 using UnityEngine;
+using TMPro;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPunCallbacks
 {
     public CharacterController controller;
     public float speed = 5.0f;
@@ -9,13 +11,19 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
 
+    public TMPro.TextMeshPro nickname;
+
     private void Awake()
     {
+        if(!photonView.IsMine) { return; }
         DontDestroyOnLoad(this);
+
+        nickname.text = CORE.instance.connection.userName;
     }
 
     void Update()
     {
+        if (!photonView.IsMine) { return; }
         // Checa se o personagem está no chão
         isGrounded = controller.isGrounded;
         if (isGrounded && velocity.y < 0)

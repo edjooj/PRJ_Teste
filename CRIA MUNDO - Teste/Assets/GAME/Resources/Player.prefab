@@ -128,6 +128,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.81
   jumpHeight: 2
+  nickname: {fileID: 251863131195603357}
 --- !u!143 &7044767603710347856
 CharacterController:
   m_ObjectHideFlags: 0
