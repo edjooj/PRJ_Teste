@@ -16,7 +16,12 @@ public class ConnectionPhoton : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("OnConnectedToMaster() was called by PUN.");
-        PhotonNetwork.JoinRandomOrCreateRoom();
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        PhotonNetwork.CreateRoom("CRIA");
     }
 
     public override void OnJoinedRoom()
