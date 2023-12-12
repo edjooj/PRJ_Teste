@@ -1,11 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-public class CORE : MonoBehaviour
+public class FirebaseCORE : MonoBehaviour
 {
-    public static CORE instance;
-    public UserStatus status;
-    public ConnectionPhoton connection;
+    public static FirebaseCORE instance;
+    public FirebaseAuthManager authManager;
+    public CoinController coinController;
 
     private void Awake()
     {

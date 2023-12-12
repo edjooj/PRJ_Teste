@@ -11,7 +11,7 @@ public class CORE : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = GetComponent<CORE>();
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else

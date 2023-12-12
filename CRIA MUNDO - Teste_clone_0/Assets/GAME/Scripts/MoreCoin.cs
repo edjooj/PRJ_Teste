@@ -17,10 +17,9 @@ public class MoreCoin : MonoBehaviour
         }
     }
 
-    // Function to be called when the button is pressed
     public void AddCoin()
     {
-        CoinController.instance.coinsValue ++;
-        CoinController.instance.UpdatePlayerCoinsInFirebase(CoinController.instance.coinsValue);
+        CORE.instance.status.playerCoin++;
+        CoinController.instance.UpdatePlayerCoinsInFirebase(CORE.instance.status.playerCoin);
     }
 }

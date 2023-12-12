@@ -6,8 +6,6 @@ using Firebase.Auth;
 
 public class FirebaseAuthManager : MonoBehaviour
 {
-    public static FirebaseAuthManager instance;
-
     // Variaveis Firebase
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -35,20 +33,6 @@ public class FirebaseAuthManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            if (this != instance)
-            {
-                Destroy(gameObject);
-            }
-        }
-
-
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             dependencyStatus = task.Result;
