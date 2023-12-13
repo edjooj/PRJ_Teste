@@ -29,33 +29,6 @@ public class Customize : MonoBehaviourPun
         instance = this;
     }
 
-
-    [PunRPC]
-    public void TrocarRoupaRPC(string novaCamisaMesh, string novaCalcaMesh, string novaLuvaMesh, string novoSapatoMesh, string novoCabeloMesh, string novoChapeuMesh)
-    {
-
-
-        if (!string.IsNullOrEmpty(novaCamisaMesh)) camisa.sharedMesh = FindMeshByName(novaCamisaMesh);
-        if (!string.IsNullOrEmpty(novaCalcaMesh)) calça.sharedMesh = FindMeshByName(novaCalcaMesh);
-        if (!string.IsNullOrEmpty(novoSapatoMesh)) sapato.sharedMesh = FindMeshByName(novoSapatoMesh);
-        if (!string.IsNullOrEmpty(novaLuvaMesh)) luva.sharedMesh = FindMeshByName(novaLuvaMesh);
-        if (!string.IsNullOrEmpty(novoCabeloMesh)) cabelo.sharedMesh = FindMeshByName(novoCabeloMesh);
-        if (!string.IsNullOrEmpty(novoChapeuMesh)) chapeu.sharedMesh = FindMeshByName(novoChapeuMesh);
-    }
-
-    private Mesh FindMeshByName(string meshName)
-    {
-        Mesh[] meshes = Resources.FindObjectsOfTypeAll<Mesh>();
-        foreach (Mesh mesh in meshes)
-        {
-            if (mesh.name == meshName)
-            {
-                return mesh;
-            }
-        }
-        return null;
-    }
-
     public void MeshSelect()
     {
         cabelo.sharedMesh = assets.cabelo[CORE.instance.customize.cabelo];

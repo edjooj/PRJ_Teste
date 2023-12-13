@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc8ff10cd6b3134cbd1dc87df037abc, type: 3}
+  m_Name: RoupasDATA
+  m_EditorClassIdentifier: 
+  skinColor:
+  - {r: 0, g: 0, b: 0, a: 0}
+  camisa:
+  - {fileID: 8437148888057648327, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -932073445309338395, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 5265150984521023534, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 8789972190061591381, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  "cal\xE7a":
+  - {fileID: 3452743971429745945, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 2214727502431455367, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -1807140829557154294, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 1874475975234929642, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  luva:
+  - {fileID: -7445209749466077704, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  sapato:
+  - {fileID: 3032602820115018088, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -3363288194465714914, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 8769409527804753591, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  cabelo:
+  - {fileID: 662541923151691171, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 2540893564454704178, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 3253808122821617214, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: 61165552821922706, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -2634021093998635794, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -7538206893936299159, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  chapeu:
+  - {fileID: -3686821171655926652, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -3801324182434132560, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -225946722408531118, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}
+  - {fileID: -7538206893936299159, guid: a4c95fb5cd2325745a5c414c0eaa4612, type: 3}

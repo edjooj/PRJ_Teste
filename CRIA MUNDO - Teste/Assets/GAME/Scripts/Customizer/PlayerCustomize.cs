@@ -31,8 +31,13 @@ public class PlayerCustomize : MonoBehaviour
         LoadCustomizePlayer();
     }
 
-    private void LoadCustomizePlayer()
+    public void LoadCustomizePlayer()
     {
         string userId = FirebaseCORE.instance.authManager.user.UserId;
+    }
+
+    public void SaveCustomizePlayer()
+    {
+
     }
 }
