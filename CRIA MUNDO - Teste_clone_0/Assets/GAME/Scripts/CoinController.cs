@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
-    public static CoinController instance;
-
     // Variaveis Firebase
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -16,9 +14,8 @@ public class CoinController : MonoBehaviour
 
     public DatabaseReference DBreference;
 
-    private void Start()
+    private void Awake()
     {
-        instance = this;
         auth = FirebaseAuth.DefaultInstance;
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
 
@@ -48,6 +45,7 @@ public class CoinController : MonoBehaviour
             }
         });
     }
+
 
 // Método para atualizar as moedas no Firebase
 public void UpdatePlayerCoinsInFirebase(int coins)

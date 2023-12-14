@@ -20,6 +20,6 @@ public class MoreCoin : MonoBehaviour
     public void AddCoin()
     {
         CORE.instance.status.playerCoin++;
-        CoinController.instance.UpdatePlayerCoinsInFirebase(CORE.instance.status.playerCoin);
+        NetworkController.instance.coinController.UpdatePlayerCoinsInFirebase(CORE.instance.status.playerCoin);
     }
 }

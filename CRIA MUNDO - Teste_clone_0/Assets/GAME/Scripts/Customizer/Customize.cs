@@ -31,12 +31,12 @@ public class Customize : MonoBehaviourPun
 
     public void MeshSelect()
     {
-        cabelo.sharedMesh = assets.cabelo[CORE.instance.customize.cabelo];
-        camisa.sharedMesh = assets.camisa[CORE.instance.customize.camisa];
-        calça.sharedMesh = assets.calça[CORE.instance.customize.calça];
-        sapato.sharedMesh = assets.sapato[CORE.instance.customize.sapato];
-        luva.sharedMesh = assets.luva[CORE.instance.customize.luva];
-        chapeu.sharedMesh = assets.chapeu[CORE.instance.customize.chapeu];
+        cabelo.sharedMesh = assets.cabelo[NetworkController.instance.customize.cabelo];
+        camisa.sharedMesh = assets.camisa[NetworkController.instance.customize.camisa];
+        calça.sharedMesh = assets.calça[NetworkController.instance.customize.calça];
+        sapato.sharedMesh = assets.sapato[NetworkController.instance.customize.sapato];
+        luva.sharedMesh = assets.luva[NetworkController.instance.customize.luva];
+        chapeu.sharedMesh = assets.chapeu[NetworkController.instance.customize.chapeu];
     }
 
     [PunRPC]

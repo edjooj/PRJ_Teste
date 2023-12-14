@@ -6,7 +6,6 @@ public class FirebaseCORE : MonoBehaviour
 {
     public static FirebaseCORE instance;
     public FirebaseAuthManager authManager;
-    public CoinController coinController;
 
     private void Awake()
     {
