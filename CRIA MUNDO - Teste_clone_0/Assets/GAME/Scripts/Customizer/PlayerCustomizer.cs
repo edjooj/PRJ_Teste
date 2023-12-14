@@ -1,10 +1,11 @@
 using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
+using Photon.Pun;
 using System.Collections;
 using UnityEngine;
 
-    public class PlayerCustomizer : MonoBehaviour
+    public class PlayerCustomizer : MonoBehaviourPunCallbacks
     {
         public int camisa;
         public int cabelo;
@@ -19,9 +20,13 @@ using UnityEngine;
         public FirebaseUser user;
 
         public DatabaseReference DBreference;
+    public Customize customize;
 
     private void Start()
     {
+        if (!photonView.IsMine) { return; }
+        customize = FindObjectOfType<Customize>();
+
         Debug.Log("PlayerCustomizer: Iniciando o carregamento das customizações do jogador.");
         StartCoroutine(LoadCustomizePlayerCoroutine());
     }
@@ -75,7 +80,7 @@ using UnityEngine;
 
             // Agora que os valores foram atualizados, aplique as mudanças visualmente ao personagem
             Debug.Log("LoadCustomizePlayerCoroutine: Atualizando o modelo do personagem com as customizações carregadas.");
-            Customize.instance.MeshSelect();
+            customize.MeshSelect();
         }
     }
 

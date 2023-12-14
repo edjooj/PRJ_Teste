@@ -1,18 +1,14 @@
 using Photon.Pun;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Customize : MonoBehaviourPun
+public class Customize : MonoBehaviourPunCallbacks
 {
     [System.Serializable]
     public enum CustomType
     {
         CAMISA,CALCA, SAPATO, LUVA, CABELO, CHAPEU
     }
-
-    public static Customize instance;
 
     public CustomizationVariations variations;
 
@@ -30,7 +26,10 @@ public class Customize : MonoBehaviourPun
 
     private void Awake()
     {
-        instance = this;
+        if(!photonView.IsMine)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     public void MeshSelect()
@@ -82,6 +81,18 @@ public class Customize : MonoBehaviourPun
         }
     }
 
+    [PunRPC]
+    void UpdateSkinRPC(CustomType type, int index)
+    {
+        SelectVariation(type, index);
+    }
+
+    public void UpdateSkin(CustomType type, int index)
+    {
+        photonView.RPC("UpdateSkinRPC", RpcTarget.AllBuffered, type, index);
+    }
+
+
     public void EscolherCor(Color cor, CustomType tipo)
     {
         // Este método precisa ser atualizado para lidar com a escolha de cores das variações
@@ -111,30 +122,35 @@ public class Customize : MonoBehaviourPun
     {
         Debug.Log($"SelectCamisa: Selecionando camisa com índice {index}.");
         SelectVariation(CustomType.CAMISA, index);
+        UpdateSkin(CustomType.CAMISA, index);
         NetworkController.instance.customize.camisa = index;
     }
 
     public void SelectCalca(int index)
     {
         SelectVariation(CustomType.CALCA, index);
+        UpdateSkin(CustomType.CALCA, index);
         NetworkController.instance.customize.calca = index;
     }
 
     public void SelectSapato(int index)
     {
         SelectVariation(CustomType.SAPATO, index);
+        UpdateSkin(CustomType.SAPATO, index);
         NetworkController.instance.customize.sapato = index;
     }
 
     public void SelectCabelo(int index)
     {
         SelectVariation(CustomType.CALCA, index);
+        UpdateSkin(CustomType.CABELO, index);
         NetworkController.instance.customize.cabelo = index;
     }
 
     public void SelectChapeu(int index)
     {
         SelectVariation(CustomType.CHAPEU, index);
+        UpdateSkin(CustomType.CHAPEU, index);
         NetworkController.instance.customize.chapeu = index;
     }
     #endregion

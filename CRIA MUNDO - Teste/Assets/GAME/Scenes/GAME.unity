@@ -513,9 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d8f06007c194b428106d24d573b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 171144194}
   index: 3
-  customType: 0
   customize: {fileID: 0}
 --- !u!114 &171144194
 MonoBehaviour:
@@ -561,14 +559,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343336352}
-        m_TargetAssemblyTypeName: PlayerCustomizer, Assembly-CSharp
-        m_MethodName: SaveRoupa
-        m_Mode: 1
+      - m_Target: {fileID: 171144193}
+        m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
+        m_MethodName: OnCamisaButtonClicked
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -623,6 +621,7 @@ GameObject:
   - component: {fileID: 189351649}
   - component: {fileID: 189351648}
   - component: {fileID: 189351647}
+  - component: {fileID: 189351651}
   m_Layer: 5
   m_Name: -= Canvas Principal
   m_TagString: Untagged
@@ -713,6 +712,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &189351651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189351646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &343336351
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +769,7 @@ MonoBehaviour:
   chapeu: 0
   sapato: 0
   dependencyStatus: 0
+  customize: {fileID: 0}
 --- !u!4 &343336353
 Transform:
   m_ObjectHideFlags: 0
@@ -1876,9 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d8f06007c194b428106d24d573b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 803912467}
   index: 4
-  customType: 0
   customize: {fileID: 0}
 --- !u!114 &803912467
 MonoBehaviour:
@@ -1924,14 +1944,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343336352}
-        m_TargetAssemblyTypeName: PlayerCustomizer, Assembly-CSharp
-        m_MethodName: SaveRoupa
-        m_Mode: 1
+      - m_Target: {fileID: 803912466}
+        m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
+        m_MethodName: OnCamisaButtonClicked
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2026,9 +2046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d8f06007c194b428106d24d573b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 890092657}
   index: 1
-  customType: 0
   customize: {fileID: 0}
 --- !u!114 &890092657
 MonoBehaviour:
@@ -2074,14 +2092,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343336352}
-        m_TargetAssemblyTypeName: PlayerCustomizer, Assembly-CSharp
-        m_MethodName: SaveRoupa
-        m_Mode: 1
+      - m_Target: {fileID: 890092656}
+        m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
+        m_MethodName: OnCamisaButtonClicked
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2512,10 +2530,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343336352}
-        m_TargetAssemblyTypeName: PlayerCustomizer, Assembly-CSharp
-        m_MethodName: SaveRoupa
-        m_Mode: 1
+      - m_Target: {fileID: 1021074152}
+        m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
+        m_MethodName: OnCamisaButtonClicked
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2574,9 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d8f06007c194b428106d24d573b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 1021074149}
   index: 0
-  customType: 0
   customize: {fileID: 0}
 --- !u!1 &1150784855
 GameObject:
@@ -2920,6 +2936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622173629}
   - component: {fileID: 1622173628}
+  - component: {fileID: 1622173630}
   m_Layer: 0
   m_Name: -=-= NetworkController
   m_TagString: Untagged
@@ -2958,6 +2975,28 @@ Transform:
   - {fileID: 343336353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622173630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622173627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1714178271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3382,9 +3421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d8f06007c194b428106d24d573b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 1829186379}
   index: 2
-  customType: 0
   customize: {fileID: 0}
 --- !u!114 &1829186379
 MonoBehaviour:
@@ -3430,14 +3467,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343336352}
-        m_TargetAssemblyTypeName: PlayerCustomizer, Assembly-CSharp
-        m_MethodName: SaveRoupa
-        m_Mode: 1
+      - m_Target: {fileID: 1829186378}
+        m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
+        m_MethodName: OnCamisaButtonClicked
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

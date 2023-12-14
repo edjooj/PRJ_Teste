@@ -1,15 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
-using UnityEngine.UI;
+using static Customize;
 
-public class ButtonConfig : MonoBehaviour
+public class ButtonConfig : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private Button btn;
-    [SerializeField] private int index;
-
-    [SerializeField] private Customize.CustomType customType;
+    public int index;
 
     [SerializeField] private Customize customize;
 
@@ -17,33 +12,57 @@ public class ButtonConfig : MonoBehaviour
     {
         customize = FindObjectOfType<Customize>(); // Find the Customize script
 
-        if (btn != null)
-        {
-            btn.onClick.AddListener(() => ApplyCustomization());
-        }
     }
 
-    private void ApplyCustomization()
+    public void OnCamisaButtonClicked(int index)
     {
-        switch (customType)
+        SelectCustomization(CustomType.CAMISA, index);
+    }
+
+    public void OnCalcaButtonClicked(int index)
+    {
+        SelectCustomization(CustomType.CALCA, index);
+    }
+
+    public void OnSapatoButtonClicked(int index)
+    {
+        SelectCustomization(CustomType.SAPATO, index);
+    }
+
+    public void OnCabeloButtonClicked(int index)
+    {
+        SelectCustomization(CustomType.CABELO, index);
+    }
+
+    public void OnChapeuButtonClicked(int index)
+    {
+        SelectCustomization(CustomType.CHAPEU, index);
+    }
+
+    private void SelectCustomization(CustomType type, int index)
+    {
+        if (!photonView.IsMine) { return; }
+
+        switch (type)
         {
-            case Customize.CustomType.CAMISA:
+            case CustomType.CAMISA:
                 customize.SelectCamisa(index);
                 break;
-            case Customize.CustomType.CALCA:
+            case CustomType.CALCA:
                 customize.SelectCalca(index);
                 break;
-            case Customize.CustomType.SAPATO:
+            case CustomType.SAPATO:
                 customize.SelectSapato(index);
                 break;
-            case Customize.CustomType.CABELO:
+            case CustomType.CABELO:
                 customize.SelectCabelo(index);
                 break;
-            case Customize.CustomType.CHAPEU:
+            case CustomType.CHAPEU:
                 customize.SelectChapeu(index);
                 break;
-            default:
-                break;
+
         }
+
+        NetworkController.instance.customize.SaveRoupa();
     }
 }
