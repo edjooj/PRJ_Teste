@@ -1,6 +1,7 @@
 using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
+using System.Collections;
 using UnityEngine;
 
 public class CoinController : MonoBehaviour
@@ -16,39 +17,56 @@ public class CoinController : MonoBehaviour
 
     private void Awake()
     {
-        auth = FirebaseAuth.DefaultInstance;
-        DBreference = FirebaseDatabase.DefaultInstance.RootReference;
+        auth = FirebaseCORE.instance.authManager.auth;
+        DBreference = FirebaseCORE.instance.authManager.DBreference;
 
-        LoadPlayerCoins();
+        StartCoroutine(CheckAuthenticationAndLoadCoins());
     }
 
-    private void LoadPlayerCoins()
+    private IEnumerator CheckAuthenticationAndLoadCoins()
+    {
+        yield return new WaitUntil(() => auth.CurrentUser != null); // Espera pela autenticação do usuário.
+
+        if (auth.CurrentUser != null)
+        {
+            Debug.Log("Usuário está autenticado com UID: " + auth.CurrentUser.UserId);
+            StartCoroutine(LoadPlayerCoins());
+        }
+        else
+        {
+            Debug.LogWarning("Usuário não está autenticado!");
+        }
+    }
+
+    private IEnumerator LoadPlayerCoins()
     {
         string userId = FirebaseCORE.instance.authManager.user.UserId;
-        DBreference.Child("users").Child(userId).Child("PlayerCoins").GetValueAsync().ContinueWith(task => {
-            if (task.IsFaulted)
+        var getPlayerCoinsTask = DBreference.Child("users").Child(userId).Child("PlayerCoins").GetValueAsync();
+
+        yield return new WaitUntil(() => getPlayerCoinsTask.IsCompleted);
+
+        if (getPlayerCoinsTask.IsFaulted)
+        {
+            // Handle the error...
+            Debug.LogError(getPlayerCoinsTask.Exception);
+        }
+        else if (getPlayerCoinsTask.IsCompleted)
+        {
+            DataSnapshot snapshot = getPlayerCoinsTask.Result;
+            if (snapshot.Exists && int.TryParse(snapshot.Value.ToString(), out int coins))
             {
-                // Handle the error...
-                Debug.LogError(task.Exception);
+                CORE.instance.status.playerCoin = coins;
             }
-            else if (task.IsCompleted)
+            else
             {
-                DataSnapshot snapshot = task.Result;
-                if (snapshot.Exists && int.TryParse(snapshot.Value.ToString(), out int coins))
-                {
-                    CORE.instance.status.playerCoin = coins;
-                }
-                else
-                {
-                    Debug.Log("PlayerCoins not found or invalid format.");
-                }
+                Debug.Log("PlayerCoins not found or invalid format.");
             }
-        });
+        }
     }
 
 
-// Método para atualizar as moedas no Firebase
-public void UpdatePlayerCoinsInFirebase(int coins)
+    // Método para atualizar as moedas no Firebase
+    public void UpdatePlayerCoinsInFirebase(int coins)
         {
             if (FirebaseCORE.instance.authManager.user.UserId != null)
             {

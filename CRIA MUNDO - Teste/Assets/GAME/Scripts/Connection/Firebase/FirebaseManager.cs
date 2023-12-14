@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Database;
 
 public class FirebaseAuthManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FirebaseAuthManager : MonoBehaviour
     public DependencyStatus dependencyStatus;
     public FirebaseAuth auth;
     public FirebaseUser user;
+    public DatabaseReference DBreference;
 
     // Variaveis Login
     [Space]
@@ -51,6 +53,7 @@ public class FirebaseAuthManager : MonoBehaviour
     void InitializeFirebase()
     {
         auth = FirebaseAuth.DefaultInstance;
+        DBreference = FirebaseDatabase.DefaultInstance.RootReference;
 
         auth.StateChanged += AuthStateChanged;
         AuthStateChanged(this, null);
@@ -125,6 +128,8 @@ public class FirebaseAuthManager : MonoBehaviour
             Debug.LogFormat("{0} Voce se logou com sucesso como:", user.DisplayName);
             CORE.instance.status.userName = user.DisplayName;
             CORE.instance.connection.ConnectToMaster();
+
+            UpdatePlayerNickInFirebase();
 
             photon.SetUserName(user.DisplayName);
         }
@@ -230,8 +235,29 @@ public class FirebaseAuthManager : MonoBehaviour
                 {
                     Debug.Log("Registradoi com sucesso como: " + user.DisplayName);
                     UIManager.Instance.OpenLoginPanel();
+                    UpdatePlayerNickInFirebase();
                 }
             }
         }
     }
+
+    public void UpdatePlayerNickInFirebase()
+    {
+        if (FirebaseCORE.instance.authManager.user.UserId != null)
+        {
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference playerCoinsRef = FirebaseDatabase.DefaultInstance.RootReference
+                .Child("users")
+                .Child(userId)
+                .Child("PlayerNick");
+
+            // Atualize esta linha para passar o valor inteiro das moedas
+            playerCoinsRef.SetValueAsync(user.DisplayName);
+        }
+        else
+        {
+            Debug.LogWarning("User not authenticated. Cannot update player nick.");
+        }
+    }
+
 }

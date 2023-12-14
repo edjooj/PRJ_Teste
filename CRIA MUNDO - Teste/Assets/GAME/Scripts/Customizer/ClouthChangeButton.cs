@@ -18,7 +18,7 @@ public class ClouthChangeButton : MonoBehaviourPun
                 NetworkController.instance.customize.cabelo = roupaIndice;
                 break;
             case Customize.CustomType.CALÇA:
-                NetworkController.instance.customize.calça = roupaIndice;
+                NetworkController.instance.customize.calca = roupaIndice;
                 break;
             case Customize.CustomType.CHAPEU:
                 NetworkController.instance.customize.chapeu = roupaIndice;

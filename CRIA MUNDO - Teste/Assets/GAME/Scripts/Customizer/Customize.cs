@@ -33,9 +33,8 @@ public class Customize : MonoBehaviourPun
     {
         cabelo.sharedMesh = assets.cabelo[NetworkController.instance.customize.cabelo];
         camisa.sharedMesh = assets.camisa[NetworkController.instance.customize.camisa];
-        calça.sharedMesh = assets.calça[NetworkController.instance.customize.calça];
+        calça.sharedMesh = assets.calça[NetworkController.instance.customize.calca];
         sapato.sharedMesh = assets.sapato[NetworkController.instance.customize.sapato];
-        luva.sharedMesh = assets.luva[NetworkController.instance.customize.luva];
         chapeu.sharedMesh = assets.chapeu[NetworkController.instance.customize.chapeu];
     }
 
