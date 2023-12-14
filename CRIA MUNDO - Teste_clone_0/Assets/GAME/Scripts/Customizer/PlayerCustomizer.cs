@@ -1,6 +1,6 @@
-    using Firebase;
-    using Firebase.Auth;
-    using Firebase.Database;
+using Firebase;
+using Firebase.Auth;
+using Firebase.Database;
 using System.Collections;
 using UnityEngine;
 
@@ -22,18 +22,23 @@ using UnityEngine;
 
     private void Start()
     {
-         StartCoroutine(LoadCustomizePlayerCoroutine());
+        Debug.Log("PlayerCustomizer: Iniciando o carregamento das customizações do jogador.");
+        StartCoroutine(LoadCustomizePlayerCoroutine());
+    }
+
+    public void SaveRoupa()
+    {
+        SaveCustomizePlayer();
     }
 
     public void AtualizarRoupa()
     {
-        Customize.instance.MeshSelect();
-        SaveCustomizePlayer();
+        StartCoroutine (LoadCustomizePlayerCoroutine());
     }
 
     public IEnumerator LoadCustomizePlayerCoroutine()
     {
-        Debug.Log("Iniciando LoadCustomizePlayer");
+        Debug.Log("LoadCustomizePlayerCoroutine: Carregando customizações do jogador do Firebase.");
         auth = FirebaseCORE.instance.authManager.auth;
         DBreference = FirebaseCORE.instance.authManager.DBreference;
 
@@ -59,30 +64,25 @@ using UnityEngine;
         {
             Debug.LogError("Erro ao carregar customização de roupa.");
         }
-        else
+        else if (camisaTask.IsCompleted && cabeloTask.IsCompleted && calcaTask.IsCompleted && chapeuTask.IsCompleted && sapatoTask.IsCompleted)
         {
-            // Aplica as customizações carregadas.
+            // Se as tarefas foram bem-sucedidas, atualize os valores em NetworkController.instance.customize
             NetworkController.instance.customize.camisa = int.Parse(camisaTask.Result.Value.ToString());
             NetworkController.instance.customize.cabelo = int.Parse(cabeloTask.Result.Value.ToString());
             NetworkController.instance.customize.calca = int.Parse(calcaTask.Result.Value.ToString());
             NetworkController.instance.customize.chapeu = int.Parse(chapeuTask.Result.Value.ToString());
             NetworkController.instance.customize.sapato = int.Parse(sapatoTask.Result.Value.ToString());
 
-            // Atualiza o visual do personagem.
-            StartCoroutine(ApplyMeshCustomization());
+            // Agora que os valores foram atualizados, aplique as mudanças visualmente ao personagem
+            Debug.Log("LoadCustomizePlayerCoroutine: Atualizando o modelo do personagem com as customizações carregadas.");
+            Customize.instance.MeshSelect();
         }
     }
 
-    private IEnumerator ApplyMeshCustomization()
-    {
-
-        Customize.instance.MeshSelect();
-
-        yield return null;
-    }
 
     public void SaveCustomizePlayer()
     {
+        Debug.Log("SaveCustomizePlayer: Salvando customização do jogador no Firebase.");
         if (FirebaseCORE.instance.authManager.user.UserId != null)
         {
             string userId = FirebaseCORE.instance.authManager.user.UserId;
