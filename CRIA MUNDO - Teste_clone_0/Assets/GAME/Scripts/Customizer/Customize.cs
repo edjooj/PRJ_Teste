@@ -24,14 +24,6 @@ public class Customize : MonoBehaviourPunCallbacks
         public List<GameObject> chapeus;
     }
 
-    private void Awake()
-    {
-        if(!photonView.IsMine)
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
-
     public void MeshSelect()
     {
         Debug.Log("MeshSelect: Aplicando seleções de personalização.");
@@ -45,6 +37,8 @@ public class Customize : MonoBehaviourPunCallbacks
 
     public void SelectVariation(CustomType type, int index)
     {
+                if (!photonView.IsMine) { return; }
+
         // Desativar todas as variações do tipo selecionado
         List<GameObject> currentTypeList = GetTypeList(type);
         if (currentTypeList != null)
@@ -91,6 +85,18 @@ public class Customize : MonoBehaviourPunCallbacks
     {
         photonView.RPC("UpdateSkinRPC", RpcTarget.AllBuffered, type, index);
     }
+
+    [PunRPC]
+    void ApplyClothesToPlayer(int camisa, int calca, int sapato, int cabelo, int chapeu)
+    {
+        // Aplicar as roupas ao jogador
+        SelectVariation(CustomType.CAMISA, camisa);
+        SelectVariation(CustomType.CALCA, calca);
+        SelectVariation(CustomType.SAPATO, sapato);
+        SelectVariation(CustomType.CABELO, cabelo);
+        SelectVariation(CustomType.CHAPEU, chapeu);
+    }
+
 
 
     public void EscolherCor(Color cor, CustomType tipo)
