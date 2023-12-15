@@ -25,6 +25,7 @@ using UnityEngine;
     private void Start()
     {
         if (!photonView.IsMine) { return; }
+        customize = FindObjectOfType<Customize>();
 
         Debug.Log("PlayerCustomizer: Iniciando o carregamento das customizações do jogador.");
         StartCoroutine(LoadCustomizePlayerCoroutine());
@@ -80,13 +81,6 @@ using UnityEngine;
             // Agora que os valores foram atualizados, aplique as mudanças visualmente ao personagem
             Debug.Log("LoadCustomizePlayerCoroutine: Atualizando o modelo do personagem com as customizações carregadas.");
             customize.MeshSelect();
-
-                    photonView.RPC("ApplyClothesToPlayer", RpcTarget.Others, 
-                       NetworkController.instance.customize.camisa,
-                       NetworkController.instance.customize.calca,
-                       NetworkController.instance.customize.sapato,
-                       NetworkController.instance.customize.cabelo,
-                       NetworkController.instance.customize.chapeu);
         }
     }
 

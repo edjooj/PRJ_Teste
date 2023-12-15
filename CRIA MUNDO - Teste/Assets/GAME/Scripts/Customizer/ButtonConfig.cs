@@ -14,7 +14,7 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        if (!photonView.IsMine) { this.gameObject.SetActive(false); }
+        if(!photonView.IsMine) { this.gameObject.SetActive(false); }
 
         customize = FindObjectOfType<Customize>(); // Find the Customize script
 
