@@ -8,6 +8,10 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
     [SerializeField] private Customize customize;
 
+    [Header("Scroolings")]
+    public GameObject camisaScrooling, calcaScrooling, sapatoScrooling, cabeloScrooling, chapeuScrooling;
+
+
     void Start()
     {
         if (!photonView.IsMine) { this.gameObject.SetActive(false); }
@@ -15,6 +19,8 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
         customize = FindObjectOfType<Customize>(); // Find the Customize script
 
     }
+
+    #region Definir o index das roupas nos botões
 
     public void OnCamisaButtonClicked(int index)
     {
@@ -67,4 +73,42 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
         NetworkController.instance.customize.SaveRoupa();
     }
+    #endregion
+
+    public void ChooserMenu(string menu)
+    {
+        camisaScrooling.SetActive(false);
+        calcaScrooling.SetActive(false);
+        sapatoScrooling.SetActive(false);
+        cabeloScrooling.SetActive(false);
+        chapeuScrooling.SetActive(false);
+
+        switch (menu)
+        {
+            case "camisa":
+                camisaScrooling.SetActive(true);
+                break;            
+            
+            case "calca":
+                calcaScrooling.SetActive(true);
+                break;            
+            
+            case "sapato":
+                sapatoScrooling.SetActive(true);
+                break;            
+            
+            case "cabelo":
+                cabeloScrooling.SetActive(true);
+                break;            
+            
+            case "chapeu":
+                chapeuScrooling.SetActive(true);
+                break;            
+            
+        }
+    }
+
+
+
+
 }
