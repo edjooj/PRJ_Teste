@@ -20,7 +20,7 @@ using UnityEngine;
         public FirebaseUser user;
 
         public DatabaseReference DBreference;
-    public Customize customize;
+        public Customize customize;
 
     private void Start()
     {
@@ -34,6 +34,12 @@ using UnityEngine;
     public void SaveRoupa()
     {
         SaveCustomizePlayer();
+    }
+
+    public override void OnJoinedRoom()
+    {
+        // Carregar as skins do jogador do Firebase...
+        StartCoroutine(LoadCustomizePlayerCoroutine());
     }
 
     public void AtualizarRoupa()
@@ -71,19 +77,18 @@ using UnityEngine;
         }
         else if (camisaTask.IsCompleted && cabeloTask.IsCompleted && calcaTask.IsCompleted && chapeuTask.IsCompleted && sapatoTask.IsCompleted)
         {
-            // Se as tarefas foram bem-sucedidas, atualize os valores em NetworkController.instance.customize
-            NetworkController.instance.customize.camisa = int.Parse(camisaTask.Result.Value.ToString());
-            NetworkController.instance.customize.cabelo = int.Parse(cabeloTask.Result.Value.ToString());
-            NetworkController.instance.customize.calca = int.Parse(calcaTask.Result.Value.ToString());
-            NetworkController.instance.customize.chapeu = int.Parse(chapeuTask.Result.Value.ToString());
-            NetworkController.instance.customize.sapato = int.Parse(sapatoTask.Result.Value.ToString());
+            camisa = int.Parse(camisaTask.Result.Value.ToString());
+            cabelo = int.Parse(cabeloTask.Result.Value.ToString());
+            calca = int.Parse(calcaTask.Result.Value.ToString());
+            chapeu = int.Parse(chapeuTask.Result.Value.ToString());
+            sapato = int.Parse(sapatoTask.Result.Value.ToString());
 
-            // Agora que os valores foram atualizados, aplique as mudanças visualmente ao personagem
-            Debug.Log("LoadCustomizePlayerCoroutine: Atualizando o modelo do personagem com as customizações carregadas.");
-            customize.MeshSelect();
+            customize.MeshSelect(); //Sincronizar Local
+
+
+            photonView.RPC("UpdatePlayerCustomization", RpcTarget.AllBuffered, camisa, cabelo, calca, chapeu, sapato); // Sincronize p/ todos
         }
     }
-
 
     public void SaveCustomizePlayer()
     {
@@ -96,7 +101,6 @@ using UnityEngine;
                 .Child(userId)
                 .Child("PlayerClouths");
 
-            // Agora, em vez de salvar um objeto completo, você salva cada item individualmente.
             playerClothsRef.Child("camisa").SetValueAsync(NetworkController.instance.customize.camisa);
             playerClothsRef.Child("cabelo").SetValueAsync(NetworkController.instance.customize.cabelo);
             playerClothsRef.Child("calca").SetValueAsync(NetworkController.instance.customize.calca);

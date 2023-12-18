@@ -14,6 +14,8 @@ public class Customize : MonoBehaviourPunCallbacks
 
     public CustomType customType;
 
+    public GameObject selectedObject;
+
     [System.Serializable]
     public class CustomizationVariations
     {
@@ -34,7 +36,6 @@ public class Customize : MonoBehaviourPunCallbacks
 
     public void MeshSelect()
     {
-        Debug.Log("MeshSelect: Aplicando seleções de personalização.");
 
         SelectVariation(CustomType.CAMISA, NetworkController.instance.customize.camisa);
         SelectVariation(CustomType.CALCA, NetworkController.instance.customize.calca);
@@ -60,7 +61,20 @@ public class Customize : MonoBehaviourPunCallbacks
                 currentTypeList[index].SetActive(true);
             }
         }
+
+        selectedObject = currentTypeList[index];
     }
+
+    public SkinnedMeshRenderer GetSelectedObjectSkinnedMeshRenderer()
+    {
+        if (selectedObject != null)
+        {
+            return selectedObject.GetComponent<SkinnedMeshRenderer>();
+        }
+
+        return null;
+    }
+
 
     private List<GameObject> GetTypeList(CustomType type)
     {
@@ -90,30 +104,6 @@ public class Customize : MonoBehaviourPunCallbacks
     public void UpdateSkin(CustomType type, int index)
     {
         photonView.RPC("UpdateSkinRPC", RpcTarget.AllBuffered, type, index);
-    }
-
-
-    public void EscolherCor(Color cor, CustomType tipo)
-    {
-        // Este método precisa ser atualizado para lidar com a escolha de cores das variações
-        // Por exemplo, mudar a cor da camisa selecionada
-        List<GameObject> currentTypeList = GetTypeList(tipo);
-        if (currentTypeList != null)
-        {
-            foreach (var item in currentTypeList)
-            {
-                if (item.activeSelf)
-                {
-                    // Presumindo que o objeto tenha um Renderer com um Material que você deseja mudar
-                    Renderer renderer = item.GetComponent<Renderer>();
-                    if (renderer != null)
-                    {
-                        renderer.material.color = cor;
-                    }
-                    break; // Somente alterar o item ativo
-                }
-            }
-        }
     }
 
 

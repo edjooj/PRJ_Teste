@@ -11,12 +11,12 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
     [Header("Scroolings")]
     public GameObject camisaScrooling, calcaScrooling, sapatoScrooling, cabeloScrooling, chapeuScrooling;
 
+    [SerializeField] private ClouthColorChange clouthColorChange;
+
 
     void Start()
     {
         if(!photonView.IsMine) { this.gameObject.SetActive(false); }
-
-        customize = FindObjectOfType<Customize>(); // Find the Customize script
 
     }
 
@@ -71,6 +71,7 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
         }
 
+        clouthColorChange.UpdateCustomType(type);
         NetworkController.instance.customize.SaveRoupa();
     }
     #endregion
