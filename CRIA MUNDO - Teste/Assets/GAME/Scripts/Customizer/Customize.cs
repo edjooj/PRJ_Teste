@@ -1,4 +1,5 @@
 using Photon.Pun;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -105,6 +106,49 @@ public class Customize : MonoBehaviourPunCallbacks
     {
         photonView.RPC("UpdateSkinRPC", RpcTarget.AllBuffered, type, index);
     }
+
+    public void ApplyColor(string clothType, string colorString)
+    {
+        CustomType type = (CustomType)Enum.Parse(typeof(CustomType), clothType);
+        Color newColor;
+        if (ColorUtility.TryParseHtmlString("#" + colorString, out newColor))
+        {
+            SkinnedMeshRenderer renderer = GetRendererForCustomType(type);
+            if (renderer != null)
+            {
+                MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
+                renderer.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetColor("_Color", newColor);
+                renderer.SetPropertyBlock(propertyBlock);
+            }
+        }
+    }
+
+
+    public SkinnedMeshRenderer GetRendererForCustomType(CustomType type)
+    {
+        List<GameObject> typeList = GetTypeList(type);
+        if (typeList != null)
+        {
+            // Encontre o objeto ativo atual para o tipo específico
+            GameObject activeObject = typeList.Find(obj => obj.activeSelf);
+            if (activeObject != null)
+            {
+                return activeObject.GetComponent<SkinnedMeshRenderer>();
+            }
+            else
+            {
+                Debug.LogError($"Nenhum objeto ativo encontrado para o tipo {type}");
+            }
+        }
+        else
+        {
+            Debug.LogError($"Lista de tipo não encontrada para {type}");
+        }
+
+        return null;
+    }
+
 
 
     #region CHAMADA HUD

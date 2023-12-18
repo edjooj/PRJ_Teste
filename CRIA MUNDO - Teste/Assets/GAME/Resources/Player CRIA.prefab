@@ -84,7 +84,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 43171d6ba33ea85489b0f6ab6c0f4f5a, type: 2}
+  - {fileID: 2100000, guid: b8a7495b9d39b2d4f886e0552d78e095, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4623,7 +4623,6 @@ GameObject:
   - component: {fileID: 374407862027377950}
   - component: {fileID: 313109679037994336}
   - component: {fileID: 578824835975702178}
-  - component: {fileID: 3279123861339425839}
   m_Layer: 5
   m_Name: -= Color
   m_TagString: Untagged
@@ -4690,21 +4689,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3279123861339425839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3036871646124286325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e394004de88cfac45847db4c97568219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rgbSlider: {fileID: 4397636516811779064}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  custom: {fileID: 11798816227803760}
 --- !u!1 &3077636628402151859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5806,7 +5790,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3279123861339425839}
+      - m_Target: {fileID: 9180326780171408375}
         m_TargetAssemblyTypeName: ClouthColorChange, Assembly-CSharp
         m_MethodName: ApplyButton
         m_Mode: 1
@@ -9309,7 +9293,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3279123861339425839}
+      - m_Target: {fileID: 9180326780171408375}
         m_TargetAssemblyTypeName: ClouthColorChange, Assembly-CSharp
         m_MethodName: RGBSlider
         m_Mode: 1
@@ -11580,7 +11564,7 @@ MonoBehaviour:
   sapatoScrooling: {fileID: 156684191597192236}
   cabeloScrooling: {fileID: 4597559544392117826}
   chapeuScrooling: {fileID: 3916886631997163493}
-  clouthColorChange: {fileID: 3279123861339425839}
+  clouthColorChange: {fileID: 9180326780171408375}
 --- !u!1 &7048431945676995223
 GameObject:
   m_ObjectHideFlags: 0
@@ -11933,7 +11917,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 43171d6ba33ea85489b0f6ab6c0f4f5a, type: 2}
+  - {fileID: 2100000, guid: b8a7495b9d39b2d4f886e0552d78e095, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13307,6 +13291,7 @@ GameObject:
   - component: {fileID: 8132019645679181723}
   - component: {fileID: 3623659058978341066}
   - component: {fileID: 4220703142294151726}
+  - component: {fileID: 9180326780171408375}
   m_Layer: 0
   m_Name: Player CRIA
   m_TagString: Untagged
@@ -13446,6 +13431,21 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &9180326780171408375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228549438320869892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e394004de88cfac45847db4c97568219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rgbSlider: {fileID: 4397636516811779064}
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  custom: {fileID: 11798816227803760}
 --- !u!1 &8261128712838952912
 GameObject:
   m_ObjectHideFlags: 0
