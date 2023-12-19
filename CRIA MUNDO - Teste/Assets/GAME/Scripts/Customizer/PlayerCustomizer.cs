@@ -85,21 +85,27 @@ using UnityEngine;
 
             customize.MeshSelect(); //Sincronizar Local
 
+            int camisaId = camisaTask.Id;
+            int cabeloId = cabeloTask.Id;
+            int calcaId = calcaTask.Id;
+            int chapeuId = chapeuTask.Id;
+            int sapatoId = sapatoTask.Id;
 
-            photonView.RPC("UpdatePlayerCustomization", RpcTarget.AllBuffered, camisa, cabelo, calca, chapeu, sapato);
+
+            photonView.RPC("UpdatePlayerCustomization", RpcTarget.AllBuffered, camisaId, cabeloId, calcaId, chapeuId, sapatoId);
         }
     }
 
     [PunRPC]
     public void UpdatePlayerCustomization(int camisaId, int cabeloId, int calcaId, int chapeuId, int sapatoId)
     {
-
-            // Aplique as customizações apenas ao jogador que possui este PhotonView
             camisa = camisaId;
             cabelo = cabeloId;
             calca = calcaId;
             chapeu = chapeuId;
             sapato = sapatoId;
+
+        customize.MeshSelect();
     }
 
     public void SaveCustomizePlayer()
