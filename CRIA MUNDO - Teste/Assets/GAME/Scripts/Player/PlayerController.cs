@@ -24,10 +24,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        Debug.Log("Player Gerado");
         if(!photonView.IsMine) { return; }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void Update()

@@ -72,7 +72,6 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
         }
 
         clouthColorChange.UpdateCustomType(type);
-        NetworkController.instance.customize.SaveRoupa();
     }
     #endregion
 
