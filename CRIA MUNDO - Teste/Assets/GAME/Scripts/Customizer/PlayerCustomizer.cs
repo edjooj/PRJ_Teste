@@ -86,8 +86,20 @@ using UnityEngine;
             customize.MeshSelect(); //Sincronizar Local
 
 
-            photonView.RPC("UpdatePlayerCustomization", RpcTarget.AllBuffered, camisa, cabelo, calca, chapeu, sapato); // Sincronize p/ todos
+            photonView.RPC("UpdatePlayerCustomization", RpcTarget.AllBuffered, camisa, cabelo, calca, chapeu, sapato);
         }
+    }
+
+    [PunRPC]
+    public void UpdatePlayerCustomization(int camisaId, int cabeloId, int calcaId, int chapeuId, int sapatoId)
+    {
+
+            // Aplique as customizações apenas ao jogador que possui este PhotonView
+            camisa = camisaId;
+            cabelo = cabeloId;
+            calca = calcaId;
+            chapeu = chapeuId;
+            sapato = sapatoId;
     }
 
     public void SaveCustomizePlayer()

@@ -17,6 +17,8 @@ public class Customize : MonoBehaviourPunCallbacks
 
     public GameObject selectedObject;
 
+    public PlayerCustomizer playerCustomizer;
+
     [System.Serializable]
     public class CustomizationVariations
     {
@@ -27,22 +29,14 @@ public class Customize : MonoBehaviourPunCallbacks
         public List<GameObject> chapeus;
     }
 
-    private void Awake()
-    {
-        if(!photonView.IsMine)
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
-
     public void MeshSelect()
     {
 
-        SelectVariation(CustomType.CAMISA, NetworkController.instance.customize.camisa);
-        SelectVariation(CustomType.CALCA, NetworkController.instance.customize.calca);
-        SelectVariation(CustomType.SAPATO, NetworkController.instance.customize.sapato);
-        SelectVariation(CustomType.CABELO, NetworkController.instance.customize.cabelo);
-        SelectVariation(CustomType.CHAPEU, NetworkController.instance.customize.chapeu);
+        SelectVariation(CustomType.CAMISA, playerCustomizer.camisa);
+        SelectVariation(CustomType.CALCA, playerCustomizer.calca);
+        SelectVariation(CustomType.SAPATO, playerCustomizer.sapato);
+        SelectVariation(CustomType.CABELO, playerCustomizer.cabelo);
+        SelectVariation(CustomType.CHAPEU, playerCustomizer.chapeu);
     }
 
     public void SelectVariation(CustomType type, int index)
@@ -157,35 +151,35 @@ public class Customize : MonoBehaviourPunCallbacks
         Debug.Log($"SelectCamisa: Selecionando camisa com índice {index}.");
         SelectVariation(CustomType.CAMISA, index);
         UpdateSkin(CustomType.CAMISA, index);
-        NetworkController.instance.customize.camisa = index;
+        playerCustomizer.camisa = index;
     }
 
     public void SelectCalca(int index)
     {
         SelectVariation(CustomType.CALCA, index);
         UpdateSkin(CustomType.CALCA, index);
-        NetworkController.instance.customize.calca = index;
+        playerCustomizer.calca = index;
     }
 
     public void SelectSapato(int index)
     {
         SelectVariation(CustomType.SAPATO, index);
         UpdateSkin(CustomType.SAPATO, index);
-        NetworkController.instance.customize.sapato = index;
+        playerCustomizer.sapato = index;
     }
 
     public void SelectCabelo(int index)
     {
         SelectVariation(CustomType.CALCA, index);
         UpdateSkin(CustomType.CABELO, index);
-        NetworkController.instance.customize.cabelo = index;
+        playerCustomizer.cabelo = index;
     }
 
     public void SelectChapeu(int index)
     {
         SelectVariation(CustomType.CHAPEU, index);
         UpdateSkin(CustomType.CHAPEU, index);
-        NetworkController.instance.customize.chapeu = index;
+        playerCustomizer.chapeu = index;
     }
     #endregion
 }

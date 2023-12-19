@@ -2,7 +2,7 @@ using Photon.Pun;
 using UnityEngine;
 using TMPro;
 
-public class PlayerController : MonoBehaviourPunCallbacks
+public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     public CharacterController controller;
     public float speed = 5.0f;
