@@ -12,6 +12,8 @@ public class PlayerInfo : MonoBehaviourPunCallbacks
     {
         auth = FirebaseAuth.DefaultInstance;
 
+        DontDestroyOnLoad(this.gameObject);
+
         if (photonView.IsMine && auth.CurrentUser != null)
         {
             string nickname = auth.CurrentUser.DisplayName ?? "Anônimo";

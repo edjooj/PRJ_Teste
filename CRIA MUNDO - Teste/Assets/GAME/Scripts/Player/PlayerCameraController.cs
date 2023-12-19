@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PlayerCameraController : MonoBehaviourPunCallbacks
 {
@@ -9,13 +10,24 @@ public class PlayerCameraController : MonoBehaviourPunCallbacks
     [SerializeField] private Camera targetCamera;
     [SerializeField] private CinemachineFreeLook vcam;
 
-        private void Start()
-        {
-            if (!photonView.IsMine) { return; }
-            camera.SetActive(true);
-            vcam = FindAnyObjectByType<CinemachineFreeLook>();
-            vcam.Follow = targetPlayerCamera.transform;
-            vcam.LookAt = targetPlayerCamera.transform;
-        }
+
+    private void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (!photonView.IsMine) { return; }
+        camera.SetActive(true);
+        vcam = FindAnyObjectByType<CinemachineFreeLook>();
+        vcam.Follow = targetPlayerCamera.transform;
+        vcam.LookAt = targetPlayerCamera.transform;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
 }
