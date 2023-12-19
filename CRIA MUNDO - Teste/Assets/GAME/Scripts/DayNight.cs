@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class DayNight : MonoBehaviourPunCallbacks
 {
-    public float dayLengthInSeconds = 120;
-    public float timer = 0;
+    public float dayLengthInSeconds = 86400;
+    [Range(0, 24)] public float timer = 0; 
     public Light directionalLight;
     private float lastSyncTime = -1;
 
@@ -12,11 +12,17 @@ public class DayNight : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        timer += Time.deltaTime;
-        float rotationAngle = (timer / dayLengthInSeconds) * 360;
+
+        timer += Time.deltaTime / dayLengthInSeconds * 24; 
+
+
+        float rotationAngle = (timer / 24) * 360; 
         directionalLight.transform.rotation = Quaternion.Euler(rotationAngle, -30f, 0);
 
-        if (timer >= dayLengthInSeconds) timer = 0;
+        isNight = timer >= 18 || timer < 6; 
+
+
+        if (timer >= 24) timer = 0;
 
         if (PhotonNetwork.IsMasterClient && Time.time - lastSyncTime > 5f)
         {

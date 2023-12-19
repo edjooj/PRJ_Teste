@@ -13362,7 +13362,7 @@ MonoBehaviour:
   controller: {fileID: 8132019645679181723}
   cam: {fileID: 5123312697780857727}
   animator: {fileID: 7357792347225971643}
-  speed: 6
+  speed: 120
   runSpeed: 12
   turnSmoothTime: 0.1
   gravity: -9.81
