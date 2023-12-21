@@ -11,6 +11,7 @@ public class Particulas : MonoBehaviour
             if(other.CompareTag("Player"))
         {
             particulas.Play();
+            Destroy(this);
         }
     }
 }

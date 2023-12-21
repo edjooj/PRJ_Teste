@@ -69,11 +69,7 @@ public class PlayerGame1 : MonoBehaviour
         UpdateHUD();
     }
 
-    private void UpdateScore(int value)
-    {
-        score += value;
-        UpdateHUD();
-    }
+    
 
     private void UpdateHUD()
     {
