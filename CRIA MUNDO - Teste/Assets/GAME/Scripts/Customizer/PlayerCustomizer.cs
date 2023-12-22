@@ -1,4 +1,4 @@
-using Firebase;
+Ôªøusing Firebase;
 using Firebase.Auth;
 using Firebase.Database;
 using Photon.Pun;
@@ -30,8 +30,9 @@ using UnityEngine;
         StartCoroutine(LoadCustomizePlayerCoroutine());
     }
 
-    public void SaveRoupa() //FUN«√O PARA MANDAR INFORMA«’ES NO FIREBASE
+    public void SaveRoupa() //FUN√á√ÉO PARA MANDAR INFORMA√á√ïES NO FIREBASE
     {
+        Debug.Log("SaveRoupa: Chamando SaveCustomizePlayer()");
         SaveCustomizePlayer();
     }
 
@@ -45,7 +46,7 @@ using UnityEngine;
         StartCoroutine (LoadCustomizePlayerCoroutine());
     }
 
-    public IEnumerator LoadCustomizePlayerCoroutine() //PEGAR INFORMA«’ES DO FIREBASE
+    public IEnumerator LoadCustomizePlayerCoroutine() //PEGAR INFORMA√á√ïES DO FIREBASE
     {
         auth = FirebaseCORE.instance.authManager.auth;
         DBreference = FirebaseCORE.instance.authManager.DBreference;
@@ -67,7 +68,7 @@ using UnityEngine;
 
         if (camisaTask.IsCompleted && cabeloTask.IsCompleted && calcaTask.IsCompleted && chapeuTask.IsCompleted && sapatoTask.IsCompleted)
         {
-            // Converte os resultados das tarefas para inteiros e os atribui ‡s vari·veis.
+            // Converte os resultados das tarefas para inteiros e os atribui √†s vari√°veis.
             camisa = int.Parse(camisaTask.Result.Value.ToString());
             cabelo = int.Parse(cabeloTask.Result.Value.ToString());
             calca = int.Parse(calcaTask.Result.Value.ToString());
@@ -93,22 +94,50 @@ using UnityEngine;
     }
 
 
-    public void SaveCustomizePlayer() // SALVAR NO FIREBASE AS INFORMA«’ES CONFORME APERTA BOT’ES
+    public void SaveCustomizePlayer() // SALVAR NO FIREBASE AS INFORMA√á√ïES CONFORME APERTA BOT√ïES
     {
-        if (FirebaseCORE.instance.authManager.user.UserId != null)
+
+        Debug.Log("SaveCustomizePlayer: Tentando salvar customiza√ß√£o no Firebase.");
+        if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
         {
+            Debug.Log($"SaveCustomizePlayer: UserId √© {FirebaseCORE.instance.authManager.user.UserId}");
+
             string userId = FirebaseCORE.instance.authManager.user.UserId;
             DatabaseReference playerClothsRef = FirebaseDatabase.DefaultInstance.RootReference
                 .Child("users")
                 .Child(userId)
                 .Child("PlayerClouths");
 
-            playerClothsRef.Child("camisa").SetValueAsync(NetworkController.instance.customize.camisa);
+            Debug.Log($"SaveCustomizePlayer: Salvando camisa {NetworkController.instance.customize.camisa}");
+
+
+            playerClothsRef.Child("camisa").SetValueAsync(NetworkController.instance.customize.camisa)
+            .ContinueWith(task => {
+                if (task.IsFaulted)
+                {
+                    // Houve um erro ao salvar no Firebase, log o erro
+                    Debug.LogError("SaveCustomizePlayer: Erro ao salvar 'camisa' no Firebase.");
+                }
+                else if (task.IsCompleted)
+                {
+                    Debug.Log("SaveCustomizePlayer: 'camisa' salva com sucesso no Firebase.");
+                }
+            });
             playerClothsRef.Child("cabelo").SetValueAsync(NetworkController.instance.customize.cabelo);
             playerClothsRef.Child("calca").SetValueAsync(NetworkController.instance.customize.calca);
             playerClothsRef.Child("chapeu").SetValueAsync(NetworkController.instance.customize.chapeu);
             playerClothsRef.Child("sapato").SetValueAsync(NetworkController.instance.customize.sapato);
         }
+        else
+        {
+            Debug.LogError("SaveCustomizePlayer: UserId √© nulo ou vazio.");
+        }
+    }
+
+    public void OnSomeButtonClicked()
+    {
+        Debug.Log("OnSomeButtonClicked: Bot√£o pressionado, chamando SaveRoupa()");
+        SaveRoupa();
     }
 
 
