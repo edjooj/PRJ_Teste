@@ -10067,12 +10067,12 @@ GameObject:
   - component: {fileID: 3890301133901902161}
   - component: {fileID: 2517723715026102021}
   m_Layer: 0
-  m_Name: Tronco_TRONCO
+  m_Name: Tronco_BASE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3890301133901902161
 Transform:
   m_ObjectHideFlags: 0
@@ -10333,7 +10333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4753272872195887780, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4263710676585713587, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}
       propertyPath: m_IsActive
