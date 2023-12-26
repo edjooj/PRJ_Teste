@@ -13,11 +13,15 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     public bool onlineMinigame = false;
 
     public string minigameName;
+    public Transform initialMiniGame;
     public Sprite minigameIcon;
     [SerializeField] private Image icon;
     [SerializeField] private GameObject minigameHud;
     public TextMeshProUGUI countPlayer;
+
+    public GameObject currentPlayer;
     public PhotonView otherPhotonView;
+    public CharacterController controller;
 
     public float countdownTime = 5f;
     public TextMeshProUGUI countdownDisplay;
@@ -64,24 +68,24 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     private void StartMinigame()
     {
+
         if (!onlineMinigame && otherPhotonView.IsMine)
         {
-            PhotonNetwork.LeaveRoom(this);
-            PhotonNetwork.LeaveLobby();
-            Debug.Log("Desconectado do lobby");
-        }
+            controller.enabled = false;
 
-        if(otherPhotonView != null && otherPhotonView.IsMine)
-        {
-            PhotonNetwork.LoadLevel(minigameName);
+            currentPlayer.transform.position = initialMiniGame.position;
+            currentPlayer.transform.rotation = initialMiniGame.rotation;
+            controller.enabled = true;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         otherPhotonView = other.gameObject.GetComponent<PhotonView>();
+        controller = other.gameObject.GetComponent<CharacterController>();
+        currentPlayer = other.gameObject;
 
-        if (other.gameObject.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
+        if (currentPlayer.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
             minigameHud.SetActive(true);
         }
