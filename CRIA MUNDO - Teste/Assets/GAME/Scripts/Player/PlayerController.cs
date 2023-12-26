@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (isJumping || !canMove) { return; }
+        if (isJumping || !canMove || !photonView.IsMine) { return; }
         Vector3 direction = new Vector3(movementInput.x, 0f, movementInput.y).normalized;
 
         verticalVelocity += gravity * Time.deltaTime;
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && controller.isGrounded || !canMove)
+        if (context.started && controller.isGrounded || !canMove || photonView.IsMine)
         {
             isJumping = true;
             animator.SetTrigger("Jumping");
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if (!isJumping && !isPicking)
+        if (!isJumping && !isPicking || photonView.IsMine)
         {
             isRunning = context.ReadValueAsButton();
         }
