@@ -9448,6 +9448,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4220703142294151726}
+  - {fileID: 2134074742968646657}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -9506,7 +9507,7 @@ CharacterController:
   m_Height: 21.61
   m_Radius: 1.86
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 6
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 10.94, z: 0}
@@ -9542,7 +9543,11 @@ MonoBehaviour:
   runSpeed: 60
   turnSmoothTime: 0.1
   gravity: -9.81
-  jumpHeight: 2
+  jumpHeight: 4
+  isJumping: 0
+  isRunning: 0
+  isPicking: 0
+  canMove: 1
 --- !u!114 &9180326780171408375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10906,6 +10911,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6837176509792765813}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2134074742968646657}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1467716416485429864}
   m_SourcePrefab: {fileID: 100100000, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}
 --- !u!4 &358618971031289535 stripped
 Transform:
@@ -10953,6 +10964,46 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2134074742968646657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130898979278119941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: isWalking
+  - Type: 4
+    SynchronizeType: 2
+    Name: isRunning
+  - Type: 9
+    SynchronizeType: 0
+    Name: Jumping
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!114 &1467716416485429864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130898979278119941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa3bca25e043204287f9a349875bf3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 6753464100925999510}
 --- !u!1 &1248176218874995115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7916550958579566337, guid: eac5f9b461a6d5f40b59d4daf0111b6c, type: 3}

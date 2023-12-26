@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 
@@ -7,10 +7,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public CharacterController controller;
     public Transform cam;
-    public Animator animator; // Referência ao Animator
+    public Animator animator;
 
     public float speed = 6f;
-    public float runSpeed = 12f; // Velocidade ao correr
+    public float runSpeed = 12f;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
@@ -19,19 +19,21 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float verticalVelocity;
 
     private Vector2 movementInput;
-    private bool isJumping;
-    private bool isRunning; // Se o jogador está correndo
+    public bool isJumping;
+    [SerializeField] private bool isRunning;
+    public bool isPicking;
+
+    public bool canMove = true;
 
     private void Start()
     {
-        if(!photonView.IsMine) { return; }
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
-        if (!photonView.IsMine) { return; }
+        if (isJumping || !canMove) { return; }
         Vector3 direction = new Vector3(movementInput.x, 0f, movementInput.y).normalized;
 
         verticalVelocity += gravity * Time.deltaTime;
@@ -54,20 +56,32 @@ public class PlayerController : MonoBehaviourPunCallbacks
             controller.Move(gravityMovement * Time.deltaTime);
         }
 
-        // Atualizar os parâmetros do Animator
+        // Atualizar os parï¿½metros do Animator
         bool isMoving = direction.magnitude >= 0.1f;
-        animator.SetBool("isWalking", isMoving && !isRunning);
-        animator.SetBool("isRunning", isMoving && isRunning);
+        animator.SetBool("isWalking", !isRunning && !isJumping && !isPicking && direction.magnitude >= 0.1f);
+        animator.SetBool("isRunning", isRunning && !isJumping && !isPicking && direction.magnitude >= 0.1f);
+
+        if (isJumping || isPicking)
+        {
+            isRunning = false;
+        }
     }
 
     public void Jump()
     {
-        if (controller.isGrounded && isJumping)
+        if (controller.isGrounded && isJumping || !canMove)
         {
             verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.ResetTrigger("Jumping");
+            isJumping = false;
+        }
+
+        if (!controller.isGrounded && verticalVelocity < 0)
+        {
             isJumping = false;
         }
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -76,19 +90,29 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && photonView.IsMine)
+        if (context.started && controller.isGrounded || !canMove)
+        {
             isJumping = true;
-        animator.SetTrigger("isJumping");
-        Jump();
+            animator.SetTrigger("Jumping");
+        }
     }
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        isRunning = context.ReadValueAsButton();
+        if (!isJumping && !isPicking)
+        {
+            isRunning = context.ReadValueAsButton();
+        }
+        else
+        {
+            isRunning = false;
+        }
     }
 
-    public void Wave()
+    public void Pick()
     {
-        animator.SetTrigger("Wave"); // Ativar a animação de acenar
+        if (controller.isGrounded || !canMove)
+            isPicking = true;
+        animator.SetTrigger("Pick");
     }
 }
