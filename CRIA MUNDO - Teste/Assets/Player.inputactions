@@ -44,7 +44,7 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
+                    "name": "Teclado",
                     "id": "ec7cfd74-61d9-40d2-98fa-5eaf030156fe",
                     "path": "2DVector",
                     "interactions": "",
@@ -91,6 +91,61 @@
                     "name": "right",
                     "id": "20bb7a98-e561-469b-a289-190bedbc10b5",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moviment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Celular",
+                    "id": "8279b003-1a1e-43da-b892-35c03666c997",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moviment",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "2c88eb72-0260-448b-b3ba-e7722891d7d8",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moviment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "65c39c35-66ae-4ebe-a024-d0007289231b",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moviment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "9f8ce923-713d-468c-a5a9-169fecdfce3a",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Moviment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5757d123-d2ee-4981-9b08-4c449501113b",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

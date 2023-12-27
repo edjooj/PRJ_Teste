@@ -32,7 +32,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     public float currentTime;
     private bool timerIsActive = false;
 
-    private void Start()
+    private void OnEnable()
     {
         currentTime = countdownTime;
     }
@@ -67,6 +67,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
             timerIsActive = false;
             currentTime = 0;
             StartMinigame();
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -88,6 +89,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
                 currentPlayer.transform.rotation = initialGameObject.transform.rotation;
 
                 controller.enabled = true;
+                minigameHud.SetActive(false);
             }
         }
     }
