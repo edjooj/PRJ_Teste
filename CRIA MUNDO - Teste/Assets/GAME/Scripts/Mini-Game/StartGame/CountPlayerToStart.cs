@@ -32,13 +32,14 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     public float currentTime;
     private bool timerIsActive = false;
 
-    private void OnEnable()
+    private new void OnEnable()
     {
         currentTime = countdownTime;
+        minigameStarted = false;
     }
 
     void Update()
-    {
+    {   
         countPlayer.text = currentplayer.ToString();
 
         if(currentplayer >= playerToStart)

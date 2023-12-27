@@ -11831,6 +11831,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   gravity: -9.81
   jumpHeight: 4
+  mouseView: 0
   isJumping: 0
   isRunning: 0
   isPicking: 0
@@ -12006,6 +12007,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8c7ab56d-371e-4796-a14c-ec6b3a1023dc
     m_ActionName: Player/Pular[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753464100925999510}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: MouseView
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1c2a4c00-fc04-4c3b-a9cc-5bc77b6b1b55
+    m_ActionName: Player/Celular[/Keyboard/leftAlt]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

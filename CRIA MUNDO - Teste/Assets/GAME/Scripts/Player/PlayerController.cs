@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     private float verticalVelocity;
+    public bool mouseView = false;
 
     private Vector2 movementInput;
     public bool isJumping;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        mouseView = false;
     }
 
     private void Update()
@@ -86,6 +88,25 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+    }
+
+    public void MouseView(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            mouseView = !mouseView;
+            if (mouseView)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
