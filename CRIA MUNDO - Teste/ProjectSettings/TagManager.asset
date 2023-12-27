@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnPoint
+  - PortaSub
+  - PortaAdd
+  - FimDaFase
+  - PortaMult
+  - PortaDiv
+  - InitialMiniGameTag
   layers:
   - Default
   - TransparentFX

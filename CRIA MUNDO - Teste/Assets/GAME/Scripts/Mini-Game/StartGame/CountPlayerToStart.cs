@@ -13,15 +13,18 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     public bool onlineMinigame = false;
 
     public string minigameName;
-    public Transform initialMiniGame;
     public Sprite minigameIcon;
     [SerializeField] private Image icon;
     [SerializeField] private GameObject minigameHud;
     public TextMeshProUGUI countPlayer;
 
     public GameObject currentPlayer;
+    public GameObject sceneMiniGame;
+    public Transform SpawnSceneMinigame;
     public PhotonView otherPhotonView;
     public CharacterController controller;
+
+    private bool minigameStarted = false;
 
     public float countdownTime = 5f;
     public TextMeshProUGUI countdownDisplay;
@@ -57,11 +60,12 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
             countdownDisplay.text = currentTime.ToString("F2");
         }
 
-        if (currentTime <= 0)
+        if (currentTime <= 0 && !minigameStarted)
         {
+            minigameStarted = true;
+
             timerIsActive = false;
             currentTime = 0;
-
             StartMinigame();
         }
     }
@@ -71,11 +75,20 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
         if (!onlineMinigame && otherPhotonView.IsMine)
         {
-            controller.enabled = false;
+            Instantiate(sceneMiniGame, SpawnSceneMinigame.position, SpawnSceneMinigame.rotation);
 
-            currentPlayer.transform.position = initialMiniGame.position;
-            currentPlayer.transform.rotation = initialMiniGame.rotation;
-            controller.enabled = true;
+            GameObject initialGameObject = GameObject.FindWithTag("InitialMiniGameTag");
+
+            if (initialGameObject != null)
+            {
+                controller.enabled = false;
+
+                // Ajusta a posição e rotação com base no objeto encontrado
+                currentPlayer.transform.position = initialGameObject.transform.position;
+                currentPlayer.transform.rotation = initialGameObject.transform.rotation;
+
+                controller.enabled = true;
+            }
         }
     }
 
