@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+    public float voidThreshold = -10f;
+
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     private float verticalVelocity;
@@ -36,6 +38,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private void Update()
     {
         if (isJumping || !canMove || !photonView.IsMine) { return; }
+
+        CheckForVoidFall();
+
         Vector3 direction = new Vector3(movementInput.x, 0f, movementInput.y).normalized;
 
         verticalVelocity += gravity * Time.deltaTime;
@@ -66,6 +71,15 @@ public class PlayerController : MonoBehaviourPunCallbacks
         if (isJumping || isPicking)
         {
             isRunning = false;
+        }
+    }
+
+    void CheckForVoidFall()
+    {
+        if (transform.position.y < voidThreshold)
+        {
+            // Reposiciona o jogador para a posição inicial
+            transform.position = Vector3.zero;
         }
     }
 
