@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +32,11 @@ public class FimDeFase : MonoBehaviour
     {
         cronometro.PararCronometro();
         cronometro.SalvarTempoNoFinalDaFase(); 
+    }
+
+    public void PontuaçãoFinal(int finalPoint)
+    {
+        CORE.instance.score.UpdatePlayerPointsInFirebase(finalPoint);
     }
 
 }
