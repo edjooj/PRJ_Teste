@@ -40,6 +40,8 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     void Update()
     {   
+        if(!otherPhotonView.IsMine) { return; }
+
         countPlayer.text = currentplayer.ToString();
 
         if(currentplayer >= playerToStart)
