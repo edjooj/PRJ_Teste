@@ -10,7 +10,6 @@ public class PlayerGame1 : MonoBehaviour
     
     private void Start()
     {
-       
         UpdateHUD();
     }
 
@@ -72,5 +71,6 @@ public class PlayerGame1 : MonoBehaviour
     private void UpdateHUD()
     {
         hudText.text = "Credito: " + currentValue.ToString("F2");
+        CORE.instance.score.UpdatePlayerPointsInFirebase(currentValue);
     }
 }

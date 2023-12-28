@@ -21,7 +21,7 @@ public class ScoreController : MonoBehaviour
         user = FirebaseCORE.instance.authManager.user.UserId;
     }
 
-    public void UpdatePlayerPointsInFirebase(int score)
+    public void UpdatePlayerPointsInFirebase(float score)
     {
         if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
         {
