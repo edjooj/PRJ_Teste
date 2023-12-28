@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -265,17 +265,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2580226789236540273, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
-      propertyPath: sceneViewId
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364336877521633612, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
-      propertyPath: sceneViewId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802190578239376465, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
-      propertyPath: sceneViewId
-      value: 1
+    - target: {fileID: 3756240980508273132, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
+      propertyPath: m_Name
+      value: TextPontos
       objectReference: {fileID: 0}
     - target: {fileID: 8963920117185184660, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
       propertyPath: m_Name
@@ -284,10 +276,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6906749899740073653, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

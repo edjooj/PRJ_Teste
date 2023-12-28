@@ -6,14 +6,14 @@ public class PlayerGame1 : MonoBehaviour
 {
     public TextMeshProUGUI hudText;
     public TextMeshProUGUI fimText;
-    private int score = 0;
     public float currentValue = 1000;
     
-
     private void Start()
     {
+       
         UpdateHUD();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PortaAdd"))
@@ -38,6 +38,7 @@ public class PlayerGame1 : MonoBehaviour
         }
        
     }
+
     private void PerformOperation(char operation, float operand)
     {
         switch (operation)
@@ -65,11 +66,8 @@ public class PlayerGame1 : MonoBehaviour
                 Debug.LogWarning("Operação inválida!");
                 break;
         }
-
         UpdateHUD();
     }
-
-    
 
     private void UpdateHUD()
     {
