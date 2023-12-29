@@ -25,12 +25,13 @@ public class ScoreController : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
         {
-            DatabaseReference PlayerScoreRef = FirebaseDatabase.DefaultInstance.RootReference
-                .Child("users")
-                .Child(user)
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference playerScoreRef = FirebaseDatabase.DefaultInstance.RootReference
+            .Child("users")
+                .Child(userId)
                 .Child("PlayerScore");
 
-            PlayerScoreRef.SetValueAsync(score);
+            playerScoreRef.SetValueAsync(score);
         }
     }
 }

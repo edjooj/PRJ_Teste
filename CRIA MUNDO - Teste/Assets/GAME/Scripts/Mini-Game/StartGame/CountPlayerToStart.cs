@@ -40,7 +40,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     void Update()
     {   
-        if(!otherPhotonView.IsMine) { return; }
+        if(otherPhotonView == null || !otherPhotonView.IsMine) { return; }
 
         countPlayer.text = currentplayer.ToString();
 
