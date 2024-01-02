@@ -1727,6 +1727,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.08
       objectReference: {fileID: 0}
+    - target: {fileID: -1255605710908113952, guid: 74f8aaa297162d64fab3214d3264639a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 27.974388
+      objectReference: {fileID: 0}
+    - target: {fileID: -1255605710908113952, guid: 74f8aaa297162d64fab3214d3264639a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 28.188192
+      objectReference: {fileID: 0}
+    - target: {fileID: -1255605710908113952, guid: 74f8aaa297162d64fab3214d3264639a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: -1255605710908113952, guid: 74f8aaa297162d64fab3214d3264639a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66388
+      objectReference: {fileID: 0}
+    - target: {fileID: -1255605710908113952, guid: 74f8aaa297162d64fab3214d3264639a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.652
+      objectReference: {fileID: 0}
     - target: {fileID: -775069670341356040, guid: 74f8aaa297162d64fab3214d3264639a, type: 3}
       propertyPath: m_LocalScale.x
       value: 18.401005
@@ -7822,6 +7842,7 @@ GameObject:
   - component: {fileID: 1280812849}
   - component: {fileID: 1280812848}
   - component: {fileID: 1280812847}
+  - component: {fileID: 1280812850}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -7901,6 +7922,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280812845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1280812850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280812845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1320144527
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,11 +83,12 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
             GameObject initialGameObject = GameObject.FindWithTag("InitialMiniGameTag");
 
+            otherPhotonView.RPC("HideOtherPlayers", RpcTarget.All);
+
             if (initialGameObject != null)
             {
                 controller.enabled = false;
 
-                // Ajusta a posição e rotação com base no objeto encontrado
                 currentPlayer.transform.position = initialGameObject.transform.position;
                 currentPlayer.transform.rotation = initialGameObject.transform.rotation;
 
