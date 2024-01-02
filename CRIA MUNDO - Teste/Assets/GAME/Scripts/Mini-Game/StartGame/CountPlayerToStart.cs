@@ -74,6 +74,17 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         }
     }
 
+    void HideOtherPlayers()
+    {
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (!otherPhotonView.IsMine)
+            {
+                player.SetActive(false);
+            }
+        }
+    }
+
     private void StartMinigame()
     {
 
@@ -83,7 +94,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
             GameObject initialGameObject = GameObject.FindWithTag("InitialMiniGameTag");
 
-            otherPhotonView.RPC("HideOtherPlayers", RpcTarget.All);
+            HideOtherPlayers();
 
             if (initialGameObject != null)
             {
