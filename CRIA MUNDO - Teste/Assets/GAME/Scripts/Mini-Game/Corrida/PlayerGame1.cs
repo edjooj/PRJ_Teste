@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerGame1 : MonoBehaviour
 {
     public TextMeshProUGUI hudText;
-    public TextMeshProUGUI fimText;
+    
     public float currentValue = 1000;
     
     private void Start()
