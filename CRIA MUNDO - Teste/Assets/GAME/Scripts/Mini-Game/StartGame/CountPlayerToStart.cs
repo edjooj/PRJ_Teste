@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,12 +40,12 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     }
 
     void Update()
-    {   
-        if(otherPhotonView == null || !otherPhotonView.IsMine) { return; }
+    {
+        if (otherPhotonView == null || !otherPhotonView.IsMine) { return; }
 
         countPlayer.text = currentplayer.ToString();
 
-        if(currentplayer >= playerToStart)
+        if (currentplayer >= playerToStart)
         {
             timerIsActive = true;
         }
@@ -76,29 +77,18 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     void HideOtherPlayers()
     {
-        Debug.Log("HideOtherPlayers chamado");
-        if (this.gameObject.CompareTag("Player"))
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
-            if (otherPhotonView.IsMine)
+            PhotonView pv = player.GetComponent<PhotonView>();
+            if (pv != null && !pv.IsMine)
             {
-                Debug.Log("PhotonView é do jogador local");
-                foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
-                {
-                    Debug.Log("Escondendo " + player);
-                    if (!player.GetComponent<PhotonView>().IsMine)
-                    {
-                        player.SetActive(false);
-                    }
-                }
+                Debug.Log("Escondendo " + player.name);
+                player.SetActive(false);
             }
             else
             {
-                Debug.Log("PhotonView não é do jogador local");
+                Debug.Log("Ignorando " + player.name + " porque é o jogador local ou não possui PhotonView");
             }
-        }
-         else 
-        {
-        Debug.Log("GameObject não é um Player");
         }
     }
 
