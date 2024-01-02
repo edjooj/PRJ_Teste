@@ -76,10 +76,12 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     void HideOtherPlayers()
     {
+        Debug.Log("Escondendo outros jogadores");
         if (this.gameObject.CompareTag("Player") && otherPhotonView.IsMine)
         {
             foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
             {
+                Debug.Log("Escondendo " + player);
                 if (!player.GetComponent<PhotonView>().IsMine)
                 {
                     player.SetActive(false);
