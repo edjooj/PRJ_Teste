@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6603246089880811328}
   - component: {fileID: 2155356932391665029}
   - component: {fileID: 4473386888992773518}
+  - component: {fileID: 5612193995900875151}
   m_Layer: 0
   m_Name: NPC Movi
   m_TagString: Untagged
@@ -117,6 +118,29 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1141.96
   m_Center: {x: 0, y: 354.22, z: 0}
+--- !u!136 &5612193995900875151
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368404089352941470}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 140
+  m_Height: 70.47
+  m_Direction: 1
+  m_Center: {x: -1.25, y: 455.2, z: 0}
 --- !u!1 &1465844178550456191
 GameObject:
   m_ObjectHideFlags: 0
