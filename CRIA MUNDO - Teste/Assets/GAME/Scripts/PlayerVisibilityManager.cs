@@ -8,11 +8,20 @@ public class PlayerVisibilityManager : MonoBehaviourPunCallbacks
 
     public static void HidePlayer(GameObject playerToHide)
     {
-        if (!hiddenPlayers.Contains(playerToHide))
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
-            hiddenPlayers.Add(playerToHide);
-            playerToHide.SetActive(false);
+            PhotonView pv = playerToHide.GetComponent<PhotonView>();
+            if (pv != null && !pv.IsMine)
+            {
+                Debug.Log("Escondendo " + player.name);
+                player.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Ignorando " + player.name + " porque é o jogador local ou não possui PhotonView");
+            }
         }
+
     }
 
     public static void ShowAllPlayers()
