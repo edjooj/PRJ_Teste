@@ -6,22 +6,18 @@ public class PlayerVisibilityManager : MonoBehaviourPunCallbacks
 {
     public static List<GameObject> hiddenPlayers = new List<GameObject>();
 
-    public static void HidePlayer(GameObject playerToHide)
+    public static void HideOtherPlayers()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
-            PhotonView pv = playerToHide.GetComponent<PhotonView>();
+            PhotonView pv = player.GetComponent<PhotonView>();
             if (pv != null && !pv.IsMine)
             {
                 Debug.Log("Escondendo " + player.name);
+                hiddenPlayers.Add(player); 
                 player.SetActive(false);
             }
-            else
-            {
-                Debug.Log("Ignorando " + player.name + " porque é o jogador local ou não possui PhotonView");
-            }
         }
-
     }
 
     public static void ShowAllPlayers()
@@ -30,6 +26,7 @@ public class PlayerVisibilityManager : MonoBehaviourPunCallbacks
         {
             if (player != null)
             {
+                Debug.Log("Mostrando " + player.name);
                 player.SetActive(true);
             }
         }

@@ -27,8 +27,6 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     private bool minigameStarted = false;
 
-    public GameObject player;
-
     public float countdownTime = 5f;
     public TextMeshProUGUI countdownDisplay;
 
@@ -103,7 +101,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
             GameObject initialGameObject = GameObject.FindWithTag("InitialMiniGameTag");
 
-            PlayerVisibilityManager.HidePlayer(player);
+            PlayerVisibilityManager.HideOtherPlayers();
 
             if (initialGameObject != null)
             {
@@ -127,7 +125,6 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         if (currentPlayer.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
             minigameHud.SetActive(true);
-            player = other.gameObject;
         }
             currentplayer++;
 

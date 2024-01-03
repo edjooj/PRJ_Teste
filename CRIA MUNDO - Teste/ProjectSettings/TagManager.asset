@@ -11,6 +11,8 @@ TagManager:
   - PortaMult
   - PortaDiv
   - InitialMiniGameTag
+  - Bullet
+  - CrefisaSpawn
   layers:
   - Default
   - TransparentFX
