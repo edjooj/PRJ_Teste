@@ -127,6 +127,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         if (currentPlayer.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
             minigameHud.SetActive(true);
+            player = other.gameObject;
         }
             currentplayer++;
 
@@ -139,7 +140,6 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         if (other.gameObject.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
             minigameHud.SetActive(false);
-            player = other.gameObject;
 
         }
         currentplayer--;
