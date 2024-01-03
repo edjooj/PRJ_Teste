@@ -52,6 +52,6 @@ public class NPCNavigation : MonoBehaviour
         }
 
         agent.SetDestination(PathPoints[index].position);
-        animator.SetFloat("vertical", !agent.isStopped && agent.hasPath ? 1 : 0);
+        animator.SetFloat("vertical", !agent.isStopped && agent.hasPath ? 1 : 0); 
     }
 }
