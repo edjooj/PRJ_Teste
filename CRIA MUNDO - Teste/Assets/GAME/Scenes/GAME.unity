@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1445,7 +1445,6 @@ GameObject:
   - component: {fileID: 184383954}
   - component: {fileID: 184383956}
   - component: {fileID: 184383955}
-  - component: {fileID: 184383957}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1527,37 +1526,6 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
---- !u!114 &184383957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184383953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 4756cad5463482d4b954b706f9e62538, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1 &189351646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3885,6 +3853,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558370254}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &569429694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 569429695}
+  - component: {fileID: 569429696}
+  m_Layer: 0
+  m_Name: -= Firebase Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &569429695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569429694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1622173629}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569429696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569429694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a162b730306ad488dd02c87ff052ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  user: 
+  scorePoint: 0
+  currentScorePoint: 0
 --- !u!1001 &576498608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6068,7 +6083,6 @@ Transform:
   - {fileID: 1115787653}
   - {fileID: 228446759}
   - {fileID: 189351650}
-  - {fileID: 1622173629}
   - {fileID: 1190690149}
   - {fileID: 576498609}
   - {fileID: 220981143}
@@ -9434,6 +9448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customize: {fileID: 0}
   coinController: {fileID: 1819292159}
+  scoreController: {fileID: 569429696}
 --- !u!4 &1622173629
 Transform:
   m_ObjectHideFlags: 0
@@ -9443,12 +9458,13 @@ Transform:
   m_GameObject: {fileID: 1622173627}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18928978, y: -3.8146424, z: -0.24606727}
+  m_LocalPosition: {x: -0.18847105, y: 0.3797474, z: 0.19540252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1819292160}
-  m_Father: {fileID: 984428904}
+  - {fileID: 569429695}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1622173630
 MonoBehaviour:
@@ -11100,6 +11116,7 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1622173629}
   - {fileID: 984428904}
   - {fileID: 1120779654}
   - {fileID: 1029032276}

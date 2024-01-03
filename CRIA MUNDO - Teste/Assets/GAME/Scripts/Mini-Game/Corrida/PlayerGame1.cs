@@ -6,7 +6,7 @@ public class PlayerGame1 : MonoBehaviour
 {
     public TextMeshProUGUI hudText;
     
-    public float currentValue = 1000;
+    public int currentValue = 1000;
     
     private void Start()
     {
@@ -38,7 +38,7 @@ public class PlayerGame1 : MonoBehaviour
        
     }
 
-    private void PerformOperation(char operation, float operand)
+    private void PerformOperation(char operation, int operand)
     {
         switch (operation)
         {
@@ -70,7 +70,8 @@ public class PlayerGame1 : MonoBehaviour
 
     private void UpdateHUD()
     {
-        //hudText.text = "Credito: " + currentValue.ToString("F2");
-        CORE.instance.score.UpdatePlayerPointsInFirebase(currentValue);
+        hudText.text = currentValue.ToString();
+        NetworkController.instance.scoreController.currentScorePoint = currentValue;
+        Debug.Log("Atualizando pontos" + currentValue);
     }
 }

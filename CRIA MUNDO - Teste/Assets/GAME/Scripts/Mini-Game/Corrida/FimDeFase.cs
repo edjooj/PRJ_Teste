@@ -3,40 +3,23 @@ using UnityEngine.UI;
 
 public class FimDeFase : MonoBehaviour
 {
-    private CharacterController charactercontroller;
-    public Cronometro cronometro;
     public GameObject endLevelHUD;
-    private void Start()
-    {
-        charactercontroller = GetComponent<CharacterController>();
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
-        {
-            
-            Debug.Log("FIM");
-
+        { 
             endLevelHUD.SetActive(true);
-
-            
-            Time.timeScale = 0f;
+            PontuaçãoFinal();
         }
     }
 
-     
-
-    public void FimDaFase()
+    public void PontuaçãoFinal()
     {
-        cronometro.PararCronometro();
-        cronometro.SalvarTempoNoFinalDaFase(); 
-    }
-
-    public void PontuaçãoFinal(int finalPoint)
-    {
-        CORE.instance.score.UpdatePlayerPointsInFirebase(finalPoint);
+        if(NetworkController.instance.scoreController.currentScorePoint > NetworkController.instance.scoreController.scorePoint)
+        {
+            NetworkController.instance.scoreController.UpdatePlayerPointsInFirebase(NetworkController.instance.scoreController.currentScorePoint);
+        }
     }
 
 }
