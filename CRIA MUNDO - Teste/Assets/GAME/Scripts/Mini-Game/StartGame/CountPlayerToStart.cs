@@ -27,6 +27,8 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     private bool minigameStarted = false;
 
+    public GameObject player;
+
     public float countdownTime = 5f;
     public TextMeshProUGUI countdownDisplay;
 
@@ -75,7 +77,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         }
     }
 
-    void HideOtherPlayers()
+    /*void HideOtherPlayers()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
@@ -90,7 +92,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
                 Debug.Log("Ignorando " + player.name + " porque é o jogador local ou não possui PhotonView");
             }
         }
-    }
+    }*/
 
     private void StartMinigame()
     {
@@ -101,7 +103,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
             GameObject initialGameObject = GameObject.FindWithTag("InitialMiniGameTag");
 
-            HideOtherPlayers();
+            PlayerVisibilityManager.HidePlayer(player);
 
             if (initialGameObject != null)
             {
@@ -137,6 +139,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         if (other.gameObject.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
             minigameHud.SetActive(false);
+            player = other.gameObject;
 
         }
         currentplayer--;

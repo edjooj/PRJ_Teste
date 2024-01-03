@@ -37,14 +37,7 @@ public class StartGame : MonoBehaviour
             timerIsActive = false;
             currentTime = 0;
 
-            TimerFinished();
         }
-    }
-
-    private void TimerFinished()
-    {
-
-
     }
 }
 

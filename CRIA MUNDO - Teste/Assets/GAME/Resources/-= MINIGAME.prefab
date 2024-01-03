@@ -30936,6 +30936,7 @@ GameObject:
   - component: {fileID: 2917303993758035089}
   - component: {fileID: 8873072197243650672}
   - component: {fileID: 1578662840328658293}
+  - component: {fileID: 1244141692128855968}
   m_Layer: 5
   m_Name: PanelFimHud
   m_TagString: Untagged
@@ -31002,6 +31003,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1244141692128855968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5685121952415046814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84765580854150745a807286f421d121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 6221751033838238327}
 --- !u!1 &5817982794162113742
 GameObject:
   m_ObjectHideFlags: 0
