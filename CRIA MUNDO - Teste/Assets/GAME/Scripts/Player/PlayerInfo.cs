@@ -8,6 +8,8 @@ public class PlayerInfo : MonoBehaviourPunCallbacks
     public TMP_Text nicknameText;
     private FirebaseAuth auth;
 
+    public GameObject player;
+
     void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
@@ -23,6 +25,14 @@ public class PlayerInfo : MonoBehaviourPunCallbacks
 
 
             photonView.RPC("UpdateNickname", RpcTarget.AllBuffered, nickname);
+        }
+    }
+
+    private void Update()
+    {
+        if (NetworkController.instance.player == null && photonView.IsMine)
+        {
+            NetworkController.instance.player = player;
         }
     }
 

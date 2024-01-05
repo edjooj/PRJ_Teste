@@ -1,6 +1,4 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -19,20 +17,20 @@ public class ScoreUpdate : MonoBehaviour
     {
         Transform returnTransform = crefisaSpawn.transform;
 
-        this.gameObject.SetActive(false);
+        PhotonView photonView = NetworkController.instance.player.GetComponent<PhotonView>();
+        CharacterController controller = NetworkController.instance.player.GetComponent<CharacterController>();
 
-        PhotonView photonView = this.gameObject.GetComponent<PhotonView>();
-        CharacterController controller = this.gameObject.GetComponent<CharacterController>();
         if (photonView != null && photonView.IsMine)
         {
             controller.enabled = false;
 
-            this.gameObject.transform.position = returnTransform.position;
-            this.gameObject.transform.rotation = returnTransform.rotation;
+            NetworkController.instance.player.transform.position = returnTransform.position;
+            NetworkController.instance.player.transform.rotation = returnTransform.rotation;
             controller.enabled = true;
         }
 
         PlayerVisibilityManager.ShowAllPlayers();
 
+        this.gameObject.SetActive(false);
     }
 }
