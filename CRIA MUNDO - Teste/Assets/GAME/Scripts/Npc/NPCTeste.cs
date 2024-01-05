@@ -1,8 +1,11 @@
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
-public class NPCInteraction : MonoBehaviour
+
+public class NPCInteraction : MonoBehaviourPunCallbacks
 {
     public GameObject hudNPC;
     public Button botaoInteracao;
@@ -34,6 +37,7 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PararNPC();
+           // if (!photonView.IsMine) { return; }
             hudNPC.SetActive(true);
             if (!dialogoAtivo)
             {
