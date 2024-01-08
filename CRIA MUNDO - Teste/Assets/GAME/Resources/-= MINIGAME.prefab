@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 3190582888486433296}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaSub
+  m_TagString: PortaDiv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7068,7 +7068,7 @@ GameObject:
   - component: {fileID: 4817623995614988107}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaAdd
+  m_TagString: PortaMult
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14108,7 +14108,7 @@ GameObject:
   - component: {fileID: 9023638353400367069}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaMult
+  m_TagString: PortaAdd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22276,7 +22276,7 @@ GameObject:
   - component: {fileID: 6478117511918031077}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaSub
+  m_TagString: PortaDiv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22987,7 +22987,7 @@ GameObject:
   - component: {fileID: 5905730977494725258}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaSub
+  m_TagString: PortaDiv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30117,7 +30117,7 @@ GameObject:
   - component: {fileID: 4547916073536546223}
   m_Layer: 0
   m_Name: Arco (2)
-  m_TagString: Untagged
+  m_TagString: PortaDiv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30225,7 +30225,7 @@ GameObject:
   - component: {fileID: 2807710210762595722}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaSub
+  m_TagString: PortaMult
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36684,7 +36684,7 @@ GameObject:
   - component: {fileID: 1576827446181410995}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaAdd
+  m_TagString: PortaMult
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40301,7 +40301,7 @@ GameObject:
   - component: {fileID: 5850991035202540232}
   m_Layer: 1
   m_Name: Portal
-  m_TagString: PortaSub
+  m_TagString: PortaDiv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
