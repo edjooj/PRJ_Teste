@@ -8,10 +8,7 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
     [SerializeField] private Customize customize;
 
-    [Header("Scroolings")]
-    public GameObject camisaScrooling, calcaScrooling, sapatoScrooling, cabeloScrooling, chapeuScrooling;
-
-    [SerializeField] private ClouthColorChange clouthColorChange;
+    //[SerializeField] private ClouthColorChange clouthColorChange;
 
 
     void Start()
@@ -71,44 +68,14 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
         }
 
-        clouthColorChange.UpdateCustomType(type);
+      //  clouthColorChange.UpdateCustomType(type);
     }
     #endregion
 
-    public void ChooserMenu(string menu)
-    {
-        camisaScrooling.SetActive(false);
-        calcaScrooling.SetActive(false);
-        sapatoScrooling.SetActive(false);
-        cabeloScrooling.SetActive(false);
-        chapeuScrooling.SetActive(false);
-
-        switch (menu)
-        {
-            case "camisa":
-                camisaScrooling.SetActive(true);
-                break;            
-            
-            case "calca":
-                calcaScrooling.SetActive(true);
-                break;            
-            
-            case "sapato":
-                sapatoScrooling.SetActive(true);
-                break;            
-            
-            case "cabelo":
-                cabeloScrooling.SetActive(true);
-                break;            
-            
-            case "chapeu":
-                chapeuScrooling.SetActive(true);
-                break;            
-            
-        }
+    
     }
 
 
 
 
-}
+

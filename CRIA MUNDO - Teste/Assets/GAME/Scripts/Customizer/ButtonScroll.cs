@@ -8,7 +8,7 @@ public class ButtonScroll : MonoBehaviour
     public class ButtonScrollPair
     {
         public Button button;
-        public ScrollRect scrollRect;
+        public GameObject painel;
     }
 
     public List<ButtonScrollPair> buttonScrollPairs;
@@ -18,19 +18,19 @@ public class ButtonScroll : MonoBehaviour
         
         foreach (var pair in buttonScrollPairs)
         {
-            pair.scrollRect.gameObject.SetActive(false);
+            pair.painel.gameObject.SetActive(false);
 
             
-            pair.button.onClick.AddListener(() => SelecionarScroll(pair.scrollRect));
+            pair.button.onClick.AddListener(() => SelecionarScroll(pair.painel));
         }
     }
 
-    void SelecionarScroll(ScrollRect scrollRect)
+    void SelecionarScroll(GameObject scrollRect)
     {
        
         foreach (var pair in buttonScrollPairs)
         {
-            pair.scrollRect.gameObject.SetActive(false);
+            pair.painel.gameObject.SetActive(false);
         }
 
         

@@ -1,4 +1,4 @@
-using Firebase.Auth;
+/*using Firebase.Auth;
 using Firebase.Database;
 using Photon.Pun;
 using System;
@@ -153,3 +153,4 @@ public class ClouthColorChange : MonoBehaviourPunCallbacks
         }
     }
 }
+*/

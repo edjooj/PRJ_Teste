@@ -156,7 +156,7 @@ public class Customize : MonoBehaviourPunCallbacks
 
     public void SelectCabelo(int index)
     {
-        SelectVariation(CustomType.CALCA, index);
+        SelectVariation(CustomType.CABELO, index);
         UpdateSkin(CustomType.CABELO, index);
         playerCustomizer.cabelo = index;
     }
