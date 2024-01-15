@@ -6,9 +6,12 @@ public class Cronometro : MonoBehaviour
 {
     public TextMeshProUGUI tempoText;
     private float tempoDecorrido = 0f;
-    private bool cronometroAtivo = true;
+    public bool cronometroAtivo = true;
 
-    private void Start()
+    public int minutos;
+    public int segundos;
+
+    private void OnEnable()
     {
         tempoDecorrido = 0f;
     }
@@ -24,8 +27,8 @@ public class Cronometro : MonoBehaviour
 
     private void AtualizarTempo()
     {
-        int minutos = Mathf.FloorToInt(tempoDecorrido / 60f);
-        int segundos = Mathf.FloorToInt(tempoDecorrido % 60f);
+        minutos = Mathf.FloorToInt(tempoDecorrido / 60f);
+        segundos = Mathf.FloorToInt(tempoDecorrido % 60f);
 
         tempoText.text = minutos.ToString("00") + ":" + segundos.ToString("00");
     }

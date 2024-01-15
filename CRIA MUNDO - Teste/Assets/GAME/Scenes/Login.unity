@@ -5579,7 +5579,7 @@ PrefabInstance:
     - target: {fileID: 5359677646505743468, guid: 8a5d24ef6ea14784a9172f3bd863d7d1, type: 3}
       propertyPath: playerPrefab
       value: 
-      objectReference: {fileID: 8228549438320869892, guid: bc96568511c969547ba98f4b5188e6a8, type: 3}
+      objectReference: {fileID: 8228549438320869892, guid: cb670dac9d93b04478a8014cc0ac5af8, type: 3}
     - target: {fileID: 5374895091557939122, guid: 8a5d24ef6ea14784a9172f3bd863d7d1, type: 3}
       propertyPath: m_Name
       value: -= CORE

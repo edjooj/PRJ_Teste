@@ -207,6 +207,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MiniGame - Arte",
+            "id": "fba719f5-0268-4caf-b08b-98bffa756729",
+            "actions": [
+                {
+                    "name": "ARTE",
+                    "type": "Button",
+                    "id": "4fdb746b-47e6-469f-ab56-b795c12aae5e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ba7a88e1-a262-4a5f-a720-0d7ee4a12cf2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ARTE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
