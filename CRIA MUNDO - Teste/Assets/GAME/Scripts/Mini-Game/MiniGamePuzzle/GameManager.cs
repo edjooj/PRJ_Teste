@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject PipesHolder;
     public GameObject[] Pipes;
+    public GameObject hud;
+
 
     [SerializeField]
     int totalPipes = 0;
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
         if (correctPipes == totalPipes)
         {
             Debug.Log(" YOU WIN");
+            
+            hud.SetActive(true);
         }
     }
 
