@@ -9,14 +9,15 @@ public class Board : MonoBehaviour
     private GameObject tilePrefab;
     [SerializeField]
     private Transform tilesParent;
-    public GameObject Gameover;
 
     private List<Tile> tileList;
 
-    private Vector2Int puzzleSize = new Vector2Int(4, 4);
+    private Vector2Int puzzleSize = new Vector2Int(5, 5);
     private float neighborTileDistance = 102;
 
     public Vector3 EmptyTilePosition { set; get; }
+    public int PlayTime { private set; get; } = 0;
+    public int MoveCount { private set; get; } = 0;
 
     private IEnumerator Start()
     {
@@ -30,6 +31,8 @@ public class Board : MonoBehaviour
         tileList.ForEach(x => x.SetCorrectPosition());
 
         StartCoroutine("OnSuffle");
+        StartCoroutine("CalculatePlayTime");
+        
     }
 
     private void SpawnTiles()
@@ -76,6 +79,7 @@ public class Board : MonoBehaviour
             EmptyTilePosition = tile.GetComponent<RectTransform>().localPosition;
 
             tile.OnMoveTo(goalPosition);
+            MoveCount ++;
         }
     }
 
@@ -86,7 +90,17 @@ public class Board : MonoBehaviour
         if(tiles.Count == puzzleSize.x * puzzleSize.y - 1) 
         {
             Debug.Log("GameClear");
-            Gameover.SetActive(true);
+            GetComponent<UIControle>().OnResultPanel();
+            StopCoroutine("CalculatePlayTime");
+        }
+    }
+
+    private IEnumerator CalculatePlayTime()
+    {
+        while(true)
+        {
+            PlayTime ++;
+            yield return new WaitForSeconds(1);
         }
     }
 }
