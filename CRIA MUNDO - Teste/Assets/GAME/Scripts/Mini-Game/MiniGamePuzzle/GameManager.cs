@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,5 +44,9 @@ public class GameManager : MonoBehaviour
     public void wrongMove()
     {
         correctPipes -= 1;
+    }
+    public void OnClickRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
