@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -849,8 +849,8 @@ Camera:
   m_GameObject: {fileID: 833228494}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   - {fileID: 1288549123}
   letterPrefab: {fileID: 8016293396978001934, guid: 8a4da478900469a4baa9fc2b88d9a2b5, type: 3}
   "letterPrefabSemBot\xE3o": {fileID: 8016293396978001934, guid: a1c3f61325077684aa9d4d186575d9ea, type: 3}
-  currentLevel: 0
+  currentLevel: 1
   word: {fileID: 501191786}
   wordPrefab: {fileID: 500710812739477469, guid: 433fb76aa33b0f64ab532b987984373f, type: 3}
   wordTransform: {fileID: 176263390}
