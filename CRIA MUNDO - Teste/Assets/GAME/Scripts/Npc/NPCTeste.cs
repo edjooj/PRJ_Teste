@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
+using Photon.Pun;
 
 
 public class NPCInteraction : MonoBehaviourPunCallbacks
@@ -34,10 +35,9 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && photonView.IsMine)
         {
             PararNPC();
-           // if (!photonView.IsMine) { return; }
             hudNPC.SetActive(true);
             if (!dialogoAtivo)
             {
@@ -48,7 +48,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && photonView.IsMine)
         {
             hudNPC.SetActive(false);
             DesativarDialogo();

@@ -7,6 +7,7 @@ public class Dialogo : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+    public GameObject HudMiniGame;
 
     private int index;
 
@@ -59,6 +60,7 @@ public class Dialogo : MonoBehaviour
         }
         else
         {
+            HudMiniGame.SetActive(true);
             gameObject.SetActive(false);
         }
        
