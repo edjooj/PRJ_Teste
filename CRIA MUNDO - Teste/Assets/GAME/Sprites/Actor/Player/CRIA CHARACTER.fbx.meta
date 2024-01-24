@@ -1,9 +1,99 @@
 fileFormatVersion: 2
-guid: eac5f9b461a6d5f40b59d4daf0111b6c
+guid: 36364be446854e74ab31d72c55eac568
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Allstar_CC
+    second: {fileID: 2100000, guid: 43427ba4fdd7b354aae12420e03d310a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Allstar_CC.001
+    second: {fileID: 2100000, guid: 8ba78b11bbee15748b89ebb2fa8c5523, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Allstar_Detalhe
+    second: {fileID: 2100000, guid: a65741fcb78d4b543871e23d4d19968c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Allstar_Detalhe.001
+    second: {fileID: 2100000, guid: 929173171ba09044c90ef2342f9ad6df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Allstar_Linha.001
+    second: {fileID: 2100000, guid: f77ca4728b05a8a41971f3522a48c6a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Camisa_CC
+    second: {fileID: 2100000, guid: d3059ef898f0c634294ef05da1fc6c8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 979b7cfea615172459ed245b9cd9148d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: be64375e964f8a94a8c5e0837b690030, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 8ecabe73ad295d8498aee6b6a0118aaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: df3afaeaca685614bb2cbcfd32365f8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 8bc48a7d6b725f543bfa5fb31f0b7d0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: f83ea292cf0fd8c49b01f3214009b6a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 0a5c2d7d5ba862f49ae15954ff3afce1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: fa204e56aa6dd9845a26fc01440d2e61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 51e7afa5ddddda3469643c2ca504ed12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: e84a58c8634ad0b41bc47de52ca8001a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.047
+    second: {fileID: 2100000, guid: bdc23726cb03b104f92788364aeb9a73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ParteBaixo_CC
+    second: {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
