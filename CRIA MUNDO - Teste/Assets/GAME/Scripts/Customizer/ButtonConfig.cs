@@ -8,7 +8,6 @@ public class ButtonConfig : MonoBehaviourPunCallbacks
 
     [SerializeField] private Customize customize;
 
-    //[SerializeField] private ClouthColorChange clouthColorChange;
 
 
     void Start()
