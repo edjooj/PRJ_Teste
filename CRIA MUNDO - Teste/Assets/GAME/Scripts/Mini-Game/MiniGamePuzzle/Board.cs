@@ -12,7 +12,7 @@ public class Board : MonoBehaviour
 
     private List<Tile> tileList;
 
-    private Vector2Int puzzleSize = new Vector2Int(5, 5);
+    private Vector2Int puzzleSize = new Vector2Int(4, 4);
     private float neighborTileDistance = 102;
 
     public Vector3 EmptyTilePosition { set; get; }

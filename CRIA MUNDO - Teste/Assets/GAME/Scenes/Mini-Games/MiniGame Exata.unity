@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 780787336956519542, guid: 84a6892a0b63150469f60a9640d4f1d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5300963293598033933, guid: 84a6892a0b63150469f60a9640d4f1d6, type: 3}
       propertyPath: m_Name
       value: GameExatas
@@ -174,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 8182552033301598559, guid: 84a6892a0b63150469f60a9640d4f1d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760787612601896609, guid: 84a6892a0b63150469f60a9640d4f1d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.5947266
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

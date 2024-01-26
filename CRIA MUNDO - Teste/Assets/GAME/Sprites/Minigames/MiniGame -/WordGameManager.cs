@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WordGameManager : MonoBehaviour
@@ -19,6 +21,9 @@ public class WordGameManager : MonoBehaviour
     public GameObject wordPrefab;
     public Transform wordTransform;
 
+    public int wordsRevealed;
+    public GameObject hudFim;
+
     [Header("Placar")]
     public int clicks;
     public int limpar;
@@ -28,6 +33,7 @@ public class WordGameManager : MonoBehaviour
         SetLettersForCurrentLevel();
         GenerateWords();
         word.text = "";
+        wordsRevealed = 0;
     }
 
     public void SetLettersForCurrentLevel()
@@ -69,6 +75,13 @@ public class WordGameManager : MonoBehaviour
                 }
             }
         }
+    }
+    public void Compled()
+    {
+        
+        
+            
+        
     }
 
     private void GerarPalavras()
@@ -136,6 +149,7 @@ public class WordGameManager : MonoBehaviour
                 word.text = "";
                 Debug.Log("Acertou!");
                 return;
+
             }
         }
         Debug.Log("Errou!");
@@ -158,7 +172,22 @@ public class WordGameManager : MonoBehaviour
                     letterText.color = color;
                 }
             }
+
+            wordsRevealed++;
+
+          
+            if (wordsRevealed == levels[currentLevel].Levels.Sum(wordControl => wordControl.letters.Count))
+            {
+                hudFim.SetActive(true);
+            }
+
         }
+    }
+
+    public void Mudarfase()
+    {
+        currentLevel++;
+        
     }
 
 
