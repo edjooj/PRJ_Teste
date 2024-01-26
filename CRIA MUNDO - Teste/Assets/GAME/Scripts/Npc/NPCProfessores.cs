@@ -20,43 +20,50 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && photonView.IsMine)
-        {
-            hudNPC.SetActive(true);
-            if (!dialogoAtivo)
+       
+        if (other.CompareTag("Player"))
             {
-                botaoInteracao.gameObject.SetActive(true);
+                hudNPC.SetActive(true);
+                if (!dialogoAtivo)
+                {
+                    botaoInteracao.gameObject.SetActive(true);
+                }
             }
-        }
+        
     }
+
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && photonView.IsMine)
-        {
-            hudNPC.SetActive(false);
-            DesativarDialogo();
-        }
+        
+
+
+        if (other.CompareTag("Player"))
+            {
+                hudNPC.SetActive(false);
+                DesativarDialogo();
+            }
+        
     }
 
     private void AtivarDialogo()
     {
-        if (photonView.IsMine)
-        {
-            objetoParaAtivar.SetActive(true);
+        
+
+        objetoParaAtivar.SetActive(true);
             dialogo.AtivarDialogoNovamente();
             dialogoAtivo = true;
             botaoInteracao.gameObject.SetActive(false);
-        }
+        
     }
 
     private void DesativarDialogo()
     {
-        if (photonView.IsMine)
-        {
+       
+        
             objetoParaAtivar.SetActive(false);
             dialogoAtivo = false;
             botaoInteracao.gameObject.SetActive(false);
-        }
+        
     }
 }

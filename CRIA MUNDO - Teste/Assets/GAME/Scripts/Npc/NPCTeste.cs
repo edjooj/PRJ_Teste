@@ -35,7 +35,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && photonView.IsMine)
+        if (other.CompareTag("Player") )
         {
             PararNPC();
             hudNPC.SetActive(true);
@@ -48,7 +48,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && photonView.IsMine)
+        if (other.CompareTag("Player") )
         {
             hudNPC.SetActive(false);
             DesativarDialogo();
