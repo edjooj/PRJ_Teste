@@ -6,6 +6,7 @@ using Firebase.Auth;
 public class PlayerInfo : MonoBehaviourPunCallbacks
 {
     public TMP_Text nicknameText;
+    public TMP_Text playerCourse;
     private FirebaseAuth auth;
 
     public GameObject player;
