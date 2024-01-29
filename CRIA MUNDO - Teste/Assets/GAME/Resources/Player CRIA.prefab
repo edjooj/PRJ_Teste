@@ -1061,8 +1061,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500064610313059495}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.125045, y: -0.59639317, z: 0.094734184, w: 0.7872131}
-  m_LocalPosition: {x: 35.20484, y: -785.7017, z: -15.787384}
+  m_LocalRotation: {x: 0.018325422, y: 0.89251727, z: 0.036413506, w: -0.44916728}
+  m_LocalPosition: {x: 6.268683, y: 5.8559923, z: -0.48393488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13781,7 +13781,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 410239654538698999}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

@@ -13,6 +13,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
     public GameObject objetoParaAtivar;
     public Dialogo dialogo;
     public Transform cabecaNPC;
+    public Animator animator;
 
     public bool dialogoAtivo = false;
     private NavMeshAgent agent;
@@ -23,6 +24,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
         objetoParaAtivar.SetActive(false);
         botaoInteracao.onClick.AddListener(AtivarDialogo);
         agent = GetComponent<NavMeshAgent>();
+        animator = transform.Find("NpcFala").GetComponent<Animator>();
     }
 
     private void Update()
@@ -62,6 +64,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
         dialogo.AtivarDialogoNovamente(); 
         dialogoAtivo = true;
         botaoInteracao.gameObject.SetActive(false);
+        animator.SetBool("Boca", value: true);
     }
 
 
@@ -70,6 +73,7 @@ public class NPCInteraction : MonoBehaviourPunCallbacks
         objetoParaAtivar.SetActive(false);
         dialogoAtivo = false;
         botaoInteracao.gameObject.SetActive(false);
+        animator.SetBool("Boca", value: false);
     }
 
    // private void OrientarCabecaParaJogador()

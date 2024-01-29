@@ -11277,64 +11277,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -83.60723
+      value: -83.603485
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8483429
+      value: -1.8415871
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.0071564
+      value: 4.005423
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99999565
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0005623581
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.00042330762
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0028647848
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.064
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 0.049
       objectReference: {fileID: 0}
     - target: {fileID: 1127327333083989456, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.328
       objectReference: {fileID: 0}
-    - target: {fileID: 3626799864828073124, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7112621686206298073, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7312138894800220817, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8610955746104112581, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824670692928136263, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 3850089871902576907, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1690541252}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11395,14 +11379,6 @@ PrefabInstance:
     - target: {fileID: 7611954048440474811, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106449333448121425, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
-      propertyPath: hudNPC
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106449333448121425, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
-      propertyPath: botaoInteracao
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11465,10 +11441,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leo - Sitting Talking
       objectReference: {fileID: 0}
-    - target: {fileID: 6965390698726977177, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b41496072c62e3d489248b4afdb829cf, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11482,14 +11454,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2705630364308593997, guid: f125883b723b7ae429967666f2d26db8, type: 3}
-      propertyPath: hudNPC
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705630364308593997, guid: f125883b723b7ae429967666f2d26db8, type: 3}
-      propertyPath: botaoInteracao
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5344059847555273886, guid: f125883b723b7ae429967666f2d26db8, type: 3}
       propertyPath: m_LookAt
       value: 
@@ -11551,10 +11515,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 22141001443173700, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 148751726466227772, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41
@@ -11599,46 +11559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fran NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 2253086192806783053, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253086192806783053, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253086192806783053, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253086192806783053, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253086192806783053, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253086192806783053, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593962884492475221, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: hudNPC
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593962884492475221, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: botaoInteracao
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3630834174734895547, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1690541252}
-    - target: {fileID: 8472841369314856900, guid: ad107c8d2deddfb4f95e6b13489371f4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11652,14 +11576,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3770289864348504471, guid: b9e338c2ab174874dbea236eb7c13655, type: 3}
-      propertyPath: hudNPC
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770289864348504471, guid: b9e338c2ab174874dbea236eb7c13655, type: 3}
-      propertyPath: botaoInteracao
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6078777348612603910, guid: b9e338c2ab174874dbea236eb7c13655, type: 3}
       propertyPath: m_Name
       value: Bio NPC
@@ -11708,6 +11624,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1690541252}
+    - target: {fileID: 8653645039003608596, guid: b9e338c2ab174874dbea236eb7c13655, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b394d4cbb9bae8f4d91e3ac0366e644e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11769,14 +11689,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1690541252}
-    - target: {fileID: 8877798940367138609, guid: ae9e438f2d0562d48802f263c1bcfa46, type: 3}
-      propertyPath: hudNPC
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8877798940367138609, guid: ae9e438f2d0562d48802f263c1bcfa46, type: 3}
-      propertyPath: botaoInteracao
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

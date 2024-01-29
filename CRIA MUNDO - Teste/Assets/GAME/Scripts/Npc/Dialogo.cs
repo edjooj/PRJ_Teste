@@ -60,8 +60,9 @@ public class Dialogo : MonoBehaviour
         }
         else
         {
-            HudMiniGame.SetActive(true);
+            
             gameObject.SetActive(false);
+            HudMiniGame.SetActive(true);
         }
        
     }

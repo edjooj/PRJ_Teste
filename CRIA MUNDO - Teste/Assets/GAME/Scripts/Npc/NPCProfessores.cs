@@ -8,6 +8,7 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
     public Button botaoInteracao;
     public GameObject objetoParaAtivar;
     public Dialogo dialogo;
+    public Animator animator;
 
     public bool dialogoAtivo = false;
 
@@ -16,18 +17,23 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
         hudNPC.SetActive(false);
         objetoParaAtivar.SetActive(false);
         botaoInteracao.onClick.AddListener(AtivarDialogo);
+        animator = transform.Find("NpcFala").GetComponent<Animator>();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
        
         if (other.CompareTag("Player"))
-            {
+            {   
+                
                 hudNPC.SetActive(true);
                 if (!dialogoAtivo)
                 {
                     botaoInteracao.gameObject.SetActive(true);
+                    
                 }
+                
             }
         
     }
@@ -35,14 +41,14 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
 
     private void OnTriggerExit(Collider other)
     {
-        
-
 
         if (other.CompareTag("Player"))
             {
                 hudNPC.SetActive(false);
                 DesativarDialogo();
+               
             }
+
         
     }
 
@@ -50,11 +56,15 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
     {
         
 
-        objetoParaAtivar.SetActive(true);
+            objetoParaAtivar.SetActive(true);
+             animator.SetBool("Boca", value: true);
+           
+        
             dialogo.AtivarDialogoNovamente();
             dialogoAtivo = true;
             botaoInteracao.gameObject.SetActive(false);
-        
+            
+
     }
 
     private void DesativarDialogo()
@@ -62,8 +72,11 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
        
         
             objetoParaAtivar.SetActive(false);
+       
             dialogoAtivo = false;
             botaoInteracao.gameObject.SetActive(false);
-        
+            animator.SetBool("Boca", value: false);
+
+
     }
 }

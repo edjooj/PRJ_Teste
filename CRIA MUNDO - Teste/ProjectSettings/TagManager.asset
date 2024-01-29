@@ -14,6 +14,9 @@ TagManager:
   - Bullet
   - CrefisaSpawn
   - Borracha
+  - Drag
+  - Falar
+  - IdleNPC
   layers:
   - Default
   - TransparentFX

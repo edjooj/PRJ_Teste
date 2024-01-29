@@ -647,6 +647,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1068911241}
     m_Modifications:
+    - target: {fileID: 3939914384287780326, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688726278359476832, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688726278359476832, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688726278359476832, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688726278359476832, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5776730511438189716, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -766,7 +786,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8852755183666776359, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115188599}
   m_SourcePrefab: {fileID: 100100000, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
 --- !u!4 &115188597 stripped
 Transform:
@@ -778,6 +801,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8852755183666776359, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
   m_PrefabInstance: {fileID: 115188596}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &115188599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115188598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36c00eff26ec9d42a1a4b2da0812999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameCamera: {fileID: 149770921}
 --- !u!1 &129862212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1539,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77724b500bba06d43b70ca52ce29d7b6, type: 3}
   m_PrefabInstance: {fileID: 143285080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &149770921 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5688726278359476832, guid: dc1d1a8b5386b984884a19179ce75625, type: 3}
+  m_PrefabInstance: {fileID: 115188596}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &159524445
 PrefabInstance:
@@ -9305,6 +9346,14 @@ PrefabInstance:
       propertyPath: PATH
       value: 
       objectReference: {fileID: 892458306}
+    - target: {fileID: 2579601565362123042, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
+      propertyPath: Ativado
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2579601565362123042, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6655053106430782929, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: PATH
       value: 
@@ -9317,6 +9366,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7719747403898128571, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
+      propertyPath: dialogo
+      value: 
+      objectReference: {fileID: 1873303213}
     - target: {fileID: 8429755191772377788, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
       propertyPath: m_Acceleration
       value: 3
@@ -10486,7 +10539,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5900856249332978643, guid: 4049ee060da9e5c438cfe400800dec2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1520635322}
   m_SourcePrefab: {fileID: 100100000, guid: 4049ee060da9e5c438cfe400800dec2f, type: 3}
 --- !u!4 &1520635320 stripped
 Transform:
@@ -10498,6 +10554,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5900856249332978643, guid: 4049ee060da9e5c438cfe400800dec2f, type: 3}
   m_PrefabInstance: {fileID: 1520635319}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1520635322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520635321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36c00eff26ec9d42a1a4b2da0812999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameCamera: {fileID: 2091749614}
 --- !u!1 &1524684570
 GameObject:
   m_ObjectHideFlags: 0
@@ -11731,7 +11800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11744,7 +11813,7 @@ PrefabInstance:
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 115188599}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -11767,7 +11836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: ActivateMinigameCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -11779,7 +11848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: CameraSwitch, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4131444071394069370, guid: d26b35a37b575b64296604c9c7b505a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -11957,7 +12026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11970,7 +12039,7 @@ PrefabInstance:
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1520635322}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -11993,7 +12062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: ActivateMinigameCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -12005,7 +12074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: CameraSwitch, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4437938038797941307, guid: 9aac91aa5c9a23a4da8fbcdbee17398e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -13194,6 +13263,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870818469}
   m_Mesh: {fileID: -6018949169984754658, guid: 3668f72e75dbc4147b45941b4077042d, type: 3}
+--- !u!114 &1873303213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 217327014882302816, guid: f65842adc26b41944b63aaff3392bf22, type: 3}
+  m_PrefabInstance: {fileID: 1263355344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1872c353d8417a744be90254a6da2e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1890442792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14218,6 +14298,11 @@ Transform:
   - {fileID: 524918013}
   m_Father: {fileID: 228446759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &2091749614 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7108707393864057472, guid: 4049ee060da9e5c438cfe400800dec2f, type: 3}
+  m_PrefabInstance: {fileID: 1520635319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2101872159
 GameObject:
   m_ObjectHideFlags: 0
