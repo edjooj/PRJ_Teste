@@ -131,10 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2069710911257681179, guid: 4049ee060da9e5c438cfe400800dec2f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5900856249332978643, guid: 4049ee060da9e5c438cfe400800dec2f, type: 3}
       propertyPath: m_Name
       value: GameTI
