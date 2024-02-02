@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Dialogo : MonoBehaviour
+public class Dialogo : MonoBehaviourPunCallbacks
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;

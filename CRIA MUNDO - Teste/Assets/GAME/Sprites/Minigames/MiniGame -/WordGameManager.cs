@@ -24,9 +24,9 @@ public class WordGameManager : MonoBehaviour
     public int wordsRevealed;
     public GameObject hudFim;
 
-    [Header("Placar")]
-    public int clicks;
-    public int limpar;
+   // [Header("Placar")]
+   // public int clicks;
+    //public int limpar;
 
     private void Start()
     {
@@ -134,7 +134,7 @@ public class WordGameManager : MonoBehaviour
     public void Limpar()
     {
         word.text = "";
-        limpar++;
+       // limpar++;
     }
 
     public void CheckWord()
@@ -176,9 +176,10 @@ public class WordGameManager : MonoBehaviour
             wordsRevealed++;
 
           
-            if (wordsRevealed == levels[currentLevel].Levels.Sum(wordControl => wordControl.letters.Count))
+            if (wordsRevealed == 7 )
             {
                 hudFim.SetActive(true);
+
             }
 
         }
@@ -187,7 +188,6 @@ public class WordGameManager : MonoBehaviour
     public void Mudarfase()
     {
         currentLevel++;
-        
     }
 
 

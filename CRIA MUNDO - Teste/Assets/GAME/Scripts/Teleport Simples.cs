@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TeleportSystem : MonoBehaviourPunCallbacks
+public class TeleporteSimples : MonoBehaviourPunCallbacks
 {
     [SerializeField] Transform spawnPosition;
-    [SerializeField] string sceneName;
-    [SerializeField] TeleportName[] scenes;
+    
+    
     [SerializeField] GameObject hudTeleport;
     
     public void OnTriggerEnter(Collider other)
@@ -44,7 +44,7 @@ public class TeleportSystem : MonoBehaviourPunCallbacks
                 if (controller != null)
                 {
                     controller.enabled = false;
-                    SceneTeleport();
+                    
                     playerObject.transform.position = spawnPosition.position;
                     playerObject.transform.rotation = spawnPosition.rotation;
                     controller.enabled = true;
@@ -59,18 +59,5 @@ public class TeleportSystem : MonoBehaviourPunCallbacks
         }
     }
 
-    void SceneTeleport()
-    {
-        foreach (TeleportName teleportName in scenes)
-        {
-            if (teleportName.sceneName != sceneName)
-            {
-                teleportName.gameObject.SetActive(false);
-            }
-            else
-            {
-                teleportName.gameObject.SetActive(true);
-            }
-        }
-    }
+   
 }

@@ -20,7 +20,7 @@ public class LetterControl : MonoBehaviour
     public void LetterClick()
     {
         wordGameManager.word.text += letterText.text;
-        wordGameManager.clicks++;
+      //  wordGameManager.clicks++;
     }
 
 

@@ -131,6 +131,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 334949056916296521, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334949056916296521, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334949056916296521, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334949056916296521, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334949056916296521, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334949056916296521, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324798199261243602, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324798199261243602, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324798199261243602, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324798199261243602, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324798199261243602, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324798199261243602, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6337381052468184621, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
       propertyPath: m_Name
       value: GameLetras
@@ -173,6 +221,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357774995184753835, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9088750093568055882, guid: 2d52a8e7b8fac6e4db13d157170e17a0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
