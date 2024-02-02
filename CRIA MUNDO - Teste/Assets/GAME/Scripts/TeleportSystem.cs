@@ -48,7 +48,7 @@ public class TeleportSystem : MonoBehaviourPunCallbacks
                     playerObject.transform.position = spawnPosition.position;
                     playerObject.transform.rotation = spawnPosition.rotation;
                     controller.enabled = true;
-                    Debug.Log("Player Teleportado");
+                    //Debug.Log("Player Teleportado");
                 }
                
             }
