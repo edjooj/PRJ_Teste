@@ -16,7 +16,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     public string minigameName;
     public Sprite minigameIcon;
     [SerializeField] private Image icon;
-    [SerializeField] private GameObject minigameHud;
+    
     public TextMeshProUGUI countPlayer;
 
     public GameObject currentPlayer;
@@ -25,13 +25,15 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
     public PhotonView otherPhotonView;
     public CharacterController controller;
 
+    public GameObject hudCrefisa;
+
     private bool minigameStarted = false;
 
     public float countdownTime = 5f;
     public TextMeshProUGUI countdownDisplay;
 
     public float currentTime;
-    private bool timerIsActive = false;
+   
 
     private new void OnEnable()
     {
@@ -41,7 +43,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (otherPhotonView == null || !otherPhotonView.IsMine) { return; }
+        /* if (otherPhotonView == null || !otherPhotonView.IsMine) { return; }
 
         countPlayer.text = currentplayer.ToString();
 
@@ -63,12 +65,13 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         {
             countdownDisplay.text = currentTime.ToString("F2");
         }
+        */
 
         if (currentTime <= 0 && !minigameStarted)
         {
             minigameStarted = true;
 
-            timerIsActive = false;
+           
             currentTime = 0;
             StartMinigame();
             this.gameObject.SetActive(false);
@@ -92,7 +95,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         }
     }*/
 
-    private void StartMinigame()
+    public void StartMinigame()
     {
 
         if (!onlineMinigame && otherPhotonView.IsMine)
@@ -111,7 +114,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
                 currentPlayer.transform.rotation = initialGameObject.transform.rotation;
 
                 controller.enabled = true;
-                minigameHud.SetActive(false);
+                hudCrefisa.SetActive(false);
             }
         }
     }
@@ -124,7 +127,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
         if (currentPlayer.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
-            minigameHud.SetActive(true);
+            hudCrefisa.SetActive(true);
         }
             currentplayer++;
 
@@ -136,7 +139,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
         if (other.gameObject.CompareTag("Player") && otherPhotonView != null && otherPhotonView.IsMine)
         {
-            minigameHud.SetActive(false);
+            hudCrefisa.SetActive(false);
 
         }
         currentplayer--;

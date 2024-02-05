@@ -4,31 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TeleporteSimples : MonoBehaviourPunCallbacks
+public class TeleportSimplesJogoCrefisa : MonoBehaviourPunCallbacks
 {
     [SerializeField] Transform spawnPosition;
-    
-    
-    [SerializeField] GameObject hudTeleport;
-    
-    public void OnTriggerEnter(Collider other)
+
+    [SerializeField] GameObject jogoCrefisa;
+
+
+
+
+
+    private void Awake()
     {
+        //GameObject jogoCrefisa = GameObject.FindWithTag("GameCrefisa");
+        GameObject spawnPointObject = GameObject.FindWithTag("SpawnPointCrefisa");
 
-        if (other.gameObject.CompareTag("Player"))
+        if (spawnPointObject != null)
         {
-
-            hudTeleport.SetActive(true);
+            spawnPosition = spawnPointObject.transform;
         }
-
+        else
+        {
+            Debug.LogError("SpawnPoint GameObject não encontrado com a tag 'SpawnPoint'.");
+        }
+    
     }
 
-    public void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            hudTeleport.SetActive(false);
-        }
-    }
+    
 
     public void teleport()
     {
@@ -49,6 +51,7 @@ public class TeleporteSimples : MonoBehaviourPunCallbacks
                     playerObject.transform.rotation = spawnPosition.rotation;
                     controller.enabled = true;
                     Debug.Log("Player Teleportado");
+                    Destroy(jogoCrefisa);
                 }
                
             }

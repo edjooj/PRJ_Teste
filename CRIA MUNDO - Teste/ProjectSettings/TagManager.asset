@@ -17,6 +17,8 @@ TagManager:
   - Drag
   - Falar
   - IdleNPC
+  - SpawnPointCrefisa
+  - GameCrefisa
   layers:
   - Default
   - TransparentFX
