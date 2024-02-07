@@ -10,7 +10,7 @@ public class ScoreController : MonoBehaviour
     public string user;
     public DatabaseReference DBreference;
 
-    [Header("PlayerScore")]
+    [Header("PlayerScore CREFISA")]
     public int scorePoint;
     public int currentScorePoint;
 
