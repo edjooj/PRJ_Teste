@@ -131,7 +131,7 @@ public class Customize : MonoBehaviourPunCallbacks
 
 
 
-    #region CHAMADA HUD
+   #region CHAMADA HUD
     public void SelectCamisa(int index)
     {
         Debug.Log($"SelectCamisa: Selecionando camisa com índice {index}.");
@@ -167,5 +167,5 @@ public class Customize : MonoBehaviourPunCallbacks
         UpdateSkin(CustomType.CHAPEU, index);
         playerCustomizer.chapeu = index;
     }
-    #endregion
+    #endregion 
 }

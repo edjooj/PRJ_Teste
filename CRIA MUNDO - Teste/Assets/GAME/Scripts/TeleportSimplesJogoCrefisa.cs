@@ -16,7 +16,7 @@ public class TeleportSimplesJogoCrefisa : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        //GameObject jogoCrefisa = GameObject.FindWithTag("GameCrefisa");
+        
         GameObject spawnPointObject = GameObject.FindWithTag("SpawnPointCrefisa");
 
         if (spawnPointObject != null)
@@ -58,6 +58,7 @@ public class TeleportSimplesJogoCrefisa : MonoBehaviourPunCallbacks
             else
             {
                 Debug.LogError("Player GameObject not found.");
+
             }
         }
     }
