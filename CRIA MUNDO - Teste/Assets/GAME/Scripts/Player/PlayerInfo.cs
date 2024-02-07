@@ -9,6 +9,7 @@ public class PlayerInfo : MonoBehaviourPunCallbacks
     public TMP_Text playerCourse;
     private FirebaseAuth auth;
 
+
     public GameObject player;
 
     void Start()

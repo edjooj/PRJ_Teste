@@ -24,17 +24,49 @@ public class WordGameManager : MonoBehaviour
     public int wordsRevealed;
     public GameObject hudFim;
 
-   // [Header("Placar")]
-   // public int clicks;
-    //public int limpar;
+    [Header("Placar")]
+    public string tempo;
+    public int clicks;
+    public int limpar;
 
-    private void Start()
+    [Header("Cronometro")]
+    private float tempoDecorrido = 0f;
+    public bool cronometroAtivo = true;
+
+    public int minutos;
+    public int segundos;
+
+    private void OnEnable()
     {
+        currentLevel = ScoreboardController.instance.currentFaseLinguas;
         SetLettersForCurrentLevel();
         GenerateWords();
         word.text = "";
         wordsRevealed = 0;
+        tempoDecorrido = 0f;
     }
+
+
+    #region Cronometro
+
+    private void Update()
+    {
+        if (cronometroAtivo)
+        {
+            tempoDecorrido += Time.deltaTime;
+            AtualizarTempo();
+        }
+    }
+
+    private void AtualizarTempo()
+    {
+        minutos = Mathf.FloorToInt(tempoDecorrido / 60f);
+        segundos = Mathf.FloorToInt(tempoDecorrido % 60f);
+
+        tempo = minutos.ToString("00") + ":" + segundos.ToString("00");
+    }
+
+    #endregion
 
     public void SetLettersForCurrentLevel()
     {
@@ -78,32 +110,7 @@ public class WordGameManager : MonoBehaviour
     }
     public void Compled()
     {
-        
-        
-            
-        
-    }
-
-    private void GerarPalavras()
-    {
-        GameControl currentGameControl = levels[currentLevel];
-        int currentwordsIndex = 0;
-
-        foreach (WordControl wordControl in currentGameControl.Levels)
-        {
-            foreach (string letter in wordControl.letters)
-            {
-                if (currentwordsIndex < letters.Count)
-                {
-                    GameObject letterContainer = letters[currentwordsIndex];
-
-                    GameObject letterGO = Instantiate(letterPrefabSemBotão, letterContainer.transform);
-                    letterGO.GetComponentInChildren<TextMeshProUGUI>().text = letter;
-
-                    currentwordsIndex++;
-                }
-            }
-        }
+        ScoreboardController.instance.UpdateLinguasPointsInFirebase(tempo, clicks, limpar, currentLevel);
     }
 
     private void GenerateWords()
@@ -134,7 +141,7 @@ public class WordGameManager : MonoBehaviour
     public void Limpar()
     {
         word.text = "";
-       // limpar++;
+        limpar++;
     }
 
     public void CheckWord()
@@ -157,18 +164,16 @@ public class WordGameManager : MonoBehaviour
 
     private void RevealWord(string correctWord)
     {
-        // Encontre o GameObject da palavra correspondente
         Transform wordGO = wordTransform.Find(correctWord);
         if (wordGO != null)
         {
-            // Altere o alpha de cada letra para 1
             foreach (Transform letter in wordGO)
             {
                 TextMeshProUGUI letterText = letter.GetComponentInChildren<TextMeshProUGUI>();
                 if (letterText != null)
                 {
                     Color color = letterText.color;
-                    color.a = 1; // 100% de opacidade
+                    color.a = 1; 
                     letterText.color = color;
                 }
             }
@@ -179,6 +184,7 @@ public class WordGameManager : MonoBehaviour
             if (wordsRevealed == 7 )
             {
                 hudFim.SetActive(true);
+                Mudarfase();
 
             }
 
@@ -188,6 +194,7 @@ public class WordGameManager : MonoBehaviour
     public void Mudarfase()
     {
         currentLevel++;
+        Compled();
     }
 
 

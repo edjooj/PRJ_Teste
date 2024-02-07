@@ -5,22 +5,31 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PLayerInfoScore
-{
-    public string username;
-    public int score;
-    public string test;
-}
-
 public class ScoreboardController : MonoBehaviour
 {
+    public static ScoreboardController instance;
+
     [Header("Database")]
     public FirebaseAuth auth;
     public string user;
     public DatabaseReference DBreference;
 
-    public TMP_Text NicknamePrimeiro, NicknameSegundo, NicknameTerceiro;
-    public TMP_Text ScorePrimeiro, ScoreSegundo, ScoreTerceiro;
+    [Header("Minigame - Crefisa")]
+    public int crefisaScore; //Score do MiniGame da Crefisa
+
+    [Header("Minigame - Linguas")]
+    public string linguasTime; //Time do MiniGame de Linguas
+    public int linguasClick; //Clicks do MiniGame de Linguas
+    public int linguasLimpeza; //Limpeza do MiniGame de Linguas
+    public int currentFaseLinguas; //Fase atual do curso de Linguas
+
+    [Header("Minigame - Exatas")]
+    public float exatasScore; //Score do MiniGame de Exatas
+    public int exatasClick; //Click do MiniGame de Exatas
+
+    [Header("Minigame - Exatas")]
+    public float biologicasScore; //Score do MiniGame de Biologicas
+
 
     void Awake()
     {
@@ -28,45 +37,85 @@ public class ScoreboardController : MonoBehaviour
         DBreference = FirebaseCORE.instance.authManager.DBreference;
         user = FirebaseCORE.instance.authManager.user.UserId;
 
-        LoadScoreboard();
-    }
-
-    public void LoadScoreboard()
-    {
-        StartCoroutine(LoadScoreboardCoroutine());
-    }
-
-    private IEnumerator LoadScoreboardCoroutine()
-    {
-        var getScoreboardTask = DBreference.Child("users").OrderByChild("PlayerScore").LimitToLast(3).GetValueAsync();
-
-        yield return new WaitUntil(() => getScoreboardTask.IsCompleted);
-
-        if (getScoreboardTask.IsCompleted)
+        if (instance == null)
         {
-            DataSnapshot snapshot = getScoreboardTask.Result;
-            if (snapshot.Exists)
-            {
-                List<PLayerInfoScore> players = new List<PLayerInfoScore>();
-                foreach (DataSnapshot player in snapshot.Children)
-                {
-                    PLayerInfoScore playerInfo = new PLayerInfoScore();
-                    playerInfo.username = player.Child("username").Value.ToString();
-                    playerInfo.score = int.Parse(player.Child("PlayerScore").Value.ToString());
-                    players.Add(playerInfo);
-                }
+            instance = this;
+        }
 
-                players.Sort((x, y) => y.score.CompareTo(x.score));
+        GetLinguasPointsFromFirebase();
+    }
 
-                NicknamePrimeiro.text = players[0].username;
-                ScorePrimeiro.text = players[0].score.ToString();
+    public void UpdateCrefisaPointsInFirebase(int score)
+    {
+        if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
+        {
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference playerScoreRef = FirebaseDatabase.DefaultInstance.RootReference
+            .Child("users")
+                .Child(userId)
+                .Child("PlayerScore")
+                .Child("Crefisa");
 
-                NicknameSegundo.text = players[1].username;
-                ScoreSegundo.text = players[1].score.ToString();
-
-                NicknameTerceiro.text = players[2].username;
-                ScoreTerceiro.text = players[2].score.ToString();
-            }
+            playerScoreRef.SetValueAsync(score);
         }
     }
+
+    #region Firebase Letras
+
+    public void UpdateLinguasPointsInFirebase(string time, int click, int limpeza, int currentFaseLinguas)
+    {
+        if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
+        {
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference linguasRef = FirebaseDatabase.DefaultInstance.RootReference
+            .Child("users")
+                .Child(userId)
+                .Child("PlayerScore")
+                .Child("Linguas");
+
+            var linguasData = new Dictionary<string, object>
+        {
+            {"Timer", time},
+            {"Click", click},
+            {"Limpeza", limpeza},
+            {"Current", currentFaseLinguas}
+        };
+            linguasRef.SetValueAsync(linguasData);
+        }
+    }
+
+    public void GetLinguasPointsFromFirebase()
+    {
+        if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
+        {
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference linguasRef = FirebaseDatabase.DefaultInstance.RootReference
+            .Child("users")
+                .Child(userId)
+                .Child("PlayerScore")
+                .Child("Linguas");
+
+            linguasRef.GetValueAsync().ContinueWith(task => {
+                if (task.IsFaulted)
+                {
+                    Debug.Log("Deu erro");
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+
+                    if (snapshot.HasChildren)
+                    {
+                        linguasTime = snapshot.Child("Timer").Value as string;
+                        linguasClick = int.Parse(snapshot.Child("Click").Value.ToString());
+                        linguasLimpeza = int.Parse(snapshot.Child("Limpeza").Value.ToString());
+                        currentFaseLinguas = int.Parse(snapshot.Child("Current").Value.ToString());
+                    }
+                }
+            });
+        }
+    }
+
+    #endregion
+
 }
