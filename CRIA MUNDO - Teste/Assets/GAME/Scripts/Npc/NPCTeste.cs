@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
-using Photon.Pun;
+
 
 
 public class NPCInteraction : MonoBehaviourPunCallbacks

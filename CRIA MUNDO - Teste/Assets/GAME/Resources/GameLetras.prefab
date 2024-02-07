@@ -332,8 +332,6 @@ MonoBehaviour:
   wordTransform: {fileID: 6890673904261677894}
   wordsRevealed: 0
   hudFim: {fileID: 9088750093568055882}
-  clicks: 0
-  limpar: 0
 --- !u!114 &7775999076488483458
 MonoBehaviour:
   m_ObjectHideFlags: 0

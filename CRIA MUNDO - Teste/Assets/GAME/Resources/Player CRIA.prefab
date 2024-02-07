@@ -198,7 +198,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -424,7 +424,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155693527716430820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -445,8 +445,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00025672046, y: -143.347}
-  m_SizeDelta: {x: 886.8, y: 1061.4183}
+  m_AnchoredPosition: {x: -0.0003, y: -283.8073}
+  m_SizeDelta: {x: 886.8, y: 1342.3387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &936164502336310399
 CanvasRenderer:
@@ -878,7 +878,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 58f644a2904c0404c8d79630c7ac8143, type: 2}
+  - {fileID: 2100000, guid: 461371276a35c274987027e36da6323b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1205,12 +1205,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1755,7 +1755,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 7551e9ef63b265b4ba8494ec10c8b328, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1943,13 +1943,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2592348837739152720}
   m_Father: {fileID: 5661324651211720096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 649.8522, y: -70.2329}
-  m_SizeDelta: {x: 161.8243, y: 161.8243}
+  m_AnchoredPosition: {x: 649.85205, y: -70.2329}
+  m_SizeDelta: {x: 171.4594, y: 171.4594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8268499500714647649
 CanvasRenderer:
@@ -2156,12 +2157,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2449,7 +2450,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3192,7 +3193,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3389,6 +3390,81 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
+--- !u!1 &771825642400290923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6071674794084767465}
+  - component: {fileID: 7425040110282460142}
+  - component: {fileID: 5406699385533958439}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6071674794084767465
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771825642400290923}
+  m_LocalRotation: {x: -1.4551915e-11, y: -0, z: -2.3283064e-10, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000091552734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6634293824954796608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85.73, y: -85.73}
+  m_SizeDelta: {x: 144.749, y: 144.749}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7425040110282460142
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771825642400290923}
+  m_CullTransparentMesh: 1
+--- !u!114 &5406699385533958439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771825642400290923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 175f46a7fbc489b41a7f7dd94316cbf2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &812185063093864353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,12 +3588,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3955,7 +4031,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 7551e9ef63b265b4ba8494ec10c8b328, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4325,12 +4401,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4539,107 +4615,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1046261349837947240
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5273987621612692935}
-  - component: {fileID: 3936729677885592053}
-  m_Layer: 0
-  m_Name: Camisa Leo (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5273987621612692935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046261349837947240}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071069, y: 0.0000000043990775, z: 0.0000000029568648, w: 0.7071067}
-  m_LocalPosition: {x: -0.04339348, y: 24.407152, z: -19.608343}
-  m_LocalScale: {x: 2284.9316, y: 2284.9316, z: 2191.4482}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6187239697540390252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &3936729677885592053
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046261349837947240}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fa204e56aa6dd9845a26fc01440d2e61, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -3131381918308742455, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-  m_Bones:
-  - {fileID: 8341103650534586995}
-  - {fileID: 147048949445765567}
-  - {fileID: 6287920787911748328}
-  - {fileID: 593262886145664661}
-  - {fileID: 266256972000661487}
-  - {fileID: 4825724447292824195}
-  - {fileID: 2154363990628830827}
-  - {fileID: 1841180004434148856}
-  - {fileID: 8202088659268027524}
-  - {fileID: 3783169573990712446}
-  - {fileID: 606754582345346884}
-  - {fileID: 3488996799865766682}
-  - {fileID: 77262733168059778}
-  - {fileID: 2524477236409191111}
-  - {fileID: 8197846740717145903}
-  - {fileID: 5468047307184375119}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 1841180004434148856}
-  m_AABB:
-    m_Center: {x: 0.20530248, y: 5.9947824, z: 1.3373303}
-    m_Extent: {x: 7.2919893, y: 7.324539, z: 4.1389813}
-  m_DirtyAABB: 0
 --- !u!1 &1080263178589389767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4763,7 +4738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5209,12 +5184,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5417,16 +5392,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274971588560491012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8005438370862974515}
   m_Father: {fileID: 5661324651211720096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 278.50803, y: -70.2329}
-  m_SizeDelta: {x: 161.8243, y: 161.8243}
+  m_SizeDelta: {x: 171.4594, y: 171.4594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5807470251405156937
 CanvasRenderer:
@@ -5706,7 +5682,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bdc23726cb03b104f92788364aeb9a73, type: 2}
+  - {fileID: 2100000, guid: 40800614f4aec6d4d982c81de29a56e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5873,7 +5849,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6330,7 +6306,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6550,12 +6526,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7058,7 +7034,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 7b73a07c4914c5c459ecf1623dfb5f45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7114,7 +7090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5360128694008935875
 Transform:
   m_ObjectHideFlags: 0
@@ -7368,7 +7344,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 7b73a07c4914c5c459ecf1623dfb5f45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7573,7 +7549,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: c38f804533a590144b257810765792be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7867,12 +7843,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8442,7 +8418,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8789,12 +8765,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9145,12 +9121,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9694,7 +9670,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9834,7 +9810,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10090,12 +10066,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10235,12 +10211,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10545,12 +10521,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10567,6 +10543,81 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2601706356073918063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4243654511932394124}
+  - component: {fileID: 693580976668464500}
+  - component: {fileID: 2368322978174477582}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4243654511932394124
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2601706356073918063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8889082751223536582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.6255, y: 0.6255}
+  m_SizeDelta: {x: 144.749, y: 144.749}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &693580976668464500
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2601706356073918063}
+  m_CullTransparentMesh: 1
+--- !u!114 &2368322978174477582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2601706356073918063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0923b6b77a93d654fa7a4edb6a2b535f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2623914085318352421
 GameObject:
   m_ObjectHideFlags: 0
@@ -10619,7 +10670,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: c38f804533a590144b257810765792be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10781,7 +10832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01c5ca786af49149922aafc27983da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 2692574662538367984}
+  playerStatus: {fileID: 2475760388700436520}
 --- !u!1 &2712081721069281389
 GameObject:
   m_ObjectHideFlags: 0
@@ -11202,12 +11253,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11347,12 +11398,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11415,8 +11466,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00025672046, y: -143.347}
-  m_SizeDelta: {x: 886.8, y: 1061.4183}
+  m_AnchoredPosition: {x: -0.0003, y: -149.0685}
+  m_SizeDelta: {x: 886.8, y: 1072.8612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4853155722020702755
 CanvasRenderer:
@@ -11753,12 +11804,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11802,7 +11853,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2969368837606438524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11825,8 +11876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00025672046, y: -143.347}
-  m_SizeDelta: {x: 886.8, y: 1061.4183}
+  m_AnchoredPosition: {x: -0.0003, y: -303.0897}
+  m_SizeDelta: {x: 886.8, y: 1380.9037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4143455019532359097
 CanvasRenderer:
@@ -11890,6 +11941,81 @@ MonoBehaviour:
   m_Spacing: {x: 60, y: 40}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!1 &3074348629934032427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8005438370862974515}
+  - component: {fileID: 7421182578253207766}
+  - component: {fileID: 8762302396688306884}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8005438370862974515
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074348629934032427}
+  m_LocalRotation: {x: -1.4551915e-11, y: -0, z: -2.3283064e-10, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4123523767050408853}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85.73, y: -85.73}
+  m_SizeDelta: {x: 144.749, y: 144.749}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7421182578253207766
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074348629934032427}
+  m_CullTransparentMesh: 1
+--- !u!114 &8762302396688306884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074348629934032427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 02fbfcff7a4af6f40b70a14a57aadaa5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3132861840821245494
 GameObject:
   m_ObjectHideFlags: 0
@@ -12313,7 +12439,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12546,7 +12672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12949,7 +13075,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13226,7 +13352,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13496,12 +13622,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13570,7 +13696,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3059ef898f0c634294ef05da1fc6c8e, type: 2}
+  - {fileID: 2100000, guid: 384f111c6910a344087bdf38af4ef55e, type: 2}
   - {fileID: 2100000, guid: a65741fcb78d4b543871e23d4d19968c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -13739,7 +13865,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13761,6 +13887,81 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &3633785324681663409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2592348837739152720}
+  - component: {fileID: 3135366218741198892}
+  - component: {fileID: 2431015404555050627}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2592348837739152720
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633785324681663409}
+  m_LocalRotation: {x: -1.4551915e-11, y: -0, z: -2.3283064e-10, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000061035156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3766138686569129419}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85.73, y: -85.73}
+  m_SizeDelta: {x: 144.749, y: 144.749}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3135366218741198892
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633785324681663409}
+  m_CullTransparentMesh: 1
+--- !u!114 &2431015404555050627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633785324681663409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0ac9bd3b4996a6048a7c40c81cc22f4d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3644341398626919846
 GameObject:
   m_ObjectHideFlags: 0
@@ -14145,7 +14346,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14647,12 +14848,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14721,7 +14922,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: afa9406b5e47a3e4485f738cbfd7b267, type: 2}
+  - {fileID: 2100000, guid: 266a94133973c474fb7548ae937960ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14965,12 +15166,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15110,7 +15311,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15281,7 +15482,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f77ca4728b05a8a41971f3522a48c6a6, type: 2}
-  - {fileID: 2100000, guid: 8ba78b11bbee15748b89ebb2fa8c5523, type: 2}
+  - {fileID: 2100000, guid: 8bc48a7d6b725f543bfa5fb31f0b7d0f, type: 2}
   - {fileID: 2100000, guid: 929173171ba09044c90ef2342f9ad6df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -15567,7 +15768,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3059ef898f0c634294ef05da1fc6c8e, type: 2}
+  - {fileID: 2100000, guid: 280108c207940514984f8cfaddfc52e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15811,13 +16012,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 774970618897231567}
   m_Father: {fileID: 5661324651211720096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 464.18005, y: -70.2329}
-  m_SizeDelta: {x: 161.8243, y: 161.8243}
+  m_AnchoredPosition: {x: 464.18002, y: -70.2329}
+  m_SizeDelta: {x: 171.4594, y: 171.4594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1286366572056237849
 CanvasRenderer:
@@ -16376,7 +16578,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: c38f804533a590144b257810765792be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16440,7 +16642,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4526994549342378105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16463,8 +16665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00025672046, y: -143.347}
-  m_SizeDelta: {x: 886.8, y: 1061.4183}
+  m_AnchoredPosition: {x: -0.0003, y: -287.1185}
+  m_SizeDelta: {x: 886.8, y: 1348.961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2427975796205669888
 CanvasRenderer:
@@ -16726,12 +16928,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16871,7 +17073,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17031,6 +17233,81 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &4717062695981434198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774970618897231567}
+  - component: {fileID: 8161089289119853299}
+  - component: {fileID: 1838746586571915822}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &774970618897231567
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717062695981434198}
+  m_LocalRotation: {x: -1.4551915e-11, y: -0, z: -2.3283064e-10, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000061035156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 916457984472964613}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85.73, y: -85.73}
+  m_SizeDelta: {x: 144.749, y: 144.749}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8161089289119853299
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717062695981434198}
+  m_CullTransparentMesh: 1
+--- !u!114 &1838746586571915822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717062695981434198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f3d8136aee9d99e49a87e850e862aa4b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4811462880310308315
 GameObject:
   m_ObjectHideFlags: 0
@@ -17331,107 +17608,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4926552368489201169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3755495027590191858}
-  - component: {fileID: 3614014786902145006}
-  m_Layer: 0
-  m_Name: Camisa Leo (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3755495027590191858
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4926552368489201169}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071069, y: 0.0000000043990775, z: 0.0000000029568648, w: 0.7071067}
-  m_LocalPosition: {x: -0.04339348, y: 24.407152, z: -19.608343}
-  m_LocalScale: {x: 2284.9316, y: 2284.9316, z: 2191.4482}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6187239697540390252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &3614014786902145006
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4926552368489201169}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fa204e56aa6dd9845a26fc01440d2e61, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -3131381918308742455, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-  m_Bones:
-  - {fileID: 8341103650534586995}
-  - {fileID: 147048949445765567}
-  - {fileID: 6287920787911748328}
-  - {fileID: 593262886145664661}
-  - {fileID: 266256972000661487}
-  - {fileID: 4825724447292824195}
-  - {fileID: 2154363990628830827}
-  - {fileID: 1841180004434148856}
-  - {fileID: 8202088659268027524}
-  - {fileID: 3783169573990712446}
-  - {fileID: 606754582345346884}
-  - {fileID: 3488996799865766682}
-  - {fileID: 77262733168059778}
-  - {fileID: 2524477236409191111}
-  - {fileID: 8197846740717145903}
-  - {fileID: 5468047307184375119}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 1841180004434148856}
-  m_AABB:
-    m_Center: {x: 0.20530248, y: 5.9947824, z: 1.3373303}
-    m_Extent: {x: 7.2919893, y: 7.324539, z: 4.1389813}
-  m_DirtyAABB: 0
 --- !u!1 &4930622207662589206
 GameObject:
   m_ObjectHideFlags: 0
@@ -17763,7 +17939,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bdc23726cb03b104f92788364aeb9a73, type: 2}
+  - {fileID: 2100000, guid: 6a49004ec525388468b8a0f5b56cd74d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17925,7 +18101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18052,13 +18228,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6071674794084767465}
   m_Father: {fileID: 5661324651211720096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 835.5242, y: -70.2329}
-  m_SizeDelta: {x: 161.8243, y: 161.8243}
+  m_AnchoredPosition: {x: 835.52405, y: -70.2329}
+  m_SizeDelta: {x: 171.4594, y: 171.4594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2903261557609893850
 CanvasRenderer:
@@ -19265,12 +19442,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19339,7 +19516,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3059ef898f0c634294ef05da1fc6c8e, type: 2}
+  - {fileID: 2100000, guid: a8abc951055ccd54685c047cdc5d365a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20157,12 +20334,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20997,7 +21174,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21059,7 +21236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 395}
+  m_AnchoredPosition: {x: -2, y: 395}
   m_SizeDelta: {x: 928.3601, y: 140.4658}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5215409685527730383
@@ -21249,12 +21426,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21323,7 +21500,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 461371276a35c274987027e36da6323b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21843,7 +22020,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22415,12 +22592,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22560,12 +22737,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22705,12 +22882,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23132,12 +23309,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23189,7 +23366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 390, y: -415}
+  m_AnchoredPosition: {x: 436, y: -433}
   m_SizeDelta: {x: 66.4711, y: 58.136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6625139194027401745
@@ -23960,12 +24137,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24227,12 +24404,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24449,8 +24626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00025672046, y: -143.347}
-  m_SizeDelta: {x: 886.8, y: 1061.4183}
+  m_AnchoredPosition: {x: -0.0003, y: -288.5029}
+  m_SizeDelta: {x: 886.8, y: 1351.7295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1364687954795417573
 CanvasRenderer:
@@ -24727,7 +24904,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24947,7 +25124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25021,7 +25198,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 711ffe819eb81084ab05dd4a27241d4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25657,12 +25834,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25904,107 +26081,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &7759799137564304197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2417128755448458244}
-  - component: {fileID: 431079388254922394}
-  m_Layer: 0
-  m_Name: Camisa Leo (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2417128755448458244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759799137564304197}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071069, y: 0.0000000043990775, z: 0.0000000029568648, w: 0.7071067}
-  m_LocalPosition: {x: -0.04339348, y: 24.407152, z: -19.608343}
-  m_LocalScale: {x: 2284.9316, y: 2284.9316, z: 2191.4482}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6187239697540390252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &431079388254922394
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759799137564304197}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: fa204e56aa6dd9845a26fc01440d2e61, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -3131381918308742455, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-  m_Bones:
-  - {fileID: 8341103650534586995}
-  - {fileID: 147048949445765567}
-  - {fileID: 6287920787911748328}
-  - {fileID: 593262886145664661}
-  - {fileID: 266256972000661487}
-  - {fileID: 4825724447292824195}
-  - {fileID: 2154363990628830827}
-  - {fileID: 1841180004434148856}
-  - {fileID: 8202088659268027524}
-  - {fileID: 3783169573990712446}
-  - {fileID: 606754582345346884}
-  - {fileID: 3488996799865766682}
-  - {fileID: 77262733168059778}
-  - {fileID: 2524477236409191111}
-  - {fileID: 8197846740717145903}
-  - {fileID: 5468047307184375119}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 1841180004434148856}
-  m_AABB:
-    m_Center: {x: 0.20530248, y: 5.9947824, z: 1.3373303}
-    m_Extent: {x: 7.2919893, y: 7.324539, z: 4.1389813}
-  m_DirtyAABB: 0
 --- !u!1 &7785090002448656416
 GameObject:
   m_ObjectHideFlags: 0
@@ -26361,7 +26437,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26628,12 +26704,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26954,12 +27030,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -27375,13 +27451,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4243654511932394124}
   m_Father: {fileID: 5661324651211720096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.83601, y: -70.2329}
-  m_SizeDelta: {x: 161.8243, y: 161.8243}
+  m_AnchoredPosition: {x: 92.836006, y: -70.2329}
+  m_SizeDelta: {x: 171.4594, y: 171.4594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9079088821515462108
 CanvasRenderer:
@@ -27667,26 +27744,41 @@ MonoBehaviour:
   variations:
     camisas:
     - {fileID: 1135968306393498605}
+    - {fileID: 1135968306393498605}
     - {fileID: 1740185201090026580}
     - {fileID: 3964945787522338481}
     - {fileID: 256177919901287122}
     - {fileID: 437681763445662817}
     - {fileID: 3933763388246244355}
+    - {fileID: 4079644558114201979}
+    - {fileID: 5179343360894497550}
     - {fileID: 2945451120090800599}
-    - {fileID: 2945451120090800599}
-    - {fileID: 2945451120090800599}
-    - {fileID: 2945451120090800599}
-    - {fileID: 2945451120090800599}
+    - {fileID: 311878030993550079}
+    - {fileID: 5497578291097784637}
     calcas:
     - {fileID: 1657704714889269363}
+    - {fileID: 1657704714889269363}
+    - {fileID: 1728588799727255967}
+    - {fileID: 488640638159708218}
+    - {fileID: 2623914085318352421}
+    - {fileID: 4644625310400922232}
+    - {fileID: 1804177818097002522}
+    - {fileID: 1883874797763156832}
     - {fileID: 795711048473303372}
-    - {fileID: 6663771203262084005}
+    - {fileID: 7531261123470792607}
+    - {fileID: 6070061078297829094}
     - {fileID: 2916829877801128266}
+    - {fileID: 849970758097821120}
+    - {fileID: 4421371401222311462}
     sapatos:
-    - {fileID: 8700080867255844657}
+    - {fileID: 0}
     - {fileID: 158752687108854383}
-    - {fileID: 3847352156356542270}
+    - {fileID: 5111445126522590416}
+    - {fileID: 1323353273656439291}
     - {fileID: 3523755577400829875}
+    - {fileID: 3994236580319157594}
+    - {fileID: 9199391439789336914}
+    - {fileID: 3847352156356542270}
     cabelos:
     - {fileID: 5002384234075694720}
     - {fileID: 8521291326066843700}
@@ -28513,7 +28605,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28902,7 +28994,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29052,7 +29144,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29192,12 +29284,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCalcaButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29337,7 +29429,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29482,12 +29574,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnChapeuButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29702,7 +29794,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29847,7 +29939,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnCabeloButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30222,7 +30314,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3059ef898f0c634294ef05da1fc6c8e, type: 2}
+  - {fileID: 2100000, guid: 461371276a35c274987027e36da6323b, type: 2}
   - {fileID: 2100000, guid: a65741fcb78d4b543871e23d4d19968c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -30470,7 +30562,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ec18bf2699f934aa960151bdc38eb4, type: 2}
+  - {fileID: 2100000, guid: 7551e9ef63b265b4ba8494ec10c8b328, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30635,12 +30727,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4408685617587757710}
         m_TargetAssemblyTypeName: ButtonConfig, Assembly-CSharp
-        m_MethodName: OnCamisaButtonClicked
+        m_MethodName: OnSapatoButtonClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -31335,7 +31427,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f77ca4728b05a8a41971f3522a48c6a6, type: 2}
-  - {fileID: 2100000, guid: 8ba78b11bbee15748b89ebb2fa8c5523, type: 2}
+  - {fileID: 2100000, guid: b8a688d7e545961449e552cf5d021e1b, type: 2}
   - {fileID: 2100000, guid: 929173171ba09044c90ef2342f9ad6df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -31635,6 +31727,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2067282124895937496, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8abc951055ccd54685c047cdc5d365a, type: 2}
     - target: {fileID: -1941771960230365610, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -31645,7 +31741,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7c14fec0686806f43831555c17a1b0d8, type: 2}
     - target: {fileID: -419558700768859187, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -380663070044480688, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       propertyPath: m_IsActive
@@ -31655,6 +31751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 947538643022857898, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db6cf6524d505844787937dbb63db37a, type: 2}
     - target: {fileID: 1544536716129911261, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -31663,6 +31763,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2928991082726079288, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b235352b3f0d80f4c852e22a945d5615, type: 2}
     - target: {fileID: 4258551108449184812, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -31691,6 +31795,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8521798856736993480, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8521798856736993480, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db6cf6524d505844787937dbb63db37a, type: 2}
+    - target: {fileID: 8521798856736993480, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: db6cf6524d505844787937dbb63db37a, type: 2}
     - target: {fileID: 9042740419548555532, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -31720,70 +31836,61 @@ PrefabInstance:
       insertIndex: 10
       addedObject: {fileID: 3730764424898976157}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 12
-      addedObject: {fileID: 5273987621612692935}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       insertIndex: 13
-      addedObject: {fileID: 3755495027590191858}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 14
-      addedObject: {fileID: 2417128755448458244}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 16
       addedObject: {fileID: 5360128694008935875}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 17
+      insertIndex: 14
       addedObject: {fileID: 6564640941264931673}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 18
+      insertIndex: 15
       addedObject: {fileID: 2509901247400219853}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 20
+      insertIndex: 17
       addedObject: {fileID: 9108751565090845781}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 21
+      insertIndex: 18
       addedObject: {fileID: 3586028571938947331}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 23
+      insertIndex: 20
       addedObject: {fileID: 676575766116610156}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 24
+      insertIndex: 21
       addedObject: {fileID: 7394124122040164403}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 26
+      insertIndex: 23
       addedObject: {fileID: 4985021227176104497}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 27
+      insertIndex: 24
       addedObject: {fileID: 793517663830239708}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 36
+      insertIndex: 33
       addedObject: {fileID: 8907700428416844393}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 37
+      insertIndex: 34
       addedObject: {fileID: 7216074390525223154}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 39
+      insertIndex: 36
       addedObject: {fileID: 1143344348719068949}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 40
+      insertIndex: 37
       addedObject: {fileID: 117705154964435832}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 42
+      insertIndex: 39
       addedObject: {fileID: 4557506298021393037}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 43
+      insertIndex: 40
       addedObject: {fileID: 1492253882125242777}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 45
+      insertIndex: 42
       addedObject: {fileID: 5268899568772140415}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 46
+      insertIndex: 43
       addedObject: {fileID: 782247149278045978}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 50
+      insertIndex: 47
       addedObject: {fileID: 6042011993775445335}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-      insertIndex: 51
+      insertIndex: 48
       addedObject: {fileID: 1777098978871413140}
     - targetCorrespondingSourceObject: {fileID: -3321919801592875672, guid: 36364be446854e74ab31d72c55eac568, type: 3}
       insertIndex: -1
@@ -31917,6 +32024,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7436373870293845433, guid: 36364be446854e74ab31d72c55eac568, type: 3}
   m_PrefabInstance: {fileID: 5933427381362129543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4644625310400922232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7916550958579566337, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+  m_PrefabInstance: {fileID: 5933427381362129543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4825724447292824195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8021001004253913084, guid: 36364be446854e74ab31d72c55eac568, type: 3}
@@ -31925,6 +32037,11 @@ Transform:
 --- !u!1 &5002384234075694720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7549214738933949433, guid: 36364be446854e74ab31d72c55eac568, type: 3}
+  m_PrefabInstance: {fileID: 5933427381362129543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5179343360894497550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1564857505263028617, guid: 36364be446854e74ab31d72c55eac568, type: 3}
   m_PrefabInstance: {fileID: 5933427381362129543}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5468047307184375119 stripped
@@ -31945,11 +32062,6 @@ Transform:
 --- !u!4 &6496149644551707899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 608321761475470972, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-  m_PrefabInstance: {fileID: 5933427381362129543}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6663771203262084005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8201692233716233950, guid: 36364be446854e74ab31d72c55eac568, type: 3}
   m_PrefabInstance: {fileID: 5933427381362129543}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6815825394506614742 stripped
@@ -31999,6 +32111,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: isRunning
+  - Type: 9
+    SynchronizeType: 0
+    Name: Jumping
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -32033,11 +32148,6 @@ Transform:
 --- !u!4 &8341103650534586995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6803169544883306252, guid: 36364be446854e74ab31d72c55eac568, type: 3}
-  m_PrefabInstance: {fileID: 5933427381362129543}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8700080867255844657 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3092602610786403766, guid: 36364be446854e74ab31d72c55eac568, type: 3}
   m_PrefabInstance: {fileID: 5933427381362129543}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8804107891387231279 stripped

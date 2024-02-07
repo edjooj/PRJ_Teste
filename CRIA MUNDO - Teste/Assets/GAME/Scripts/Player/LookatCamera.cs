@@ -3,27 +3,22 @@ using UnityEngine;
 
 public class LookatCamera : MonoBehaviourPunCallbacks
 {
-    private Camera cameraToLookAt;
-    public GameObject playerStatus;
+   // private Camera cameraToLookAt;
+    public Transform playerStatus;
 
-    private void Start()
-    {
-        if (photonView.IsMine)
-        {
-            playerStatus.SetActive(false);
-        }
-        else
-        {
-            cameraToLookAt = Camera.main;
-        }
-    }
+   
 
     void Update()
     {
-        if (photonView.IsMine) { return; }
-        if (cameraToLookAt != null)
-        {
-            transform.LookAt(cameraToLookAt.transform);
-        }
+        OrientarCabecaParaJogador();
+    }
+
+    private void OrientarCabecaParaJogador()
+    {
+      if (playerStatus != null)
+    {
+            Vector3 direcaoDoJogador = (Camera.main.transform.position - playerStatus.position).normalized;
+            playerStatus.LookAt(playerStatus.position + new Vector3(direcaoDoJogador.x, 0f, direcaoDoJogador.z));
+    }
     }
 }
