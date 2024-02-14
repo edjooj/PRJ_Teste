@@ -17,7 +17,6 @@ public class NPCProfessores : MonoBehaviourPunCallbacks
         hudNPC.SetActive(false);
         objetoParaAtivar.SetActive(false);
         botaoInteracao.onClick.AddListener(AtivarDialogo);
-        animator = transform.Find("NpcFala").GetComponent<Animator>();
 
     }
 

@@ -8,29 +8,30 @@ using UnityEngine.UI;
 public class CountPlayerToStart : MonoBehaviourPunCallbacks
 {
 
-    public int playerToStart;
-    public int currentplayer;
+    public int playerToStart; //Quantidade de jogadores necessária para iniciar o minigame
+    public int currentplayer; //Quantidade de jogadores no trigger
 
-    public bool onlineMinigame = false;
+    public bool onlineMinigame = false; //Se o minigame é online ou local
 
-    public string minigameName;
-    public Sprite minigameIcon;
-    [SerializeField] private Image icon;
-    
-    public TextMeshProUGUI countPlayer;
+    public string minigameName; //Nome do minigame
+    public Sprite minigameIcon; //Icone do minigame
 
-    public GameObject currentPlayer;
-    public GameObject sceneMiniGame;
-    public Transform SpawnSceneMinigame;
-    public PhotonView otherPhotonView;
-    public CharacterController controller;
+    [SerializeField] private Image icon; //HUD do icone do minigame
+    public TextMeshProUGUI countPlayer; //HUD para a contagem de jogadores
+
+    public GameObject currentPlayer; //Jogador atual
+    public GameObject sceneMiniGame; //Prefab do minigame
+    public Transform SpawnSceneMinigame; //Local de spawn do minigame
+    public PhotonView otherPhotonView; //PhotonView do jogador atual
+    public CharacterController controller; //Controller do jogador atual
+    private bool timerIsActive = false;
 
     public GameObject hudCrefisa;
 
     private bool minigameStarted = false;
 
-    public float countdownTime = 5f;
-    public TextMeshProUGUI countdownDisplay;
+    public float countdownTime = 5f; // Tempo para iniciar o minigame
+    public TextMeshProUGUI countdownDisplay; // HUD para a contagem do tempo
 
     public float currentTime;
    
@@ -43,7 +44,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        /* if (otherPhotonView == null || !otherPhotonView.IsMine) { return; }
+        if (otherPhotonView == null || !otherPhotonView.IsMine) { return; }
 
         countPlayer.text = currentplayer.ToString();
 
@@ -65,7 +66,6 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         {
             countdownDisplay.text = currentTime.ToString("F2");
         }
-        */
 
         if (currentTime <= 0 && !minigameStarted)
         {
@@ -78,7 +78,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
         }
     }
 
-    /*void HideOtherPlayers()
+    void HideOtherPlayers()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
@@ -93,7 +93,7 @@ public class CountPlayerToStart : MonoBehaviourPunCallbacks
                 Debug.Log("Ignorando " + player.name + " porque é o jogador local ou não possui PhotonView");
             }
         }
-    }*/
+    }
 
     public void StartMinigame()
     {
