@@ -92,6 +92,7 @@ public class Board : MonoBehaviour
             Debug.Log("GameClear");
             GetComponent<UIControle>().OnResultPanel();
             StopCoroutine("CalculatePlayTime");
+            SaveFirebase();
         }
     }
 
@@ -102,5 +103,10 @@ public class Board : MonoBehaviour
             PlayTime ++;
             yield return new WaitForSeconds(1);
         }
+    }
+
+    private void SaveFirebase()
+    {
+        ScoreboardController.instance.UpdateExatasPointsInFirebase(PlayTime, MoveCount);
     }
 }

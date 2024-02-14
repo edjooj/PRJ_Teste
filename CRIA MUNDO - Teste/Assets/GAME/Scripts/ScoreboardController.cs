@@ -24,11 +24,14 @@ public class ScoreboardController : MonoBehaviour
     public int currentFaseLinguas; //Fase atual do curso de Linguas
 
     [Header("Minigame - Exatas")]
-    public float exatasScore; //Score do MiniGame de Exatas
+    public float exatasTime; //Score do MiniGame de Exatas
     public int exatasClick; //Click do MiniGame de Exatas
 
-    [Header("Minigame - Exatas")]
+    [Header("Minigame - Biologicas")]
     public float biologicasScore; //Score do MiniGame de Biologicas
+
+    [Header("Minigame - Design")]
+    public float designScore; //Score do MiniGame de Design
 
 
     void Awake()
@@ -43,6 +46,7 @@ public class ScoreboardController : MonoBehaviour
         }
 
         GetLinguasPointsFromFirebase();
+        GetExatasPointsFromFirebase();
     }
 
     public void UpdateCrefisaPointsInFirebase(int score)
@@ -110,6 +114,61 @@ public class ScoreboardController : MonoBehaviour
                         linguasClick = int.Parse(snapshot.Child("Click").Value.ToString());
                         linguasLimpeza = int.Parse(snapshot.Child("Limpeza").Value.ToString());
                         currentFaseLinguas = int.Parse(snapshot.Child("Current").Value.ToString());
+                    }
+                }
+            });
+        }
+    }
+
+    #endregion
+
+
+    #region Firebase Exatas
+
+    public void UpdateExatasPointsInFirebase(int time, int click)
+    {
+        if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
+        {
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference exatasRef = FirebaseDatabase.DefaultInstance.RootReference
+            .Child("users")
+                .Child(userId)
+                .Child("PlayerScore")
+                .Child("Exatas");
+
+            var exatasData = new Dictionary<string, object>
+        {
+            {"Timer", time},
+            {"Click", click},
+        };
+            exatasRef.SetValueAsync(exatasData);
+        }
+    }
+
+    public void GetExatasPointsFromFirebase()
+    {
+        if (!string.IsNullOrEmpty(FirebaseCORE.instance.authManager.user.UserId))
+        {
+            string userId = FirebaseCORE.instance.authManager.user.UserId;
+            DatabaseReference exatasRef = FirebaseDatabase.DefaultInstance.RootReference
+            .Child("users")
+                .Child(userId)
+                .Child("PlayerScore")
+                .Child("Exatas");
+
+            exatasRef.GetValueAsync().ContinueWith(task => {
+                if (task.IsFaulted)
+                {
+                    Debug.Log("Deu erro");
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+
+                    if (snapshot.HasChildren)
+                    {
+                        exatasTime = int.Parse(snapshot.Child("Timer").Value.ToString());
+                        exatasClick = int.Parse(snapshot.Child("Click").Value.ToString());
                     }
                 }
             });
