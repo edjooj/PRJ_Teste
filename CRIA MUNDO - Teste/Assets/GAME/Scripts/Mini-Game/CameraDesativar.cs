@@ -5,16 +5,33 @@ using Photon.Pun;
 
 public class CameraDesativar : MonoBehaviourPunCallbacks
 {
-    public void Ligar()
+    private GameObject camUsuario;
+
+    private void Start()
     {
-        GameObject camUsuario = GameObject.FindWithTag("CameraPlayer");
-        camUsuario.SetActive(true);
+      
+        camUsuario = GameObject.FindGameObjectWithTag("MainCamera");
+
+        
         
     }
 
     public void Desligar()
     {
-        GameObject camUsuario = GameObject.FindWithTag("CameraPlayer");
-        camUsuario.SetActive(false);
+      
+        if (camUsuario != null)
+        {
+            camUsuario.SetActive(false);
+        }
+    }
+
+    public void Ligar()
+    {
+        
+        if (camUsuario != null)
+        {
+            camUsuario.SetActive(true);
+          
+        }
     }
 }

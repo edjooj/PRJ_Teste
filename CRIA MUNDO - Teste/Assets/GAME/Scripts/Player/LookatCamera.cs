@@ -6,12 +6,10 @@ public class LookatCamera : MonoBehaviourPunCallbacks
    // private Camera cameraToLookAt;
     public Transform playerStatus;
 
-   
-
     void Update()
     {
         OrientarCabecaParaJogador();
-    }
+    } 
 
     private void OrientarCabecaParaJogador()
     {

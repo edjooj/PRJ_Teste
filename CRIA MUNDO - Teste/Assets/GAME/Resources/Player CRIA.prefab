@@ -1808,7 +1808,7 @@ GameObject:
   - component: {fileID: 7926517246817703723}
   m_Layer: 0
   m_Name: -= Main Camera
-  m_TagString: CameraPlayer
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4492,15 +4492,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003922785347512628}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0020739469, y: 0.99563146, z: -0.022812156, w: -0.09051696}
-  m_LocalPosition: {x: -8, y: 12, z: 32.18}
+  m_LocalRotation: {x: -0.0013983428, y: 0.99787295, z: -0.022862747, w: -0.061032403}
+  m_LocalPosition: {x: -8, y: 12, z: 27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7055098664843217499}
   - {fileID: 841919438651654182}
   m_Father: {fileID: 8753448131224099006}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.625, y: 187, z: 0}
 --- !u!114 &4693476456961397857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10810,8 +10810,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2692574662538367984}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.22, y: 22.227983, z: 0.57899475}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -1.96, y: 21.51, z: -0.22351408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10819,7 +10819,7 @@ Transform:
   - {fileID: 3212899359628102360}
   - {fileID: 5866848512225276445}
   m_Father: {fileID: 8753448131224099006}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &872536539676740884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27562,6 +27562,7 @@ GameObject:
   - component: {fileID: 6206468164265550047}
   - component: {fileID: 1589114387154395707}
   - component: {fileID: 6125399940289781114}
+  - component: {fileID: 7333150147774083872}
   m_Layer: 0
   m_Name: Player CRIA
   m_TagString: Player
@@ -27949,6 +27950,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hudText: {fileID: 6499391477847489298}
   currentValue: 1000
+--- !u!114 &7333150147774083872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228549438320869892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465cd0022bd2b2b4f9195b8a0dc4fb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  user: 
+  crefisaScore: 0
+  linguasTime: 
+  linguasClick: 0
+  linguasLimpeza: 0
+  currentFaseLinguas: 0
+  exatasTime: 0
+  exatasClick: 0
+  biologicasScore: 0
+  designScore: 0
 --- !u!1 &8243265364250969981
 GameObject:
   m_ObjectHideFlags: 0
