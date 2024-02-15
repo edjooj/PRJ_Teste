@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LookatCamera : MonoBehaviourPunCallbacks
 {
-   // private Camera cameraToLookAt;
+   
     public Transform playerStatus;
 
     void Update()
