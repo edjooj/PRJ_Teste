@@ -20,7 +20,6 @@ TagManager:
   - SpawnPointCrefisa
   - GameCrefisa
   - CameraPlayer
-  - BottleCamera
   layers:
   - Default
   - TransparentFX
