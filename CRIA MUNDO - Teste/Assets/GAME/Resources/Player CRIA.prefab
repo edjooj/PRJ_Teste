@@ -1955,7 +1955,7 @@ Transform:
   m_GameObject: {fileID: 500064610313059495}
   serializedVersion: 2
   m_LocalRotation: {x: 0.018325422, y: 0.89251727, z: 0.036413506, w: -0.44916728}
-  m_LocalPosition: {x: 6.268683, y: 5.8559923, z: -0.48393488}
+  m_LocalPosition: {x: -483.39554, y: -72.66441, z: -1228.5361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24851,7 +24851,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 0
+  sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &3594962028226414452
@@ -29242,7 +29242,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4220703142294151726}
   - {fileID: 8208295120546800685}
-  sceneViewId: 0
+  sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &6062025394860076440
