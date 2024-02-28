@@ -7,13 +7,8 @@ using UnityEngine.UI;
 public class TeleporteSimples : MonoBehaviourPunCallbacks
 {
     [SerializeField] Transform spawnPosition;
-    
-    
     [SerializeField] GameObject hudTeleport;
-
-
-    
-
+ 
     public void OnTriggerEnter(Collider other)
     {
 
@@ -22,7 +17,6 @@ public class TeleporteSimples : MonoBehaviourPunCallbacks
 
             hudTeleport.SetActive(true);
         }
-
     }
 
     public void OnTriggerExit(Collider other)
@@ -53,7 +47,6 @@ public class TeleporteSimples : MonoBehaviourPunCallbacks
                     controller.enabled = true;
                     Debug.Log("Player Teleportado");
                 }
-               
             }
             else
             {
@@ -61,6 +54,4 @@ public class TeleporteSimples : MonoBehaviourPunCallbacks
             }
         }
     }
-
-   
 }

@@ -1369,6 +1369,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1349908990563012839, guid: cb670dac9d93b04478a8014cc0ac5af8, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3623659058978341066, guid: cb670dac9d93b04478a8014cc0ac5af8, type: 3}
       propertyPath: sceneViewId
       value: 6
@@ -7259,6 +7263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Cloud_Ring_02
       objectReference: {fileID: 0}
+    - target: {fileID: 2827401321296578225, guid: 7ece8030f0e2d584d852940ab5d88427, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3204067219854728203, guid: 7ece8030f0e2d584d852940ab5d88427, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.592416
@@ -8096,13 +8104,13 @@ MonoBehaviour:
   minigameName: Corrida-Game1
   minigameIcon: {fileID: 21300000, guid: 293eeabc3ddf9b54abda36d5916f637c, type: 3}
   icon: {fileID: 1112750937}
-  minigameHud: {fileID: 556100258}
   countPlayer: {fileID: 1820950583}
   currentPlayer: {fileID: 0}
   sceneMiniGame: {fileID: 8963920117185184660, guid: b042b2650e589704ea7aeb903eb393a0, type: 3}
   SpawnSceneMinigame: {fileID: 625905126}
   otherPhotonView: {fileID: 0}
   controller: {fileID: 0}
+  hudCrefisa: {fileID: 0}
   countdownTime: 5
   countdownDisplay: {fileID: 1601408390}
   currentTime: 0
