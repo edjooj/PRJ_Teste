@@ -7,30 +7,43 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Vector3 initialPosition;
     public ParticleSystem Bubbles;
+    public Camera petCAM;
+
+    public LayerMask layerMask;
 
     public void OnBeginDrag(PointerEventData eventData) //Quando pegar o objeto
     {
-        Debug.Log("Pegou o objeto");
         initialPosition = transform.position;
     }
 
     public void OnDrag(PointerEventData eventData) //Quando estiver com o objeto
     {
-        Debug.Log("Está com o objeto");
-        transform.position = Input.mousePosition;
+        Vector3 mouseWorldPosition = petCAM.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = initialPosition.z; 
+        transform.position = mouseWorldPosition;
+
+        mouseWorldPosition.z = petCAM.nearClipPlane;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(mouseWorldPosition, petCAM.transform.forward, out hit, Mathf.Infinity, layerMask))
+        {
+            if (hit.collider.gameObject.tag == "PetBed")
+            {
+                Bubbles.Play();
+            }
+            else
+            {
+                Bubbles.Stop();
+            }
+        }
+        
     }
+
 
     public void OnEndDrag(PointerEventData eventData) //Quando soltar o objeto
     {
-        Debug.Log("Soltou o objeto");
         transform.position = initialPosition;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Pet")
-        {
-            Bubbles.Play();
-        }
+        Bubbles.Stop();
     }
 }

@@ -21,6 +21,7 @@ TagManager:
   - GameCrefisa
   - CameraPlayer
   - HUD
+  - PetBed
   layers:
   - Default
   - TransparentFX

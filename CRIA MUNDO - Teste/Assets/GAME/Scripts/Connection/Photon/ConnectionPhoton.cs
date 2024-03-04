@@ -5,6 +5,7 @@ public class ConnectionPhoton : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
     public string userName;
+    public string sceneName;
 
 
     public void ConnectToMaster()
@@ -27,7 +28,7 @@ public class ConnectionPhoton : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Voce entrou na sala" + PhotonNetwork.CurrentRoom.Name);
-        PhotonNetwork.LoadLevel("GAME");
+        PhotonNetwork.LoadLevel(sceneName);
         PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
     }
 
