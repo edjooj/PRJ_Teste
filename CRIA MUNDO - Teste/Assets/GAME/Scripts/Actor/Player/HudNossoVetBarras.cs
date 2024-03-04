@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HudNossoVetBarras : MonoBehaviour
+public class HudNossoVetBarras : MonoBehaviourPunCallbacks
 {
     public float bar1 = 10f;
     public float bar2 = 10f;
@@ -17,19 +18,12 @@ public class HudNossoVetBarras : MonoBehaviour
     public Image barraDoente;
     public Image barraFome;
 
-
     private void Start()
     {
         btt1.onClick.AddListener(IncrementBar1);
         btt2.onClick.AddListener(IncrementBar2);
         btt3.onClick.AddListener(IncrementBar3);
-
-       
-      
-
-
     }
-
 
     private void Update()
     {
@@ -37,8 +31,7 @@ public class HudNossoVetBarras : MonoBehaviour
         {
            
             bar1 -= Time.deltaTime;
-            barraCarinho.fillAmount = bar1 / 10f;
-           
+            barraCarinho.fillAmount = bar1 / 20f;
         }
 
         if(bar2 > 0)
@@ -65,12 +58,12 @@ public class HudNossoVetBarras : MonoBehaviour
     {
         bar2 += 5f;
         barraDoente.fillAmount = bar2 * 20f;
+        
     }
 
     public void IncrementBar3()
     {
         bar3 += 5f;
         barraFome.fillAmount = bar3 * 20f;
-
     }
 }

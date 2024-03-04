@@ -10,7 +10,7 @@ public class AbrirLink : MonoBehaviour
         Button btn = GetComponent<Button>();
         if (btn != null)
         {
-            btn.onClick.AddListener(() => AbrirURL("https://www.crefisa.com.br/"));
+            btn.onClick.AddListener(() => AbrirURL(url));
         }
     }
 

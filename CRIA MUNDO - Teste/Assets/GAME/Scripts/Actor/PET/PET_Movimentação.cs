@@ -1,9 +1,11 @@
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PET_Movimentação : MonoBehaviour
 {
+   
     public Transform playerTransform;
     public float speed = 5f;
     public float stoppingDistance = 1f;
@@ -14,6 +16,7 @@ public class PET_Movimentação : MonoBehaviour
 
     void Start()
     {
+
         targetPosition = transform.position;
     }
 
