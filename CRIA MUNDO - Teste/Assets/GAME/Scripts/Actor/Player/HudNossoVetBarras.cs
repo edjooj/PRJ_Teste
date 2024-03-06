@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class HudNossoVetBarras : MonoBehaviourPunCallbacks
 {
-    public float bar1 = 10f;
-    public float bar2 = 10f;
-    public float bar3 = 10f;
+    public float bar1 = 5f;
+    public float bar2 = 5f;
+    public float bar3 = 5f;
 
     public Button btt1;
     public Button btt2;
@@ -31,19 +31,19 @@ public class HudNossoVetBarras : MonoBehaviourPunCallbacks
         {
            
             bar1 -= Time.deltaTime;
-            barraCarinho.fillAmount = bar1 / 20f;
+            barraCarinho.fillAmount = bar1 / 110f;
         }
 
         if(bar2 > 0)
         {
             bar2 -= Time.deltaTime;
-            barraDoente.fillAmount = bar2 / 20f;
+            barraDoente.fillAmount = bar2 /110f;
         }
 
         if(bar3 > 0)
         {
             bar3 -= Time.deltaTime;
-            barraFome.fillAmount = bar3 / 30f;
+            barraFome.fillAmount = bar3 / 110f;
         }
     }
 
@@ -51,19 +51,19 @@ public class HudNossoVetBarras : MonoBehaviourPunCallbacks
     public void IncrementBar1()
     {
         bar1 += 5f;
-        barraCarinho.fillAmount = bar1 * 20f;
+        barraCarinho.fillAmount = bar1 * 60f;
     }
 
     public void IncrementBar2()
     {
         bar2 += 5f;
-        barraDoente.fillAmount = bar2 * 20f;
+        barraDoente.fillAmount = bar2 * 60f;
         
     }
 
     public void IncrementBar3()
     {
         bar3 += 5f;
-        barraFome.fillAmount = bar3 * 20f;
+        barraFome.fillAmount = bar3 * 60f;
     }
 }

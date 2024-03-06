@@ -1,56 +1,50 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
 using TMPro;
 
-public class TrocaPet : MonoBehaviourPunCallbacks
+public class TrocaPet : MonoBehaviour
 {
-    public GameObject petCat;
-    public GameObject petDog;
-
     public Image imaCat;
     public Image imaDog;
 
+    public GameObject petCat;
+    public GameObject petDog;
+
     public Image imaPet;
     public Image imaPetFront;
-    public TMP_InputField petName;
+    public TMP_InputField petNameInputField;
+
+    public int selectPetIndex = 0;
 
     public Transform petSpawn;
     private GameObject currentPetInstance;
-    private string currentPetName = string.Empty;
-    [SerializeField]
-    public int selectPetIndex = 0;
-    
-    public TMP_InputField nameCat;
-    public TMP_InputField nameDog;
 
-    // Start is called before the first frame update
-    void Start()
+    public string catName = "";
+    public string dogName = "";
+
+    private bool isCatSelected = false;
+    private bool isDogSelected = false;
+
+    private void Start()
     {
-        petName.onEndEdit.AddListener(OnPetNameEndEdit);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        petNameInputField.onEndEdit.AddListener(OnPetNameEndEdit);
+        LoadPetNames();
     }
 
     public void SelectCat()
     {
+        isCatSelected = true;
+        isDogSelected = false;
         selectPetIndex = 1;
         SpawnSelectPet();
     }
 
     public void SelectDog()
     {
+        isCatSelected = false;
+        isDogSelected = true;
         selectPetIndex = 2;
         SpawnSelectPet();
-
     }
 
     void SpawnSelectPet()
@@ -63,7 +57,6 @@ public class TrocaPet : MonoBehaviourPunCallbacks
                 imaPet.sprite = imaCat.sprite;
                 imaPetFront.gameObject.SetActive(true);
                 imaPetFront.sprite = imaCat.sprite;
-               
                 break;
 
             case 2:
@@ -71,23 +64,43 @@ public class TrocaPet : MonoBehaviourPunCallbacks
                 imaPet.sprite = imaDog.sprite;
                 imaPetFront.gameObject.SetActive(true);
                 imaPetFront.sprite = imaDog.sprite;
-               
                 break;
-
         }
+
+       
+        petNameInputField.text = isCatSelected ? catName : dogName;
+
+      
         if (currentPetInstance != null)
         {
             Destroy(currentPetInstance);
-        }
-
-        if (selectPetPrefab != null)
-        {
-            currentPetInstance = Instantiate(selectPetPrefab, petSpawn.position, Quaternion.identity);
         }
     }
 
     private void OnPetNameEndEdit(string newName)
     {
-        currentPetName = newName;
+        if (isCatSelected)
+        {
+            catName = newName;
+        }
+        else if (isDogSelected)
+        {
+            dogName = newName;
+        }
+
+        SavePetName();
+    }
+
+    void SavePetName()
+    {
+        PlayerPrefs.SetString("CatName", catName);
+        PlayerPrefs.SetString("DogName", dogName);
+        PlayerPrefs.Save();
+    }
+
+    void LoadPetNames()
+    {
+        catName = PlayerPrefs.GetString("CatName", "");
+        dogName = PlayerPrefs.GetString("DogName", "");
     }
 }
