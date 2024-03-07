@@ -69,7 +69,8 @@ public class TrocaPet : MonoBehaviourPunCallbacks
                 break;
         }
 
-        petNameInputField.text = isCatSelected ? catName : dogName;
+        
+        ..text = isCatSelected ? catName : dogName;
 
         if (currentPetInstance != null)
         {
