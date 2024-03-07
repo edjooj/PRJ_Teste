@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
-public class TrocaPet : MonoBehaviour
+public class TrocaPet : MonoBehaviourPunCallbacks
 {
+
     public Image imaCat;
     public Image imaDog;
 
@@ -32,19 +34,19 @@ public class TrocaPet : MonoBehaviour
     }
 
     public void SelectCat()
-    {
-        isCatSelected = true;
-        isDogSelected = false;
+    { 
+        SpawnSelectPet(); 
         selectPetIndex = 1;
-        SpawnSelectPet();
+        isCatSelected = true;
+        isDogSelected = false; 
     }
 
     public void SelectDog()
-    {
+    { 
+        SpawnSelectPet();
+        selectPetIndex = 2;
         isCatSelected = false;
         isDogSelected = true;
-        selectPetIndex = 2;
-        SpawnSelectPet();
     }
 
     void SpawnSelectPet()
@@ -67,13 +69,16 @@ public class TrocaPet : MonoBehaviour
                 break;
         }
 
-       
         petNameInputField.text = isCatSelected ? catName : dogName;
 
-      
         if (currentPetInstance != null)
         {
             Destroy(currentPetInstance);
+        }
+        if (selectPetPrefab != null)
+        {
+            currentPetInstance = Instantiate(selectPetPrefab, petSpawn.position, petSpawn.rotation);
+           // currentPetInstance.transform.SetParent(petSpawn);
         }
     }
 
@@ -103,4 +108,5 @@ public class TrocaPet : MonoBehaviour
         catName = PlayerPrefs.GetString("CatName", "");
         dogName = PlayerPrefs.GetString("DogName", "");
     }
+
 }
