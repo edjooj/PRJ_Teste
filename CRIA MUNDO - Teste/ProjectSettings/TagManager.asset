@@ -22,6 +22,9 @@ TagManager:
   - CameraPlayer
   - HUD
   - PetBed
+  - Dr_Fam
+  - NPC_DrFAM
+  - target_DrFAM
   layers:
   - Default
   - TransparentFX
@@ -31,7 +34,7 @@ TagManager:
   - UI
   - MiniGameArtes
   - Player
-  - 
+  - Dr_Fam
   - 
   - 
   - 
