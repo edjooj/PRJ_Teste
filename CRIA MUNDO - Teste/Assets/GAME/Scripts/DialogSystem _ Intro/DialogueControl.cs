@@ -20,16 +20,12 @@ public class DialogueControl : MonoBehaviour
     private int index; // Index do texto
     private string[] sentences; // Frases do diálogo
 
+    public static DialogueControl instance;
 
-    void Start()
+
+    private void Awake()
     {
-        
-    }
-
-
-    void Update()
-    {
-        
+        instance = this;
     }
 
     IEnumerator TypeSentence()

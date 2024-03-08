@@ -99,7 +99,7 @@ public class AuthenticationFirebase : MonoBehaviour
             uid.text = user.UserId.ToString();
             Debug.Log("Usuário logado" + user.DisplayName);
             loginTxt.text = "ENTRAR";
-            loginBtbn.onClick.AddListener(LoginButton);
+            loginBtbn.onClick.AddListener(EntrarButton);
         }
     }
 
@@ -113,7 +113,13 @@ public class AuthenticationFirebase : MonoBehaviour
 
     void EntrarButton()
     {
+        Debug.LogFormat("{0} Voce se logou com sucesso como:", user.DisplayName);
+        CORE.instance.status.userName = user.DisplayName;
+        CORE.instance.connection.ConnectToMaster();
 
+        UpdatePlayerNickInFirebase();
+
+        photon.SetUserName(user.DisplayName);
     }
 
     #endregion
@@ -169,7 +175,7 @@ public class AuthenticationFirebase : MonoBehaviour
             CORE.instance.status.userName = user.DisplayName;
             CORE.instance.connection.ConnectToMaster();
 
-            //UpdatePlayerNickInFirebase();
+            UpdatePlayerNickInFirebase();
 
             photon.SetUserName(user.DisplayName);
         }
@@ -232,6 +238,10 @@ public class AuthenticationFirebase : MonoBehaviour
         if (dataSnapshot.Exists) //Usuário existe
         {
             firstTime = false;
+
+            Debug.LogFormat("{0} Voce se logou com sucesso como:", user.DisplayName);
+            CORE.instance.status.userName = user.DisplayName;
+            CORE.instance.connection.ConnectToMaster();
         }
         else //Usuário não existe
         {
