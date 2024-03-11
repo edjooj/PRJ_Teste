@@ -45,6 +45,7 @@ public class DrFam_Manager : MonoBehaviour
     {
         yield return new WaitForSeconds(20);
         DrFam_CORE.instance.sitSpace[i].SetActive(false);
+        chairOccupied[i] = false;
         npc.GetComponent<NPCController_DrFam>().agent.enabled = true;
         npc.GetComponent<NPCController_DrFam>().anim.SetBool("isSitting", false);
     }

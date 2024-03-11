@@ -13,8 +13,9 @@ public class NPCController_DrFam : MonoBehaviour
     public float timeToTake = 5f;
     public float transitionDuration = 10f;
 
-    public float dialogueRange;
+    public float atendimentoRange;
     public LayerMask playerLayer;
+    bool[] camasOcupadas = new bool[DrFam_CORE.instance.camasDisponiveis.Length];
 
 
     void Start()
@@ -32,7 +33,7 @@ public class NPCController_DrFam : MonoBehaviour
 
     void SeeThePlayer()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, dialogueRange, playerLayer);
+        Collider[] hits = Physics.OverlapSphere(transform.position, atendimentoRange, playerLayer);
         Debug.Log(hits.Length);
         Debug.Log(hits[0].name);
         if (hits.Length >= 1)
@@ -46,7 +47,7 @@ public class NPCController_DrFam : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, dialogueRange);
+        Gizmos.DrawWireSphere(transform.position, atendimentoRange);
     }
 
 
@@ -78,32 +79,35 @@ public class NPCController_DrFam : MonoBehaviour
         }
         spriteRenderer.material.SetFloat("_RemovedSegment", endValue);
 
-        for (int i = 0; i < DrFam_CORE.instance.camasDisponiveis.Length; i++)
+        int camaDisponivelIndex = -1;
+        for (int i = 0; i < camasOcupadas.Length; i++)
         {
-            if (!DrFam_CORE.instance.camasDisponiveis[i].activeInHierarchy)
+            if (!camasOcupadas[i])
             {
-                //Se tiver, ele vai se seitar nela
-                agent.enabled = false;
-                anim.SetBool("isSitting", true);
-                agent.velocity = Vector3.zero;
-                transform.rotation = Quaternion.Euler(0f, DrFam_CORE.instance.camasDisponiveis[i].transform.eulerAngles.y, 0f);
-                transform.position = DrFam_CORE.instance.camasDisponiveis[i].transform.position;
-                DrFam_CORE.instance.camasDisponiveis[i].SetActive(true);
-                StartCoroutine(WaitToLeave(gameObject, i));
+                camaDisponivelIndex = i;
                 break;
-            }
-            else if (i == DrFam_CORE.instance.camasDisponiveis.Length - 1)
-            {
-                //Se não tiver, ele continuará sentado
-                agent.enabled = false;
-                anim.SetBool("isSitting", true);
-                agent.velocity = Vector3.zero;
-                transform.rotation = Quaternion.Euler(0f, DrFam_CORE.instance.camasDisponiveis[i].transform.eulerAngles.y, 0f);
-                transform.position = DrFam_CORE.instance.camasDisponiveis[i].transform.position;
-                StartCoroutine(WaitToLeave(gameObject, i));
             }
         }
 
+        if (camaDisponivelIndex != -1)
+        {
+            // Se houver uma cama disponível, deite-se nela
+            agent.enabled = false;
+            anim.SetBool("isSitting", false);
+            anim.SetBool("isLaying", true);
+            agent.velocity = Vector3.zero;
+            transform.rotation = Quaternion.Euler(0f, DrFam_CORE.instance.camasDisponiveis[camaDisponivelIndex].transform.eulerAngles.y, 0f);
+            transform.position = DrFam_CORE.instance.camasDisponiveis[camaDisponivelIndex].transform.position;
+            camasOcupadas[camaDisponivelIndex] = true;
+            StartCoroutine(WaitToLeave(gameObject, camaDisponivelIndex));
+        }
+        else
+        {
+            // Se não houver cama disponível, continue sentado
+            agent.enabled = false;
+            anim.SetBool("isSitting", true);
+            agent.velocity = Vector3.zero;
+        }
     }
 
     IEnumerator WaitToLeave(GameObject npc, int i)
