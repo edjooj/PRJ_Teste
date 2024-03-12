@@ -409,7 +409,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6863844585406490363}
   timeToTake: 0
   transitionDuration: 5
-  dialogueRange: 12
+  atendimentoRange: 12
   playerLayer:
     serializedVersion: 2
     m_Bits: 128

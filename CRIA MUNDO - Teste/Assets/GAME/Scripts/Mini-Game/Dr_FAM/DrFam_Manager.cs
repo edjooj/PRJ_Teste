@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class DrFam_Manager : MonoBehaviour
 {
-    private bool[] chairOccupied;
     public Transform originalPosition;
-
-    private void Start()
-    {
-        chairOccupied = new bool[DrFam_CORE.instance.sitSpace.Length];
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,9 +12,9 @@ public class DrFam_Manager : MonoBehaviour
         {
             for (int i = 0; i < DrFam_CORE.instance.sitSpace.Length; i++)
             {
-                if (!chairOccupied[i])
+                if (!DrFam_CORE.instance.chairOccupied[i])
                 {
-                    chairOccupied[i] = true;
+                    DrFam_CORE.instance.chairOccupied[i] = true;
 
                     other.GetComponent<NPCController_DrFam>().agent.enabled = false;
                     other.GetComponent<NPCController_DrFam>().anim.SetBool("isSitting", true);
@@ -28,6 +22,8 @@ public class DrFam_Manager : MonoBehaviour
                     other.transform.rotation = Quaternion.Euler(0f, DrFam_CORE.instance.sitSpace[i].transform.eulerAngles.y, 0f);
 
                     other.transform.position = DrFam_CORE.instance.sitSpace[i].transform.position;
+
+                    other.GetComponent<NPCController_DrFam>().occupiedChairIndex = i;
 
                     break;
                 }
@@ -39,21 +35,4 @@ public class DrFam_Manager : MonoBehaviour
             }
         }
     }
-
-
-    IEnumerator WaitToLeave(GameObject npc, int i)
-    {
-        yield return new WaitForSeconds(20);
-        DrFam_CORE.instance.sitSpace[i].SetActive(false);
-        chairOccupied[i] = false;
-        npc.GetComponent<NPCController_DrFam>().agent.enabled = true;
-        npc.GetComponent<NPCController_DrFam>().anim.SetBool("isSitting", false);
-    }
-
-
-
-
-
-
-
 }

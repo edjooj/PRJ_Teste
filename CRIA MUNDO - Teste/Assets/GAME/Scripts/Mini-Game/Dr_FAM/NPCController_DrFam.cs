@@ -1,4 +1,3 @@
-using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,37 +8,47 @@ public class NPCController_DrFam : MonoBehaviour
     public Animator anim;
     public Transform target;
     public SpriteRenderer spriteRenderer;
+    public GameObject[] medicamentos;
 
     public float timeToTake = 5f;
     public float transitionDuration = 10f;
 
     public float atendimentoRange;
     public LayerMask playerLayer;
-    bool[] camasOcupadas = new bool[DrFam_CORE.instance.camasDisponiveis.Length];
+
+    private Coroutine courotine;
+    public int occupiedChairIndex = -1;
 
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("target_DrFAM").transform;
-        if (agent == null)
-        {
-            Debug.LogError("NavMeshAgent não encontrado no NPC!");
-        }
     }
+
     private void FixedUpdate()
     {
         SeeThePlayer();
     }
 
+    public void MoveToTarget()
+    {
+        if (agent != null && target != null)
+        {
+            agent.SetDestination(target.position);
+        }
+    }
+
     void SeeThePlayer()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, atendimentoRange, playerLayer);
-        Debug.Log(hits.Length);
-        Debug.Log(hits[0].name);
-        if (hits.Length >= 1)
+        if (hits.Length >= 1 && courotine == null)
         {
-            StartCoroutine(TransitionRemovedSegment(0f, 3.17f, transitionDuration));
-            
+            courotine = StartCoroutine(StartTimer());
+        }
+        else if (hits.Length <= 0 && courotine != null)
+        {
+            StopCoroutine(courotine);
+            courotine = null;
         }
 
     }
@@ -50,71 +59,53 @@ public class NPCController_DrFam : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, atendimentoRange);
     }
 
-
-    public void MoveToTarget()
-    {
-        if (agent != null && target != null)
-        {
-            agent.SetDestination(target.position);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            StartCoroutine(TransitionRemovedSegment(0f, 3.17f, transitionDuration));
-        }
-    }
-
-    IEnumerator TransitionRemovedSegment(float startValue, float endValue, float duration)
+    private IEnumerator StartTimer()
     {
         float elapsedTime = 0f;
-        while (elapsedTime < duration)
+        while (elapsedTime < transitionDuration)
         {
-            float newValue = Mathf.Lerp(startValue, endValue, elapsedTime / duration);
+            float newValue = Mathf.Lerp(0f, 3.17f, elapsedTime / transitionDuration);
             spriteRenderer.material.SetFloat("_RemovedSegment", newValue);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        spriteRenderer.material.SetFloat("_RemovedSegment", endValue);
+        DeitarNaCama();
+    }
 
-        int camaDisponivelIndex = -1;
-        for (int i = 0; i < camasOcupadas.Length; i++)
+    void DeitarNaCama()
+    {
+        for (int i = 0; i < DrFam_CORE.instance.camasDisponiveis.Length; i++)
         {
-            if (!camasOcupadas[i])
+            if (!DrFam_CORE.instance.camasOcupadas[i])
             {
-                camaDisponivelIndex = i;
+                DrFam_CORE.instance.camasOcupadas[i] = true;
+
+                this.agent.enabled = false;
+                this.anim.SetBool("isSitting", false);
+                this.anim.SetBool("isLaying", true);
+                this.agent.velocity = Vector3.zero;
+                this.transform.rotation = Quaternion.Euler(0f, DrFam_CORE.instance.camasDisponiveis[i].transform.eulerAngles.y, 0f);
+
+                this.transform.position = DrFam_CORE.instance.camasDisponiveis[i].transform.position;
+
+                SelectMedicine();
+
                 break;
             }
         }
 
-        if (camaDisponivelIndex != -1)
+        if (occupiedChairIndex != -1)
         {
-            // Se houver uma cama disponível, deite-se nela
-            agent.enabled = false;
-            anim.SetBool("isSitting", false);
-            anim.SetBool("isLaying", true);
-            agent.velocity = Vector3.zero;
-            transform.rotation = Quaternion.Euler(0f, DrFam_CORE.instance.camasDisponiveis[camaDisponivelIndex].transform.eulerAngles.y, 0f);
-            transform.position = DrFam_CORE.instance.camasDisponiveis[camaDisponivelIndex].transform.position;
-            camasOcupadas[camaDisponivelIndex] = true;
-            StartCoroutine(WaitToLeave(gameObject, camaDisponivelIndex));
+            DrFam_CORE.instance.chairOccupied[occupiedChairIndex] = false;
+            occupiedChairIndex = -1;
         }
-        else
-        {
-            // Se não houver cama disponível, continue sentado
-            agent.enabled = false;
-            anim.SetBool("isSitting", true);
-            agent.velocity = Vector3.zero;
-        }
+
+
     }
 
-    IEnumerator WaitToLeave(GameObject npc, int i)
+    void SelectMedicine()
     {
-        yield return new WaitForSeconds(timeToTake);
-        DrFam_CORE.instance.camasDisponiveis[i].SetActive(false);
-        agent.enabled = true;
-        anim.SetBool("isSitting", false);
+        int randomMedicine = Random.Range(0, medicamentos.Length);
+        Instantiate(medicamentos[randomMedicine], transform.position, Quaternion.identity);
     }
 }
