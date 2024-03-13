@@ -72,7 +72,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         {
             Debug.Log("Esta cheio");
         }
-
+        porcent.text = string.Format("{0}%", porcentagem);
     }   
     
      
@@ -89,6 +89,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
             barra.value = currentValue;
             porcentagem = (float)stream.ReceiveNext();
             porcent.text = string.Format("{0}%", porcentagem);
+
         }
     }
 
