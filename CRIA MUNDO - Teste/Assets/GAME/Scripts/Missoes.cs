@@ -80,11 +80,14 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         if(stream.IsWriting)
         {
             stream.SendNext(currentValue);
+            stream.SendNext(porcentagem);
         }
         else
         {
             currentValue = (float)stream.ReceiveNext();
             barra.value = currentValue;
+            porcentagem = (float)stream.ReceiveNext();
+            porcent.text = string.Format("{0}%", porcentagem);
         }
     }
 
