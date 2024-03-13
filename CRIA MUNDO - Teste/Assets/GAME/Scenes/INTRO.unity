@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43728998, g: 0.48501378, b: 0.56588876, a: 1}
+  m_IndirectSpecularColor: {r: 0.43975493, g: 0.4881794, b: 0.5683985, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9348,7 +9348,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12307,6 +12307,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1001 &808607518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.212048
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000014305115
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.735695
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828128023305448373, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209297491086455055, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      propertyPath: m_Name
+      value: Gato_PET
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 528686031269466947, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: f2fb623a560fc9e4980a545ed16892ea, type: 3}
 --- !u!1 &809718416
 GameObject:
   m_ObjectHideFlags: 0
@@ -13701,7 +13761,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14461,7 +14521,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 10c2506051105ef4c826668cc96f5c4f, type: 2}
+  - {fileID: 2100000, guid: 9dfb7e45e5f443d49b59b3cc9d3e9aec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16268,6 +16328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190566640}
   - component: {fileID: 1190566643}
+  - component: {fileID: 1190566644}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -16352,6 +16413,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1190566644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190566639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1219756679
 GameObject:
   m_ObjectHideFlags: 0
@@ -18928,7 +19012,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 10c2506051105ef4c826668cc96f5c4f, type: 2}
+  - {fileID: 2100000, guid: 9dfb7e45e5f443d49b59b3cc9d3e9aec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20099,7 +20183,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -26161,9 +26245,11 @@ MonoBehaviour:
   - {fileID: 195727636}
   - {fileID: 2130906922}
   - {fileID: 606190024}
+  chairOccupied: 
   camasDisponiveis:
   - {fileID: 1989308669}
   - {fileID: 1677983595}
+  camasOcupadas: 
 --- !u!1 &2104877429
 GameObject:
   m_ObjectHideFlags: 0
@@ -31434,3 +31520,4 @@ SceneRoots:
   - {fileID: 694445664}
   - {fileID: 2099556895}
   - {fileID: 880721096}
+  - {fileID: 808607518}
