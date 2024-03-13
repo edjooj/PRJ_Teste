@@ -62,10 +62,11 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
    */
 
     [PunRPC]
-    public void somandoBarRPC(float newValue)
+    public void somandoBarRPC(float newValue, float newValue1)
     {
         currentValue = newValue;
         barra.value = currentValue;
+        porcentagem = newValue1;
 
         if(currentValue >= valorMax)
         {
