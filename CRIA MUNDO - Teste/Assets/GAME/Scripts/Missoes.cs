@@ -31,14 +31,14 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 
     public void BarraUpdate()
     {
-        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32);
+        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32, porcentagem = currentValue / 10);
     
         // currentValue += 32;
         // somandoBarRPC();
         Debug.Log(currentValue);
+        /*
 
         porcentagem = currentValue / 10;
-
         if(currentValue >= valorMax)
         {
             porcentagem = 100f;
@@ -46,7 +46,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         
         porcent.text = string.Format("{0}%", porcentagem);
 
-        
+        */
     }
 
    /* private IEnumerator TweenTimer(float duration, Action<float> onTime = null, Action onEnd = null)
@@ -62,7 +62,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
    */
 
     [PunRPC]
-    public void somandoBarRPC(float newValue, float newValue1)
+    public void SomandoBarRPC(float newValue, float newValue1)
     {
         currentValue = newValue;
         barra.value = currentValue;
@@ -91,6 +91,11 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
             porcent.text = string.Format("{0}%", porcentagem);
 
         }
+    }
+
+    private void Update()
+    {
+        porcent.text = string.Format("{0}%", porcentagem);
     }
 
 }
