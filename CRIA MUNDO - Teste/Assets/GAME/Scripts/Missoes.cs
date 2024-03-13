@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class Missoes : MonoBehaviourPunCallbacks
+public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Slider barra;
     public TextMeshProUGUI porcent;
@@ -31,14 +31,10 @@ public class Missoes : MonoBehaviourPunCallbacks
 
     public void BarraUpdate()
     {
-
-        if (photonView.IsMine)
-        {
-            photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32);
-        }
-        
-       // currentValue += 32;
-       // somandoBarRPC();
+        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32);
+    
+        // currentValue += 32;
+        // somandoBarRPC();
         Debug.Log(currentValue);
 
         porcentagem = currentValue / 10;
@@ -47,8 +43,10 @@ public class Missoes : MonoBehaviourPunCallbacks
         {
             porcentagem = 100f;
         }
-       
+        
         porcent.text = string.Format("{0}%", porcentagem);
+
+        
     }
 
    /* private IEnumerator TweenTimer(float duration, Action<float> onTime = null, Action onEnd = null)
@@ -64,9 +62,9 @@ public class Missoes : MonoBehaviourPunCallbacks
    */
 
     [PunRPC]
-    public void somandoBarRPC()
+    public void somandoBarRPC(float newValue)
     {
-        
+        currentValue = newValue;
         barra.value = currentValue;
 
         if(currentValue >= valorMax)
@@ -75,6 +73,19 @@ public class Missoes : MonoBehaviourPunCallbacks
         }
 
     }   
-
+    
+     
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            stream.SendNext(currentValue);
+        }
+        else
+        {
+            currentValue = (float)stream.ReceiveNext();
+            barra.value = currentValue;
+        }
+    }
 
 }
