@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class Missoes : MonoBehaviourPunCallbacks
+public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Slider barra;
     public TextMeshProUGUI porcent;
@@ -31,24 +31,22 @@ public class Missoes : MonoBehaviourPunCallbacks
 
     public void BarraUpdate()
     {
-
-        if (photonView.IsMine)
-        {
-            photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32);
-        }
-        
-       // currentValue += 32;
-       // somandoBarRPC();
+        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32, porcentagem = currentValue / 10);
+    
+        // currentValue += 32;
+        // somandoBarRPC();
         Debug.Log(currentValue);
+        /*
 
         porcentagem = currentValue / 10;
-
         if(currentValue >= valorMax)
         {
             porcentagem = 100f;
         }
-       
+        
         porcent.text = string.Format("{0}%", porcentagem);
+
+        */
     }
 
    /* private IEnumerator TweenTimer(float duration, Action<float> onTime = null, Action onEnd = null)
@@ -64,17 +62,40 @@ public class Missoes : MonoBehaviourPunCallbacks
    */
 
     [PunRPC]
-    public void somandoBarRPC()
+    public void SomandoBarRPC(float newValue, float newValue1)
     {
-        
+        currentValue = newValue;
         barra.value = currentValue;
+        porcentagem = newValue1;
 
         if(currentValue >= valorMax)
         {
             Debug.Log("Esta cheio");
         }
-
+        porcent.text = string.Format("{0}%", porcentagem);
     }   
+    
+     
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            stream.SendNext(currentValue);
+            stream.SendNext(porcentagem);
+        }
+        else
+        {
+            currentValue = (float)stream.ReceiveNext();
+            barra.value = currentValue;
+            porcentagem = (float)stream.ReceiveNext();
+            porcent.text = string.Format("{0}%", porcentagem);
 
+        }
+    }
+
+    private void Update()
+    {
+        porcent.text = string.Format("{0}%", porcentagem);
+    }
 
 }
