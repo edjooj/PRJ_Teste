@@ -11,6 +11,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     public Slider barra;
     public TextMeshProUGUI porcent;
     public float valorMax = 1000f;
+    public GameObject Notficacao;
     
 
     [Range(0f, 1000f)]
@@ -52,6 +53,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         
         porcent.text = string.Format("{0}%", porcentagem);
         photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue, porcentagem);
+        barra.value = currentValue;
         
     }
 
@@ -85,8 +87,18 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
             porcentagem = 100f;
         }
         porcent.text = string.Format("{0}%", porcentagem);
-    }   
-    
+    }
+
+    [PunRPC]
+        public void MensagemForAll()
+    {
+        if (currentValue >= valorMax)
+        {
+            Notficacao.SetActive(true);
+        }
+    }
+
+
      
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
