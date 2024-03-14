@@ -11,7 +11,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     public Slider barra;
     public TextMeshProUGUI porcent;
     public float valorMax = 1000f;
-    PhotonView View;
+    
 
     [Range(0f, 1000f)]
     private float currentValue = 0f;
@@ -21,7 +21,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     [Range(0f, 100f)]
     private float porcentagem = 0f;
 
-    private float action = 0f;
+    
 
     public void Start()
     {
@@ -31,12 +31,18 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 
     public void BarraUpdate()
     {
-        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue += 32, porcentagem = currentValue / 10);
-    
+
+        // if (photonView.IsMine)
+
+        currentValue += 32f;
+            
+
+           
+        
         // currentValue += 32;
         // somandoBarRPC();
         Debug.Log(currentValue);
-        /*
+        
 
         porcentagem = currentValue / 10;
         if(currentValue >= valorMax)
@@ -45,8 +51,8 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         }
         
         porcent.text = string.Format("{0}%", porcentagem);
-
-        */
+        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue, porcentagem);
+        
     }
 
    /* private IEnumerator TweenTimer(float duration, Action<float> onTime = null, Action onEnd = null)
@@ -62,15 +68,21 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
    */
 
     [PunRPC]
-    public void SomandoBarRPC(float newValue, float newValue1)
+    public void SomandoBarRPC(float newValue, float newPorcentagem)
     {
         currentValue = newValue;
-        barra.value = currentValue;
-        porcentagem = newValue1;
+        barra.value = newValue;
+        porcentagem = newPorcentagem;
+        
 
-        if(currentValue >= valorMax)
+        if (currentValue >= valorMax)
         {
             Debug.Log("Esta cheio");
+        }
+        porcentagem = newValue / 10;
+        if (newValue >= valorMax)
+        {
+            porcentagem = 100f;
         }
         porcent.text = string.Format("{0}%", porcentagem);
     }   
@@ -91,11 +103,6 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
             porcent.text = string.Format("{0}%", porcentagem);
 
         }
-    }
-
-    private void Update()
-    {
-        porcent.text = string.Format("{0}%", porcentagem);
     }
 
 }
