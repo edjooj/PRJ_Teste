@@ -2,6 +2,7 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -9,6 +10,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     public TextMeshProUGUI porcent;
     public float valorMax = 1000f;
     public GameObject Notificacao;
+    public float porcentagem = 0f;
 
     private float currentValue = 0f;
 
@@ -20,24 +22,19 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 
     public void BarraUpdate()
     {
-        
         {
-           
             currentValue += 32f;
-
-         
             float novaPorcentagem = currentValue / valorMax * 100f;
-
             
             barra.value = currentValue;
             porcent.text = string.Format("{0}%", novaPorcentagem);
 
             photonView.RPC("SomandoBarRPC", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
-
             
             if (currentValue >= valorMax)
             {
                 photonView.RPC("MensagemForAll", RpcTarget.All);
+                porcent.text = string.Format("100%");
             }
         }
     }
@@ -52,7 +49,6 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void MensagemForAll()
     {
-        
         if (!Notificacao.activeSelf)
         {
             Notificacao.SetActive(true);
