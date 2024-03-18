@@ -8089,7 +8089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228549438320869892, guid: cb670dac9d93b04478a8014cc0ac5af8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8625657107638600439, guid: cb670dac9d93b04478a8014cc0ac5af8, type: 3}
       propertyPath: sceneViewId
@@ -9452,8 +9452,7 @@ MonoBehaviour:
   barra: {fileID: 1983165317}
   porcent: {fileID: 826157656}
   valorMax: 1000
-  Notficacao: {fileID: 0}
-  button: {fileID: 2029829892}
+  Notificacao: {fileID: 0}
 --- !u!114 &942674365
 MonoBehaviour:
   m_ObjectHideFlags: 0

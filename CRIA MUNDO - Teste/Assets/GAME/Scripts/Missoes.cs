@@ -1,28 +1,16 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Slider barra;
     public TextMeshProUGUI porcent;
     public float valorMax = 1000f;
-    public GameObject Notficacao;
-    
+    public GameObject Notificacao;
 
-    [Range(0f, 1000f)]
     private float currentValue = 0f;
-
-    public Button button;
-
-    [Range(0f, 100f)]
-    private float porcentagem = 0f;
-
-    
 
     public void Start()
     {
@@ -32,89 +20,54 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 
     public void BarraUpdate()
     {
-
-        // if (photonView.IsMine)
-
+       
         currentValue += 32f;
-            
 
-           
         
-        // currentValue += 32;
-        // somandoBarRPC();
-        Debug.Log(currentValue);
-        
+        float novaPorcentagem = currentValue / valorMax * 100f;
 
-        porcentagem = currentValue / 10;
-        if(currentValue >= valorMax)
-        {
-            porcentagem = 100f;
-        }
         
-        porcent.text = string.Format("{0}%", porcentagem);
-        photonView.RPC("somandoBarRPC", RpcTarget.AllBuffered, currentValue, porcentagem);
         barra.value = currentValue;
+        porcent.text = string.Format("{0}%", novaPorcentagem);
+
         
-    }
+        photonView.RPC("SomandoBarRPC", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
 
-   /* private IEnumerator TweenTimer(float duration, Action<float> onTime = null, Action onEnd = null)
-    {
-        var _timer = 100f;
-        while (_timer <= duration)
-        {
-            _timer += Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
-            onTime?.Invoke(_timer);
-        }
-    }
-   */
-
-    [PunRPC]
-    public void SomandoBarRPC(float newValue, float newPorcentagem)
-    {
-        currentValue = newValue;
-        barra.value = newValue;
-        porcentagem = newPorcentagem;
         
-
         if (currentValue >= valorMax)
         {
-            Debug.Log("Esta cheio");
+            photonView.RPC("MensagemForAll", RpcTarget.All);
         }
-        newPorcentagem = newValue / 10;
-        if (newValue >= valorMax)
-        {
-            newPorcentagem = 100f;
-        }
-        porcent.text = string.Format("{0}%", newPorcentagem);
     }
 
     [PunRPC]
-        public void MensagemForAll()
+    public void SomandoBarRPC(float novoValor, float novaPorcentagem)
     {
-        if (currentValue >= valorMax)
+        barra.value = novoValor;
+        porcent.text = string.Format("{0}%", novaPorcentagem);
+    }
+
+    [PunRPC]
+    public void MensagemForAll()
+    {
+        
+        if (!Notificacao.activeSelf)
         {
-            Notficacao.SetActive(true);
+            Notificacao.SetActive(true);
         }
     }
 
-
-     
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if(stream.IsWriting)
+        if (stream.IsWriting)
         {
             stream.SendNext(currentValue);
-            stream.SendNext(porcentagem);
         }
         else
         {
             currentValue = (float)stream.ReceiveNext();
             barra.value = currentValue;
-            porcentagem = (float)stream.ReceiveNext();
-            porcent.text = string.Format("{0}%", porcentagem);
-
+            porcent.text = string.Format("{0}%", currentValue / valorMax * 100f);
         }
     }
-
 }
