@@ -81,12 +81,12 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         {
             Debug.Log("Esta cheio");
         }
-        porcentagem = newValue / 10;
+        newPorcentagem = newValue / 10;
         if (newValue >= valorMax)
         {
-            porcentagem = 100f;
+            newPorcentagem = 100f;
         }
-        porcent.text = string.Format("{0}%", porcentagem);
+        porcent.text = string.Format("{0}%", newPorcentagem);
     }
 
     [PunRPC]
