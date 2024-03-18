@@ -20,23 +20,26 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 
     public void BarraUpdate()
     {
-       
-        currentValue += 32f;
-
         
-        float novaPorcentagem = currentValue / valorMax * 100f;
-
-        
-        barra.value = currentValue;
-        porcent.text = string.Format("{0}%", novaPorcentagem);
-
-        
-        photonView.RPC("SomandoBarRPC", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
-
-        
-        if (currentValue >= valorMax)
+        if (photonView.IsMine)
         {
-            photonView.RPC("MensagemForAll", RpcTarget.All);
+           
+            currentValue += 32f;
+
+         
+            float novaPorcentagem = currentValue / valorMax * 100f;
+
+            
+            barra.value = currentValue;
+            porcent.text = string.Format("{0}%", novaPorcentagem);
+
+            photonView.RPC("SomandoBarRPC", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
+
+            
+            if (currentValue >= valorMax)
+            {
+                photonView.RPC("MensagemForAll", RpcTarget.All);
+            }
         }
     }
 
