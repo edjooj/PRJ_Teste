@@ -21,7 +21,6 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     public void BarraUpdate()
     {
         
-        if (photonView.IsMine)
         {
            
             currentValue += 32f;
