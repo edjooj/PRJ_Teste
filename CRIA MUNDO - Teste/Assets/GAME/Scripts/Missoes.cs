@@ -6,6 +6,7 @@ using System;
 
 public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
+
     public Slider barra;
     public TextMeshProUGUI porcent;
     public float valorMax = 1000f;
@@ -29,11 +30,11 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
             barra.value = currentValue;
             porcent.text = string.Format("{0}%", novaPorcentagem);
 
-            photonView.RPC("SomandoBarRPC", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
+            photonView.RPC("SomandoBarRPC()", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
             
             if (currentValue >= valorMax)
             {
-                photonView.RPC("MensagemForAll", RpcTarget.All);
+                photonView.RPC("MensagemForAll()", RpcTarget.All);
                 porcent.text = string.Format("100%");
             }
         }
@@ -67,5 +68,6 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
             barra.value = currentValue;
             porcent.text = string.Format("{0}%", currentValue / valorMax * 100f);
         }
+
     }
 }
