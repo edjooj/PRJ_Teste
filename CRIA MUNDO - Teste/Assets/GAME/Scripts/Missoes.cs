@@ -24,27 +24,37 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     public void BarraUpdate()
     {
         {
+
             currentValue += 32f;
-            float novaPorcentagem = currentValue / valorMax * 100f;
+            porcentagem = currentValue / valorMax * 100f;
             
             barra.value = currentValue;
-            porcent.text = string.Format("{0}%", novaPorcentagem);
+            porcent.text = string.Format("{0}%", porcentagem);
 
-            photonView.RPC("SomandoBarRPC()", RpcTarget.AllBuffered, currentValue, novaPorcentagem);
+            photonView.RPC("SomandoBarRPC()", RpcTarget.AllBuffered, currentValue, porcentagem);
             
             if (currentValue >= valorMax)
             {
                 photonView.RPC("MensagemForAll()", RpcTarget.All);
                 porcent.text = string.Format("100%");
             }
+
         }
     }
 
     [PunRPC]
     public void SomandoBarRPC(float novoValor, float novaPorcentagem)
     {
+        currentValue = novoValor;
         barra.value = novoValor;
+        porcentagem = novaPorcentagem;
         porcent.text = string.Format("{0}%", novaPorcentagem);
+        if (currentValue >= valorMax)
+        {
+            
+            porcent.text = string.Format("100%");
+        }
+
     }
 
     [PunRPC]
@@ -61,6 +71,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         if (stream.IsWriting)
         {
             stream.SendNext(currentValue);
+            stream.SendNext(porcentagem);
         }
         else
         {
