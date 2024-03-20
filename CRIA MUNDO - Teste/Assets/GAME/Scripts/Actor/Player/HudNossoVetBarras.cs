@@ -66,4 +66,5 @@ public class HudNossoVetBarras : MonoBehaviourPunCallbacks
         bar3 += 5f;
         barraFome.fillAmount = bar3 * 60f;
     }
+
 }

@@ -8,10 +8,12 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Slider barra;
     public TextMeshProUGUI porcent;
+    public TextMeshProUGUI time;
     public float valorMax = 1000f;
     public GameObject Notificacao;
     public Button botao;
     public float currentValue;
+    public float timeValue = 90f;
 
     public DateTime lastClickTime;
 
@@ -102,8 +104,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         {
              botao.interactable = false;
         }
-
-
+    
     }
 
     public void ResetarValoresSalvos()
@@ -116,4 +117,6 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         PlayerPrefs.SetFloat("CurrentValue", currentValue);
         PlayerPrefs.SetInt("LastClickTime", (int)lastClickTime.Ticks);
     }
+
+   
 }
