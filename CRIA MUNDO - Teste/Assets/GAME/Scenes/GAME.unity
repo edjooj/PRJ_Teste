@@ -9741,7 +9741,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barra: {fileID: 1983165317}
   porcent: {fileID: 826157656}
-  time: {fileID: 0}
   valorMax: 1000
   Notificacao: {fileID: 53619620}
   botao: {fileID: 2029829892}

@@ -8,21 +8,21 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Slider barra;
     public TextMeshProUGUI porcent;
-    public TextMeshProUGUI time;
+    
     public float valorMax = 1000f;
     public GameObject Notificacao;
     public Button botao;
     public float currentValue;
     
 
-    public DateTime lastClickTime;
+    
 
     void Start()
     {
         
         currentValue = PlayerPrefs.GetFloat("CurrentValue", 0f);
-        long lastClickTicks = PlayerPrefs.GetInt("LastCLickTime", 0);
-        lastClickTime = new DateTime(lastClickTicks);
+        
+        
        
         barra.maxValue = valorMax;
         barra.value = currentValue;
@@ -30,7 +30,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         float porcentagem = currentValue / valorMax * 100f;
         porcent.text = string.Format("{0}%", porcentagem);
 
-        BotaoDesativar();
+       
 
     }
 
@@ -77,6 +77,12 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
+    [PunRPC]
+    public void MensagemOff()
+    {
+        Notificacao.SetActive(false);
+    }
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
@@ -94,28 +100,18 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public void BotaoDesativar()
-    {
-        if((DateTime.Now - lastClickTime).TotalDays >= 1)
-        {
-            botao.interactable = true;
-        }
-        else 
-        {
-             botao.interactable = false;
-        }
-    
-    }
+   
 
     public void ResetarValoresSalvos()
     {
         
         currentValue = 0f;
-        lastClickTime = DateTime.Now;
+       
 
         
         PlayerPrefs.SetFloat("CurrentValue", currentValue);
-        PlayerPrefs.SetInt("LastClickTime", (int)lastClickTime.Ticks);
+        photonView.RPC("MensagemOff", RpcTarget.All);
+        
     }
 
    
