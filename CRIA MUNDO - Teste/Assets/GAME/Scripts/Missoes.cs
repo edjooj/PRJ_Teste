@@ -13,7 +13,7 @@ public class Missoes : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject Notificacao;
     public Button botao;
     public float currentValue;
-    public float timeValue = 90f;
+    
 
     public DateTime lastClickTime;
 

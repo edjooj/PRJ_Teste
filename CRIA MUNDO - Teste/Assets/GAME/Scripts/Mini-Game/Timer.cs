@@ -7,7 +7,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 60;
+    public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public Button botao;
@@ -29,10 +29,9 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
-                timeRemaining = 0;
                 timerIsRunning = false;
                 botao.enabled = true;
+                timeRemaining = 10;
             }
         }
     }

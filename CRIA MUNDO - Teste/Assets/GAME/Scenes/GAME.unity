@@ -9746,7 +9746,6 @@ MonoBehaviour:
   Notificacao: {fileID: 53619620}
   botao: {fileID: 2029829892}
   currentValue: 0
-  timeValue: 90
 --- !u!114 &942674365
 MonoBehaviour:
   m_ObjectHideFlags: 0
