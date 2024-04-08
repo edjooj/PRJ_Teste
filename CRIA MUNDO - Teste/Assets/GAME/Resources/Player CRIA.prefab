@@ -33386,7 +33386,12 @@ GameObject:
   - component: {fileID: 1589114387154395707}
   - component: {fileID: 6125399940289781114}
   - component: {fileID: 7333150147774083872}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 5326181492342654426}
+  m_Layer: 7
+>>>>>>> Stashed changes
   m_Name: Player CRIA
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -33455,6 +33460,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8961f3ba4f54148a1c5b9a63596c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+--- !u!114 &2791892203857131716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228549438320869892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a7c051c3276b349999abc082ee28c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPointMedicamento: {fileID: 3646580586663710579}
+  AlturaMaxima: 5
+  distanciaMedicamento: 1
+  medicamentosEmpilhados: []
+>>>>>>> Stashed changes
 --- !u!114 &4220703142294151726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33797,6 +33821,19 @@ MonoBehaviour:
   exatasClick: 0
   biologicasScore: 0
   designScore: 0
+--- !u!114 &5326181492342654426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228549438320869892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d37d9a58c17c6e48b9a01fc66f68e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: 750ced55fba1f9a459c2fcb452f5b2af, type: 3}
 --- !u!1 &8243265364250969981
 GameObject:
   m_ObjectHideFlags: 0
